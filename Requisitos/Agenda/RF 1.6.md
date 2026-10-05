@@ -1,6 +1,7 @@
 ---
 tags: [requisito]
 id: "RF 1.6"
+id_v6: "RF 1.11"
 modulo: "[[Agenda]]"
 prioridade: Alta
 alterado: false
@@ -9,9 +10,10 @@ implementacao: completa
 ---
 # RF 1.6
 
-cada atividade da OS deve possuir tipo, data, horário de início, horário de fim e status próprios;
+o sistema deve indicar o status de cada atividade (agendada, concluída, cancelada), com distinção visual na agenda;
 
 **Módulo:** [[Agenda]]
-**Entidades:** [[Ordem de Serviço]], [[Atividade da OS]], [[Tipo de Atividade]]
+**Entidades:** [[Atividade da OS]]
 
 > Fonte: Documentação Técnica V6, seção 4.
+> Numeração V7 (separação do módulo Ordem de Serviço); na V6: RF 1.11.

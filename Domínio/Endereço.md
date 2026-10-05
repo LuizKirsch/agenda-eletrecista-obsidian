@@ -7,7 +7,7 @@ tabela: endereco
 Armazena os endereços (imóveis) atendidos.
 
 **Tabela:** `endereco`
-**Módulos:** [[Cliente e Endereço]], [[Agenda]]
+**Módulos:** [[Cliente e Endereço]], [[Ordem de Serviço (módulo)|Ordem de Serviço]]
 
 > Entidade própria vinculada ao cliente; um cliente pode ter N endereços ([[RF 3.3]], [[RF 3.4]]). As observações ficam em endereco_observacao.
 

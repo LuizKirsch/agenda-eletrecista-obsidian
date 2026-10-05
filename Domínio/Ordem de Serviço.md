@@ -7,9 +7,9 @@ tabela: ordem_servico
 Armazena as Ordens de Serviço (OS).
 
 **Tabela:** `ordem_servico`
-**Módulos:** [[Agenda]], [[Orçamento (módulo)|Orçamento]]
+**Módulos:** [[Ordem de Serviço (módulo)|Ordem de Serviço]], [[Agenda]], [[Orçamento (módulo)|Orçamento]]
 
-> Agrupa uma ou mais atividades de um mesmo cliente/endereço ([[RF 1.4]]). Cliente e endereço são obrigatórios, e as chaves impedem excluir cliente ou endereço com OS vinculada ([[RF 3.11]]).
+> Agrupa uma ou mais atividades de um mesmo cliente/endereço ([[RF 6.1]]). Cliente e endereço são obrigatórios, e as chaves impedem excluir cliente ou endereço com OS vinculada ([[RF 3.11]]).
 
 ## Relacionamentos
 - N OS → 1 [[Cliente]]
@@ -27,7 +27,7 @@ Armazena as Ordens de Serviço (OS).
 
 ## Implementação
 - Migration: `migrations/20260930000001-create-ordem-servico.js` · Model: `OrdemServico` em `models/index.js`
-- ⚠️ `endereco_id` **aceita NULL** ([[RF 1.4]]).
+- ⚠️ `endereco_id` **aceita NULL** ([[RF 6.1]]).
 - FKs sem `ON DELETE` explícito (o padrão do banco já impede excluir cliente/endereço com OS). Ao excluir a OS, o service apaga as atividades antes.
 - Divergências: [[Status da Implementação]]
 

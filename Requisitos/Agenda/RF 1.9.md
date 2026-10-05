@@ -1,17 +1,19 @@
 ---
 tags: [requisito]
 id: "RF 1.9"
+id_v6: "RF 1.13"
 modulo: "[[Agenda]]"
-prioridade: Média
+prioridade: Alta
 alterado: false
 entrega: 1
 implementacao: completa
 ---
 # RF 1.9
 
-ao adicionar uma nova atividade à OS, o sistema deve sugerir início no horário de fim da atividade anterior, na mesma data;
+o sistema deve permitir remarcar arrastando uma atividade para outro dia/horário, com encaixe em intervalos de 15 minutos;
 
 **Módulo:** [[Agenda]]
-**Entidades:** [[Ordem de Serviço]], [[Atividade da OS]]
+**Entidades:** [[Atividade da OS]]
 
 > Fonte: Documentação Técnica V6, seção 4.
+> Numeração V7 (separação do módulo Ordem de Serviço); na V6: RF 1.13.

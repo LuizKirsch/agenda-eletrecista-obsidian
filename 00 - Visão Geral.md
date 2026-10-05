@@ -13,9 +13,11 @@ Sistema de agenda e gestão de Ordens de Serviço para um eletricista autônomo 
 - [[Status da Implementação]]
 - [[Histórico de Commits]]
 - [[Fora do MVP]]
+- [[Proposta - Módulo Ordem de Serviço]] (aplicada)
 
 ## Módulos
 - [[Agenda]] — entrega 1
+- [[Ordem de Serviço (módulo)|Ordem de Serviço]] — entrega 1
 - [[Usuários e Acesso]] — entrega 3
 - [[Cliente e Endereço]] — entrega 1
 - [[Orçamento (módulo)|Orçamento]] — entrega 2
@@ -33,20 +35,22 @@ Sistema de agenda e gestão de Ordens de Serviço para um eletricista autônomo 
 - [[Item de Serviço]]
 
 Mapa visual: [[Mapa do Domínio.canvas|Mapa do Domínio]]
+Diagrama de contexto: [[Diagrama de Contexto.canvas|Diagrama de Contexto]]
 
 ## Requisitos
 - Tabela filtrável: [[Requisitos.base|Requisitos]] (por módulo, prioridade, alterado, implementação)
 - [[Requisitos Não Funcionais]]
 
 ## Regras de negócio
-- [[P1.1 - Criar OS]]
-- [[P1.2 - Remarcar OS por arraste]]
-- [[P1.3 - Remarcar atividade]]
-- [[P1.4 - Editar OS inteira]]
-- [[P1.5 - Verificar conflito de horário]]
-- [[P1.6 - Concluir ou cancelar]]
-- [[P1.7 - Excluir]]
-- [[P1.8 - Adicionar atividade a OS existente]]
+- [[P1.1 - Arrastar atividade]]
+- [[P6.1 - Criar OS]]
+- [[P6.2 - Remarcar OS inteira]]
+- [[P6.3 - Remarcar atividade]]
+- [[P6.4 - Editar OS inteira]]
+- [[P6.5 - Verificar conflito de horário]]
+- [[P6.6 - Concluir ou cancelar]]
+- [[P6.7 - Excluir]]
+- [[P6.8 - Adicionar atividade a OS existente]]
 - [[P5.1 - Gerenciar tipos de atividade]]
 - [[P2.1 - Autenticar]]
 - [[P2.2 - Cadastrar usuário]]
@@ -55,6 +59,9 @@ Mapa visual: [[Mapa do Domínio.canvas|Mapa do Domínio]]
 - [[P3.1 - Cadastrar cliente, endereço e observação]]
 - [[P3.2 - Buscar cliente]]
 - [[P3.3 - Editar e excluir cliente, endereço e observação]]
+
+## LGPD
+- [[LGPD - Visão Geral]] — ajustes pendentes levantados na análise de LGPD (a analisar)
 
 ## Arquitetura
 - [[Stack e Ambiente]]

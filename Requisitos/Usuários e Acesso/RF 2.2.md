@@ -9,7 +9,7 @@ implementacao: parcial
 ---
 # RF 2.2
 
-ambos os perfis devem ter acesso às mesmas funcionalidades (agenda, atividade, cliente, orçamento e listagem de usuários), exceto o cadastro, a edição e a exclusão de usuários, exclusivos da secretária ([[RF 2.9]], [[RF 2.10]] e [[RF 2.11]]) (alterado: decisão do projeto);
+ambos os perfis devem ter acesso às mesmas funcionalidades (agenda, ordem de serviço, atividade, cliente, orçamento e listagem de usuários), exceto o cadastro, a edição e a exclusão de usuários, exclusivos da secretária ([[RF 2.9]], [[RF 2.10]] e [[RF 2.11]]) (alterado: decisão do projeto);
 
 **Módulo:** [[Usuários e Acesso]]
 **Entidades:** [[Cliente]], [[Usuário]], [[Orçamento]]
@@ -17,3 +17,4 @@ ambos os perfis devem ter acesso às mesmas funcionalidades (agenda, atividade, 
 **Implementação:** o eletricista ainda consegue cadastrar usuário (ver [[RF 2.9]]). Ver [[Status da Implementação]].
 
 > Fonte: Documentação Técnica V6, seção 4.
+> V7: "ordem de serviço" incluída na lista após a separação do módulo.

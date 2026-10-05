@@ -7,9 +7,9 @@ tabela: tipo_atividade
 Armazena o catálogo de tipos de atividade e sua duração padrão.
 
 **Tabela:** `tipo_atividade`
-**Módulos:** [[Atividade]], [[Agenda]]
+**Módulos:** [[Atividade]], [[Ordem de Serviço (módulo)|Ordem de Serviço]]
 
-> Mantida pelo módulo Atividade e usada pela Agenda para sugerir o horário de fim das atividades ([[RF 1.8]], [[RF 5.1]] a [[RF 5.8]]). A coluna nome usa a collation utf8mb4_0900_as_ci, que não diferencia maiúsculas de minúsculas, mas diferencia acentos ([[RF 5.4]]).
+> Mantida pelo módulo Atividade e usada na Ordem de Serviço para sugerir o horário de fim das atividades ([[RF 6.4]], [[RF 5.1]] a [[RF 5.8]]). A coluna nome usa a collation utf8mb4_0900_as_ci, que não diferencia maiúsculas de minúsculas, mas diferencia acentos ([[RF 5.4]]).
 
 ## Relacionamentos
 - 1 tipo → N [[Atividade da OS]]

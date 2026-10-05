@@ -5,13 +5,13 @@ tags: [projeto]
 
 | # | Entrega | Módulos | Data prevista |
 | --- | --- | --- | --- |
-| 1 | Cadastro de Cliente e Endereço + Agenda | [[Cliente e Endereço]], [[Agenda]], [[Atividade]] | 30/09/2026 |
+| 1 | Cadastro de Cliente e Endereço + Agenda | [[Cliente e Endereço]], [[Agenda]], [[Ordem de Serviço (módulo)\|Ordem de Serviço]], [[Atividade]] | 30/09/2026 |
 | 2 | Orçamento | [[Orçamento (módulo)\|Orçamento]] | a definir |
 | 3 | Perfis de Usuário e Acesso | [[Usuários e Acesso]] | a definir |
 | 4 | MVP funcional integrado | todos | a definir |
 
 > Usuários e Acesso já foi implementado (doc V4), antes da entrega 3.
 
-> Entrega 1: o código de Cliente e Endereço, Atividade e Agenda foi commitado em 27/09/2026, mas ainda faltam itens da doc V6 (edição e exclusão de cliente, endereço obrigatório na OS, busca e cadastro rápido no formulário da OS, entre outros). Ver [[Status da Implementação]].
+> Entrega 1: o código de Cliente e Endereço, Atividade e Agenda/OS foi commitado em 27/09/2026, mas ainda faltam itens da doc V6 (edição e exclusão de cliente, endereço obrigatório na OS, busca e cadastro rápido no formulário da OS, entre outros). Ver [[Status da Implementação]].
 
 Ver também: [[Backlog]]

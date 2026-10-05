@@ -1,0 +1,124 @@
+{
+	"nodes": [
+		{
+			"id": "sys",
+			"type": "text",
+			"text": "# Sistema de Agenda",
+			"x": -160,
+			"y": -60,
+			"width": 320,
+			"height": 120,
+			"color": "3"
+		},
+		{
+			"id": "agenda",
+			"type": "file",
+			"file": "Módulos/Agenda.md",
+			"x": -430,
+			"y": -330,
+			"width": 260,
+			"height": 100,
+			"color": "5"
+		},
+		{
+			"id": "os",
+			"type": "file",
+			"file": "Módulos/Ordem de Serviço (módulo).md",
+			"x": 170,
+			"y": -330,
+			"width": 260,
+			"height": 100,
+			"color": "5"
+		},
+		{
+			"id": "cli",
+			"type": "file",
+			"file": "Módulos/Cliente e Endereço.md",
+			"x": -620,
+			"y": -50,
+			"width": 260,
+			"height": 100,
+			"color": "5"
+		},
+		{
+			"id": "atv",
+			"type": "file",
+			"file": "Módulos/Atividade.md",
+			"x": 360,
+			"y": -50,
+			"width": 260,
+			"height": 100,
+			"color": "5"
+		},
+		{
+			"id": "usr",
+			"type": "file",
+			"file": "Módulos/Usuários e Acesso.md",
+			"x": -430,
+			"y": 230,
+			"width": 260,
+			"height": 100,
+			"color": "5"
+		},
+		{
+			"id": "orc",
+			"type": "file",
+			"file": "Módulos/Orçamento (módulo).md",
+			"x": 170,
+			"y": 230,
+			"width": 260,
+			"height": 100,
+			"color": "5"
+		}
+	],
+	"edges": [
+		{
+			"id": "e-agenda",
+			"fromNode": "sys",
+			"fromSide": "top",
+			"toNode": "agenda",
+			"toSide": "bottom",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "e-os",
+			"fromNode": "sys",
+			"fromSide": "top",
+			"toNode": "os",
+			"toSide": "bottom",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "e-cli",
+			"fromNode": "sys",
+			"fromSide": "left",
+			"toNode": "cli",
+			"toSide": "right",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "e-atv",
+			"fromNode": "sys",
+			"fromSide": "right",
+			"toNode": "atv",
+			"toSide": "left",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "e-usr",
+			"fromNode": "sys",
+			"fromSide": "bottom",
+			"toNode": "usr",
+			"toSide": "top",
+			"toEnd": "arrow"
+		},
+		{
+			"id": "e-orc",
+			"fromNode": "sys",
+			"fromSide": "bottom",
+			"toNode": "orc",
+			"toSide": "top",
+			"toEnd": "arrow"
+		}
+	]
+}

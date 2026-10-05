@@ -1,6 +1,7 @@
 ---
 tags: [requisito]
 id: "RF 1.12"
+id_v6: "RF 1.27"
 modulo: "[[Agenda]]"
 prioridade: Média
 alterado: false
@@ -9,9 +10,10 @@ implementacao: completa
 ---
 # RF 1.12
 
-em uma OS com mais de uma atividade, cada bloco da agenda deve indicar sua posição na OS (ex.: 1/2 · OS 2);
+as alterações realizadas na agenda devem refletir imediatamente na visão semanal;
 
 **Módulo:** [[Agenda]]
-**Entidades:** [[Ordem de Serviço]], [[Atividade da OS]]
+**Entidades:** —
 
 > Fonte: Documentação Técnica V6, seção 4.
+> Numeração V7 (separação do módulo Ordem de Serviço); na V6: RF 1.27.

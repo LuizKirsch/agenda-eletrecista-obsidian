@@ -1,6 +1,7 @@
 ---
 tags: [requisito]
 id: "RF 1.3"
+id_v6: "RF 1.3"
 modulo: "[[Agenda]]"
 prioridade: Média
 alterado: false
@@ -15,3 +16,4 @@ o sistema deve destacar o dia atual na visão semanal;
 **Entidades:** —
 
 > Fonte: Documentação Técnica V6, seção 4.
+> Numeração V7 (separação do módulo Ordem de Serviço); na V6: RF 1.3.

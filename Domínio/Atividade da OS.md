@@ -7,9 +7,9 @@ tabela: atividade_os
 Armazena as atividades agendadas de cada OS.
 
 **Tabela:** `atividade_os`
-**Módulos:** [[Agenda]], [[Atividade]]
+**Módulos:** [[Ordem de Serviço (módulo)|Ordem de Serviço]], [[Agenda]], [[Atividade]]
 
-> Cada atividade tem data, horário e status próprios ([[RF 1.6]], [[RF 1.11]]). A sequência é renumerada de 1 a N ao incluir ou remover atividades ([[P1.4 - Editar OS inteira#RN 35|RN 35]]).
+> Cada atividade tem data, horário e status próprios ([[RF 6.3]], [[RF 1.6]]). A sequência é renumerada de 1 a N ao incluir ou remover atividades ([[P6.4 - Editar OS inteira#RN 35|RN 35]]).
 
 ## Relacionamentos
 - N atividades → 1 [[Ordem de Serviço]]
@@ -31,7 +31,7 @@ Armazena as atividades agendadas de cada OS.
 - Migration: `migrations/20260930000002-create-atividade-os.js` · Model: `AtividadeOs` em `models/index.js`
 - CHECK `chk_atividade_os_horario` (`hora_fim > hora_inicio`) e índice `idx_atividade_os_data`.
 - `status` tem DEFAULT `agendada`, mas aceita NULL.
-- FK `ordem_servico_id` sem cascata; a renumeração da sequência é feita em `os.service` ([[P1.4 - Editar OS inteira#RN 35|RN 35]]).
+- FK `ordem_servico_id` sem cascata; a renumeração da sequência é feita em `os.service` ([[P6.4 - Editar OS inteira#RN 35|RN 35]]).
 - Divergências: [[Status da Implementação]]
 
 > Fonte: Documentação Técnica V6, seção 15.

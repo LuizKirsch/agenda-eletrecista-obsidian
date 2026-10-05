@@ -1,6 +1,7 @@
 ---
 tags: [requisito]
 id: "RF 1.1"
+id_v6: "RF 1.1"
 modulo: "[[Agenda]]"
 prioridade: Alta
 alterado: false
@@ -15,3 +16,4 @@ O sistema deve exibir a agenda em visão semanal, de segunda a domingo, em perí
 **Entidades:** [[Atividade da OS]]
 
 > Fonte: Documentação Técnica V6, seção 4.
+> Numeração V7 (separação do módulo Ordem de Serviço); na V6: RF 1.1.

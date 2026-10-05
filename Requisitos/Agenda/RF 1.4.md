@@ -1,19 +1,19 @@
 ---
 tags: [requisito]
 id: "RF 1.4"
+id_v6: "RF 1.5"
 modulo: "[[Agenda]]"
-prioridade: Alta
-alterado: true
+prioridade: Média
+alterado: false
 entrega: 1
-implementacao: parcial
+implementacao: completa
 ---
 # RF 1.4
 
-o sistema deve permitir criar uma Ordem de Serviço (OS) informando cliente, endereço, observações e uma ou mais atividades; cliente e endereço são obrigatórios, e o endereço deve pertencer ao cliente da OS (alterado: decisão do projeto);
+o sistema deve permitir iniciar a criação de uma OS clicando em um horário livre da agenda, com data e hora de início pré-preenchidas;
 
 **Módulo:** [[Agenda]]
-**Entidades:** [[Ordem de Serviço]], [[Atividade da OS]], [[Cliente]], [[Endereço]], [[Observação de Endereço]]
-
-**Implementação:** o endereço ainda é opcional: o formulário oferece "Sem endereço", a API só valida o endereço quando ele é enviado e `ordem_servico.endereco_id` aceita NULL. Ver [[Status da Implementação]].
+**Entidades:** [[Ordem de Serviço]]
 
 > Fonte: Documentação Técnica V6, seção 4.
+> Numeração V7 (separação do módulo Ordem de Serviço); na V6: RF 1.5.

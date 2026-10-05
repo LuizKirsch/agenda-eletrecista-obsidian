@@ -8,7 +8,8 @@ Comparação entre a Documentação Técnica V6 e o código em `server/` (até o
 
 | Módulo | Completos | Parciais | Pendentes |
 | --- | --- | --- | --- |
-| [[Agenda]] | 25 | 4 | 0 |
+| [[Agenda]] | 12 | 0 | 0 |
+| [[Ordem de Serviço (módulo)\|Ordem de Serviço]] | 15 | 4 | 0 |
 | [[Atividade]] | 8 | 0 | 0 |
 | [[Cliente e Endereço]] | 7 | 1 | 4 |
 | [[Usuários e Acesso]] | 10 | 3 | 0 |
@@ -16,10 +17,10 @@ Comparação entre a Documentação Técnica V6 e o código em `server/` (até o
 
 ## Divergências com a doc V6
 
-### Agenda
-- **Endereço opcional na OS** ([[RF 1.4]], [[P1.1 - Criar OS#RN 34|RN 34]]): o formulário oferece "Sem endereço", `lerOs` aceita `endereco_id` nulo e a migration de `ordem_servico` deixa a coluna sem NOT NULL.
-- **Concluídas/canceladas editáveis na edição da OS** ([[RF 1.15]], [[RF 1.17]], [[P1.4 - Editar OS inteira#RN 9|RN 9]]): o `OsForm` carrega todas as atividades como linhas editáveis e removíveis, e `os.service.atualizar` atualiza ou apaga qualquer uma sem conferir o status.
-- **Busca e cadastro rápido no formulário da OS** ([[RF 1.29]]): o cliente é escolhido em um `<select>` com a lista inteira, sem busca e sem cadastro inline de cliente ou endereço.
+### Ordem de Serviço
+- **Endereço opcional na OS** ([[RF 6.1]], [[P6.1 - Criar OS#RN 34|RN 34]]): o formulário oferece "Sem endereço", `lerOs` aceita `endereco_id` nulo e a migration de `ordem_servico` deixa a coluna sem NOT NULL.
+- **Concluídas/canceladas editáveis na edição da OS** ([[RF 6.11]], [[RF 6.8]], [[P6.4 - Editar OS inteira#RN 9|RN 9]]): o `OsForm` carrega todas as atividades como linhas editáveis e removíveis, e `os.service.atualizar` atualiza ou apaga qualquer uma sem conferir o status.
+- **Busca e cadastro rápido no formulário da OS** ([[RF 6.2]]): o cliente é escolhido em um `<select>` com a lista inteira, sem busca e sem cadastro inline de cliente ou endereço.
 
 ### Usuários e Acesso
 - **Cadastro de usuário liberado ao eletricista** ([[RF 2.9]], [[P2.3 - Cadastrar, editar e excluir usuário#RN 29|RN 29]]): `routes/usuario.routes.js` aplica `somenteSecretaria` só em PUT e DELETE; o POST e o formulário da tela ficam abertos aos dois perfis.

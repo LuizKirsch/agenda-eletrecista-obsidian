@@ -31,7 +31,7 @@ Commits da branch `main` do repositório [agenda-eletrecista](https://github.com
 | --- | --- |
 | `3057be1` | Migration de `tipo_atividade` com collation `utf8mb4_0900_as_ci` e CHECK de 5 a 720 min |
 | `6db91fd` | API de tipos: CRUD, situação, contagem de uso, ao menos um ativo ([[P5.1 - Gerenciar tipos de atividade]]) |
-| `270cbf7` | Modal de tipos de atividade, aberto pela barra lateral e pela agenda ([[RF 1.7]]) |
+| `270cbf7` | Modal de tipos de atividade, aberto pela barra lateral e pela agenda ([[RF 1.5|RF 1.7]]) |
 
 ## 27/09/2026 — Agenda (doc V5)
 | Commit | Descrição |

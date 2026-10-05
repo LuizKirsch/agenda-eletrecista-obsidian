@@ -7,7 +7,7 @@ tabela: cliente
 Armazena os clientes atendidos.
 
 **Tabela:** `cliente`
-**Módulos:** [[Cliente e Endereço]], [[Agenda]]
+**Módulos:** [[Cliente e Endereço]], [[Ordem de Serviço (módulo)|Ordem de Serviço]]
 
 > Cadastro mínimo, com apenas nome e telefone obrigatórios ([[RF 3.1]], [[RF 3.2]]). O telefone é único e só pode ser excluído o cliente sem OS vinculada ([[RF 3.11]]).
 
