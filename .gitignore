@@ -1,0 +1,12 @@
+# Estado da interface do Obsidian (muda a cada clique)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.trash/
+
+# Arquivo temporário da importação inicial
+.obsidian/vault-inicial.tgz
+
+# Sistema
+.DS_Store
+Thumbs.db

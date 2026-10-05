@@ -1,0 +1,34 @@
+---
+tags: [projeto]
+---
+# Histórico de Versões da Documentação
+
+| Data | Versão | Autor |
+| --- | --- | --- |
+| 26/05/2022 | V1 | Edson I. Wobeto |
+| 25/09/2026 | V2 | Luiz Kirsch |
+| 25/09/2026 | V3 | Luiz Kirsch |
+| 27/09/2026 | V4 | Luiz Kirsch |
+| 27/09/2026 | V5 | Luiz Kirsch |
+| 27/09/2026 | V6 | Luiz Kirsch |
+
+## V2
+Módulo [[Agenda]] revisado com base no protótipo navegável. O trabalho passa a ser organizado em Ordens de Serviço ([[Ordem de Serviço]]), cada uma composta por uma ou mais atividades com data, horário e status próprios.
+
+## V3
+O catálogo de tipos de atividade passa a ser gerenciável pelo usuário e é separado da Agenda em um módulo próprio, [[Atividade]].
+
+## V4
+Módulo [[Usuários e Acesso]] implementado: login, logout, manutenção da sessão e cadastro de usuários. A secretária é criada na instalação e cadastra o eletricista. Editar e excluir usuários passa a ser exclusivo da secretária.
+
+## V5
+Módulos [[Cliente e Endereço]], [[Atividade]] e [[Agenda]] implementados. Incluídos [[RF 3.8]] e [[RF 1.28]]; alterados [[RF 1.7]], [[RF 1.14]], [[RF 1.21]] e [[RF 1.22]].
+
+## V6
+- Endereço obrigatório na OS ([[RF 1.4]]); busca e cadastro de cliente/endereço sem sair do formulário ([[RF 1.29]])
+- Cliente, endereço e observação editáveis; exclusão só sem OS vinculada ([[RF 3.9]] a [[RF 3.12]])
+- Telefone do cliente único e validado ([[RF 3.1]])
+- Cadastro de usuários exclusivo da secretária ([[RF 2.9]])
+- Atividades concluídas/canceladas travadas também na edição da OS ([[RF 1.15]], [[RF 1.17]])
+- Histórico de OS por endereço/cliente e auditoria ficam [[Fora do MVP]]
+- Regras do [[Orçamento (módulo)|Orçamento]] serão detalhadas na entrega 2

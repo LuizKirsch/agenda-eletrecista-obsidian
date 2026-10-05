@@ -1,0 +1,36 @@
+filters:
+  and:
+    - file.hasTag("requisito")
+    - file.ext == "md"
+views:
+  - type: table
+    name: Todos
+    filters:
+      and:
+        - id != null
+    groupBy:
+      property: modulo
+      direction: ASC
+    order:
+      - file.name
+      - modulo
+      - prioridade
+      - alterado
+      - entrega
+  - type: table
+    name: Alterados por decisão
+    filters:
+      and:
+        - alterado == true
+    order:
+      - file.name
+      - modulo
+      - prioridade
+  - type: table
+    name: Prioridade alta
+    filters:
+      and:
+        - prioridade == "Alta"
+    order:
+      - file.name
+      - modulo

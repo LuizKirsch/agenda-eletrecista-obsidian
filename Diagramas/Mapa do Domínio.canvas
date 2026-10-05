@@ -1,0 +1,24 @@
+{
+	"nodes":[
+		{"id":"n0","type":"file","file":"Domínio/Usuário.md","x":-700,"y":-300,"width":280,"height":160},
+		{"id":"n1","type":"file","file":"Domínio/Cliente.md","x":-350,"y":-300,"width":280,"height":160},
+		{"id":"n2","type":"file","file":"Domínio/Endereço.md","x":0,"y":-300,"width":280,"height":160},
+		{"id":"n3","type":"file","file":"Domínio/Observação de Endereço.md","x":350,"y":-300,"width":280,"height":160},
+		{"id":"n4","type":"file","file":"Domínio/Ordem de Serviço.md","x":-175,"y":0,"width":280,"height":160,"color":"4"},
+		{"id":"n5","type":"file","file":"Domínio/Orçamento.md","x":-700,"y":0,"width":280,"height":160},
+		{"id":"n6","type":"file","file":"Domínio/Item de Serviço.md","x":-700,"y":300,"width":280,"height":160},
+		{"id":"n7","type":"file","file":"Domínio/Atividade da OS.md","x":-175,"y":300,"width":280,"height":160},
+		{"id":"n8","type":"file","file":"Domínio/Tipo de Atividade.md","x":250,"y":300,"width":280,"height":160},
+		{"id":"nota","type":"text","x":-700,"y":-480,"width":630,"height":120,"text":"## Mapa do Domínio\nCada cartão é a nota da entidade — dê dois cliques para abrir. Usuário não se liga às outras entidades (não há auditoria no MVP)."}
+	],
+	"edges":[
+		{"id":"eCliEnd5","fromNode":"n1","fromSide":"right","toNode":"n2","toSide":"left","label":"1 : N"},
+		{"id":"eEndObs5","fromNode":"n2","fromSide":"right","toNode":"n3","toSide":"left","label":"1 : N"},
+		{"id":"eCliOrd5","fromNode":"n1","fromSide":"bottom","toNode":"n4","toSide":"top","label":"1 : N"},
+		{"id":"eEndOrd5","fromNode":"n2","fromSide":"bottom","toNode":"n4","toSide":"top","label":"1 : N"},
+		{"id":"eOrdAti5","fromNode":"n4","fromSide":"bottom","toNode":"n7","toSide":"top","label":"1 : N"},
+		{"id":"eTipAti5","fromNode":"n8","fromSide":"left","toNode":"n7","toSide":"right","label":"1 : N"},
+		{"id":"eOrçOrd15","fromNode":"n5","fromSide":"right","toNode":"n4","toSide":"left","label":"0..1 (opcional)"},
+		{"id":"eOrçIte27","fromNode":"n5","fromSide":"bottom","toNode":"n6","toSide":"top","label":"N : N (valor por orçamento)"}
+	]
+}
