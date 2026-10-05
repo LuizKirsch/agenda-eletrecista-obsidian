@@ -29,4 +29,9 @@ Armazena os endereços (imóveis) atendidos.
 | `cidade` | Cidade | VARCHAR | 80 | NOT NULL |
 | `ponto_referencia` | Ponto de referência para chegar ao local | VARCHAR | 150 |  |
 
+## Implementação
+- Migration: `migrations/20260928000002-create-endereco.js` · Model: `Endereco` em `models/index.js`
+- ⚠️ FK `cliente_id` **sem ON DELETE CASCADE** ([[P3.3 - Editar e excluir cliente, endereço e observação#RN 43|RN 43]]).
+- Divergências: [[Status da Implementação]]
+
 > Fonte: Documentação Técnica V6, seção 15.

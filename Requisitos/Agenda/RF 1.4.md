@@ -5,6 +5,7 @@ modulo: "[[Agenda]]"
 prioridade: Alta
 alterado: true
 entrega: 1
+implementacao: parcial
 ---
 # RF 1.4
 
@@ -12,5 +13,7 @@ o sistema deve permitir criar uma Ordem de Serviço (OS) informando cliente, end
 
 **Módulo:** [[Agenda]]
 **Entidades:** [[Ordem de Serviço]], [[Atividade da OS]], [[Cliente]], [[Endereço]], [[Observação de Endereço]]
+
+**Implementação:** o endereço ainda é opcional: o formulário oferece "Sem endereço", a API só valida o endereço quando ele é enviado e `ordem_servico.endereco_id` aceita NULL. Ver [[Status da Implementação]].
 
 > Fonte: Documentação Técnica V6, seção 4.

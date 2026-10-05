@@ -22,4 +22,10 @@ Armazena as observações registradas para cada endereço.
 | `texto` | Conteúdo da observação | TEXT |  | NOT NULL |
 | `criado_em` | Data e hora de registro da observação | DATETIME |  | NOT NULL, padrão CURRENT_TIMESTAMP |
 
+## Implementação
+- Migration: `migrations/20260928000003-create-endereco-observacao.js` · Model: `EnderecoObservacao` em `models/index.js`
+- ⚠️ FK `endereco_id` **sem ON DELETE CASCADE**.
+- Listadas por `criado_em DESC, id DESC`.
+- Divergências: [[Status da Implementação]]
+
 > Fonte: Documentação Técnica V6, seção 15.

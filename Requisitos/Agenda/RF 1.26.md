@@ -5,6 +5,7 @@ modulo: "[[Agenda]]"
 prioridade: Média
 alterado: false
 entrega: 1
+implementacao: completa
 ---
 # RF 1.26
 

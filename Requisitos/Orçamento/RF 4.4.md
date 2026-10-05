@@ -5,6 +5,7 @@ modulo: "[[Orçamento (módulo)]]"
 prioridade: Média
 alterado: false
 entrega: 2
+implementacao: pendente
 ---
 # RF 4.4
 

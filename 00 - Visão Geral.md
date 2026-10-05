@@ -10,6 +10,8 @@ Sistema de agenda e gestão de Ordens de Serviço para um eletricista autônomo 
 - [[Planejamento de Entregas]]
 - [[Backlog]]
 - [[Histórico de Versões]]
+- [[Status da Implementação]]
+- [[Histórico de Commits]]
 - [[Fora do MVP]]
 
 ## Módulos
@@ -33,7 +35,7 @@ Sistema de agenda e gestão de Ordens de Serviço para um eletricista autônomo 
 Mapa visual: [[Mapa do Domínio.canvas|Mapa do Domínio]]
 
 ## Requisitos
-- Tabela filtrável: [[Requisitos.base|Requisitos]] (por módulo, prioridade, alterado)
+- Tabela filtrável: [[Requisitos.base|Requisitos]] (por módulo, prioridade, alterado, implementação)
 - [[Requisitos Não Funcionais]]
 
 ## Regras de negócio
@@ -56,5 +58,9 @@ Mapa visual: [[Mapa do Domínio.canvas|Mapa do Domínio]]
 
 ## Arquitetura
 - [[Stack e Ambiente]]
+- [[API REST]]
+- [[Frontend]]
 - [[Decisão - Arquitetura Monolítica]]
 - [[Decisão - Endereço como Entidade Própria]]
+- [[Decisão - Datas e Horas como Texto]]
+- [[Decisão - SQLite em Desenvolvimento]]

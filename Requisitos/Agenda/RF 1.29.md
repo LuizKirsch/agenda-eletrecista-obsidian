@@ -5,6 +5,7 @@ modulo: "[[Agenda]]"
 prioridade: Alta
 alterado: false
 entrega: 1
+implementacao: parcial
 ---
 # RF 1.29
 
@@ -12,5 +13,7 @@ na criação e na edição da OS, o sistema deve permitir buscar o cliente por p
 
 **Módulo:** [[Agenda]]
 **Entidades:** [[Ordem de Serviço]], [[Cliente]], [[Endereço]], [[Observação de Endereço]]
+
+**Implementação:** o cliente é escolhido em um select com todos os clientes, sem busca, e não dá para cadastrar cliente nem endereço sem sair do formulário; as observações do endereço já são exibidas. Ver [[Status da Implementação]].
 
 > Fonte: Documentação Técnica V6, seção 4.

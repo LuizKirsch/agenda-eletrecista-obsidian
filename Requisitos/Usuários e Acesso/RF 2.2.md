@@ -5,6 +5,7 @@ modulo: "[[Usuários e Acesso]]"
 prioridade: Alta
 alterado: true
 entrega: 3
+implementacao: parcial
 ---
 # RF 2.2
 
@@ -12,5 +13,7 @@ ambos os perfis devem ter acesso às mesmas funcionalidades (agenda, atividade, 
 
 **Módulo:** [[Usuários e Acesso]]
 **Entidades:** [[Cliente]], [[Usuário]], [[Orçamento]]
+
+**Implementação:** o eletricista ainda consegue cadastrar usuário (ver [[RF 2.9]]). Ver [[Status da Implementação]].
 
 > Fonte: Documentação Técnica V6, seção 4.

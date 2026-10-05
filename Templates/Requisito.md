@@ -5,6 +5,7 @@ modulo: "[[]]"
 prioridade: Média
 alterado: false
 entrega:
+implementacao: pendente
 ---
 # RF X.Y
 

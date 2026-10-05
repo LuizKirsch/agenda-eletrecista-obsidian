@@ -17,6 +17,7 @@ views:
       - prioridade
       - alterado
       - entrega
+      - implementacao
   - type: table
     name: Alterados por decisão
     filters:
@@ -34,3 +35,17 @@ views:
     order:
       - file.name
       - modulo
+  - type: table
+    name: Implementação
+    filters:
+      and:
+        - implementacao != "completa"
+    groupBy:
+      property: implementacao
+      direction: ASC
+    order:
+      - file.name
+      - modulo
+      - prioridade
+      - entrega
+      - implementacao

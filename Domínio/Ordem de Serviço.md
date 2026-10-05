@@ -25,4 +25,10 @@ Armazena as Ordens de Serviço (OS).
 | `endereco_id` | Endereço do atendimento | BIGINT Unsigned | 20 | FK endereco, NOT NULL, ON DELETE RESTRICT |
 | `observacao` | Observações livres da OS | TEXT |  |  |
 
+## Implementação
+- Migration: `migrations/20260930000001-create-ordem-servico.js` · Model: `OrdemServico` em `models/index.js`
+- ⚠️ `endereco_id` **aceita NULL** ([[RF 1.4]]).
+- FKs sem `ON DELETE` explícito (o padrão do banco já impede excluir cliente/endereço com OS). Ao excluir a OS, o service apaga as atividades antes.
+- Divergências: [[Status da Implementação]]
+
 > Fonte: Documentação Técnica V6, seção 15.

@@ -5,6 +5,7 @@ modulo: "[[Cliente e Endereço]]"
 prioridade: Alta
 alterado: false
 entrega: 1
+implementacao: completa
 ---
 # RF 3.7
 

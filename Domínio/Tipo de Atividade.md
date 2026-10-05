@@ -22,4 +22,11 @@ Armazena o catálogo de tipos de atividade e sua duração padrão.
 | `duracao_padrao_min` | Duração padrão em minutos | INT |  | NOT NULL, entre 5 e 720 |
 | `ativo` | Indica se o tipo pode ser usado em novas atividades | BOOLEAN |  | NOT NULL, padrão TRUE |
 
+## Implementação
+- Migration: `migrations/20260929000001-create-tipo-atividade.js` · Model: `TipoAtividade` em `models/index.js`
+- CHECK `chk_tipo_atividade_duracao` (5 a 720).
+- No SQLite, a coluna `nome` usa `COLLATE NOCASE` ([[Decisão - SQLite em Desenvolvimento]]).
+- O uso (`uso`) é contado em `tipoAtividade.service.contarUso` ([[RF 5.7]]).
+- Divergências: [[Status da Implementação]]
+
 > Fonte: Documentação Técnica V6, seção 15.

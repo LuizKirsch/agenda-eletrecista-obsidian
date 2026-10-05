@@ -23,4 +23,10 @@ Armazena os clientes atendidos.
 | `telefone` | Telefone de contato | VARCHAR | 20 | NOT NULL, UNIQUE; DDD e 8 ou 9 dígitos |
 | `criado_em` | Data e hora do cadastro | DATETIME |  | NOT NULL, padrão CURRENT_TIMESTAMP |
 
+## Implementação
+- Migration: `migrations/20260928000001-create-cliente.js` · Model: `Cliente` em `models/index.js`
+- ⚠️ `telefone` **sem UNIQUE** e sem validação de formato ([[RF 3.1]]).
+- `criado_em` não é enviado no INSERT; o banco preenche, e o service faz `reload()` para devolvê-lo ([[P3.1 - Cadastrar cliente, endereço e observação#RN 38|RN 38]]).
+- Divergências: [[Status da Implementação]]
+
 > Fonte: Documentação Técnica V6, seção 15.

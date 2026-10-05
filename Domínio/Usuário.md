@@ -24,4 +24,10 @@ Armazena os usuários com acesso ao sistema.
 | `perfil` | Perfil do usuário | ENUM |  | 'eletricista', 'secretaria'; NOT NULL |
 | `ativo` | Indica se o usuário pode acessar o sistema | BOOLEAN |  | NOT NULL, padrão TRUE |
 
+## Implementação
+- Migration: `migrations/20260927000000-create-usuario.js` · Model: `Usuario` em `models/index.js`
+- Conforme o dicionário. A migration falha se faltar `SECRETARIA_NOME`, `SECRETARIA_LOGIN` ou `SECRETARIA_SENHA` ([[RF 2.13]]).
+- Hash bcrypt com custo 10; `senha_hash` nunca sai da API (o service devolve só `id, nome, login, perfil, ativo`).
+- Divergências: [[Status da Implementação]]
+
 > Fonte: Documentação Técnica V6, seção 15.

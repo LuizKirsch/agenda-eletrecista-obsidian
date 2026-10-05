@@ -5,6 +5,7 @@ modulo: "[[Usuários e Acesso]]"
 prioridade: Média
 alterado: true
 entrega: 3
+implementacao: completa
 ---
 # RF 2.10
 

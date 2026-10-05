@@ -5,6 +5,7 @@ modulo: "[[Atividade]]"
 prioridade: Média
 alterado: false
 entrega: 1
+implementacao: completa
 ---
 # RF 5.4
 

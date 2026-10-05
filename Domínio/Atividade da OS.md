@@ -27,4 +27,11 @@ Armazena as atividades agendadas de cada OS.
 | `hora_fim` | Horário de fim | TIME |  | NOT NULL, > hora_inicio |
 | `status` | Situação da atividade | ENUM |  | 'agendada', 'concluida', 'cancelada'; padrão 'agendada' |
 
+## Implementação
+- Migration: `migrations/20260930000002-create-atividade-os.js` · Model: `AtividadeOs` em `models/index.js`
+- CHECK `chk_atividade_os_horario` (`hora_fim > hora_inicio`) e índice `idx_atividade_os_data`.
+- `status` tem DEFAULT `agendada`, mas aceita NULL.
+- FK `ordem_servico_id` sem cascata; a renumeração da sequência é feita em `os.service` ([[P1.4 - Editar OS inteira#RN 35|RN 35]]).
+- Divergências: [[Status da Implementação]]
+
 > Fonte: Documentação Técnica V6, seção 15.
