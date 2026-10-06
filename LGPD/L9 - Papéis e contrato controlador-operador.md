@@ -6,7 +6,7 @@ base: "LGPD art. 5º, VI e VII; art. 39"
 status: a analisar
 decisao:
 ---
-# L9 – Papéis e contrato controlador–operador
+ # L9 – Papéis e contrato controlador–operador
 
 **Base:** LGPD art. 5º, VI e VII; art. 39 · **Tipo:** documento / decisão
 
