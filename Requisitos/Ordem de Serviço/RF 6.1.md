@@ -6,16 +6,14 @@ modulo: "[[Ordem de Serviço (módulo)]]"
 prioridade: Alta
 alterado: true
 entrega: 1
-implementacao: parcial
+implementacao: completa
 ---
 # RF 6.1
 
-o sistema deve permitir criar uma Ordem de Serviço (OS) informando cliente, endereço, observações e uma ou mais atividades; cliente e endereço são obrigatórios, e o endereço deve pertencer ao cliente da OS (alterado: decisão do projeto);
+o sistema deve permitir criar uma Ordem de Serviço (OS) informando cliente, endereço, observações e uma ou mais atividades; o cliente é obrigatório e o endereço é opcional; quando informado, o endereço deve pertencer ao cliente da OS (alterado: decisão do projeto);
 
 **Módulo:** [[Ordem de Serviço (módulo)|Ordem de Serviço]]
 **Entidades:** [[Ordem de Serviço]], [[Atividade da OS]], [[Cliente]], [[Endereço]], [[Observação de Endereço]]
-
-**Implementação:** o endereço ainda é opcional: o formulário oferece "Sem endereço", a API só valida o endereço quando ele é enviado e `ordem_servico.endereco_id` aceita NULL. Ver [[Status da Implementação]].
 
 > Fonte: Documentação Técnica V6, seção 4.
 > Numeração V7 (separação do módulo Ordem de Serviço); na V6: RF 1.4.

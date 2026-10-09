@@ -37,3 +37,4 @@ Módulos [[Cliente e Endereço]], [[Atividade]] e [[Agenda]] implementados. Incl
 ## V7 (em elaboração)
 - Ordem de Serviço separada da [[Agenda]] em módulo próprio ([[Ordem de Serviço (módulo)|Ordem de Serviço]]): RF 6.1 a 6.19 e P6.1 a P6.8; Agenda renumerada para RF 1.1 a 1.12 e P1.1. RF 1.14 e RF 1.22 da V6 divididos entre os dois módulos. Ver [[Proposta - Módulo Ordem de Serviço]].
 - Requisitos de LGPD ([[LGPD - Visão Geral]], L1 a L6): [[RF 2.14]], [[RF 2.15]] e [[RF 3.13]] a [[RF 3.17]]; processos [[P2.5 - Registrar acesso|P2.5]] e [[P3.4 - Anonimizar cliente|P3.4]] a [[P3.6 - Reter e eliminar dados|P3.6]] (RN 44 a RN 53); nova entidade [[Registro de Acesso]] e `cliente.anonimizado_em`. [[RF 3.11]] e RN 42 alterados para anonimizar, em vez de bloquear, cliente com OS vinculada.
+- Endereço da OS volta a ser opcional ([[RF 6.1]], [[P6.1 - Criar OS#RN 34|RN 34]]); quando informado, deve pertencer ao cliente da OS.

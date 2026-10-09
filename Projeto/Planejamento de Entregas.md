@@ -12,6 +12,6 @@ tags: [projeto]
 
 > Usuários e Acesso já foi implementado (doc V4), antes da entrega 3.
 
-> Entrega 1: o código de Cliente e Endereço, Atividade e Agenda/OS foi commitado em 27/09/2026, mas ainda faltam itens da doc V6 (edição e exclusão de cliente, endereço obrigatório na OS, busca e cadastro rápido no formulário da OS, entre outros). Ver [[Status da Implementação]].
+> Entrega 1: o código de Cliente e Endereço, Atividade e Agenda/OS foi commitado em 27/09/2026, mas ainda faltam itens da doc V6 (edição e exclusão de cliente, busca e cadastro rápido no formulário da OS, entre outros). Ver [[Status da Implementação]].
 
 Ver também: [[Backlog]]

@@ -4,7 +4,7 @@ entrega: 1
 ---
 # Ordem de Serviço (módulo)
 
-Mantém as Ordens de Serviço (OS) do eletricista e da secretária. Cada OS reúne cliente, endereço e observações e é composta por uma ou mais atividades, cada uma com tipo, data, horário e status próprios (agendada, concluída ou cancelada). O tipo e a duração sugerida de cada atividade vêm do catálogo mantido no módulo [[Atividade]]. Cliente e endereço são obrigatórios e podem ser cadastrados sem sair da OS. O módulo permite criar e editar a OS, remarcar a OS inteira ou apenas uma atividade, concluir, cancelar e excluir, e sinaliza conflitos de horário sem bloquear o salvamento. A visualização e os gestos na tela ficam no módulo [[Agenda]].
+Mantém as Ordens de Serviço (OS) do eletricista e da secretária. Cada OS reúne cliente, endereço e observações e é composta por uma ou mais atividades, cada uma com tipo, data, horário e status próprios (agendada, concluída ou cancelada). O tipo e a duração sugerida de cada atividade vêm do catálogo mantido no módulo [[Atividade]]. O cliente é obrigatório e o endereço é opcional; os dois podem ser cadastrados sem sair da OS. O módulo permite criar e editar a OS, remarcar a OS inteira ou apenas uma atividade, concluir, cancelar e excluir, e sinaliza conflitos de horário sem bloquear o salvamento. A visualização e os gestos na tela ficam no módulo [[Agenda]].
 
 ## Entidades
 - [[Ordem de Serviço]]
