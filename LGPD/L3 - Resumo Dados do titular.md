@@ -3,8 +3,8 @@ tags: [lgpd, ajuste]
 id: "L3"
 tipo: requisito
 base: "LGPD art. 18, I e II; art. 19"
-status: a analisar
-decisao:
+status: aceito
+decisao: "RF 3.15"
 ---
 # L3 – Resumo "Dados do titular" na ficha do cliente
 
@@ -24,9 +24,9 @@ O cliente não tem login, então o atendimento dos direitos fica do lado de quem
 ## Análise
 - [ ] Validar se entra no MVP ou vai para [[Fora do MVP]]
 - [ ] Avaliar se pode ser a mesma funcionalidade da [[L2 - Exportação dos dados do cliente|L2]]
-- [ ] Definir número de RF (módulo 3)
+- [x] Definir número de RF (módulo 3)
 
 ## Decisão
-_A preencher após a análise._
+Aceito como [[RF 3.15]], separado da exportação ([[RF 3.14]]): o resumo é o documento legível para enviar pelo WhatsApp; a exportação atende a portabilidade. Prazo e confirmação de identidade em [[P3.5 - Atender pedido do titular#RN 50|RN 50]].
 
 > Origem: apresentação "A LGPD dentro de uma agenda de eletricista" (05/10/2026). Ver [[LGPD - Visão Geral]].

@@ -3,8 +3,8 @@ tags: [lgpd, ajuste]
 id: "L1"
 tipo: requisito
 base: "LGPD art. 18, IV"
-status: a analisar
-decisao:
+status: aceito
+decisao: "RF 3.13"
 ---
 # L1 – Anonimização no lugar do bloqueio de exclusão
 
@@ -32,9 +32,9 @@ A regra atual impede excluir cliente com OS vinculada, o que na prática bloquei
 - [ ] Validar se entra no MVP ou vai para [[Fora do MVP]]
 - [ ] Definir se é ação manual da secretária ou automática
 - [ ] Revisar unicidade do telefone com telefone nulo
-- [ ] Atualizar RF 3.11 / RN 42 na documentação técnica
+- [x] Atualizar RF 3.11 / RN 42 na documentação técnica
 
 ## Decisão
-_A preencher após a análise._
+Aceito como [[RF 3.13]] e [[P3.4 - Anonimizar cliente]] (RN 46 a RN 48). Ação manual na ficha do cliente, com confirmação e irreversível. A exclusão do [[RF 3.11]] continua valendo para cliente sem OS; com OS vinculada, a alternativa passa a ser a anonimização. Em [[Cliente]], `telefone` deixa de ser NOT NULL (UNIQUE aceita vários NULL no MySQL) e entra `anonimizado_em`.
 
 > Origem: apresentação "A LGPD dentro de uma agenda de eletricista" (05/10/2026). Ver [[LGPD - Visão Geral]].

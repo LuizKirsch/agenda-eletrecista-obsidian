@@ -3,8 +3,8 @@ tags: [lgpd, ajuste]
 id: "L4"
 tipo: requisito
 base: "LGPD art. 6º, III; art. 11; art. 14"
-status: a analisar
-decisao:
+status: aceito
+decisao: "RF 3.16"
 ---
 # L4 – Aviso no campo de observação
 
@@ -27,6 +27,6 @@ A observação é texto livre. Na entrevista, o eletricista contou que pergunta 
 - [ ] Validar com o Edson se o aviso atrapalha o uso em campo
 
 ## Decisão
-_A preencher após a análise._
+Aceito como [[RF 3.16]]. Texto sugerido para o aviso: "Anote só informações técnicas do imóvel (quadro, acesso, fiação). Não registre dados de saúde, idade ou outros dados pessoais dos moradores."
 
 > Origem: apresentação "A LGPD dentro de uma agenda de eletricista" (05/10/2026). Ver [[LGPD - Visão Geral]].

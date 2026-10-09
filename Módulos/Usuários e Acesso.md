@@ -8,14 +8,16 @@ Define os perfis de acesso ao sistema: eletricista e secretária. Os dois perfis
 
 ## Entidades
 - [[Usuário]]
+- [[Registro de Acesso]]
 
 ## Processos e regras de negócio
 - [[P2.1 - Autenticar]]
 - [[P2.2 - Cadastrar usuário]]
 - [[P2.3 - Cadastrar, editar e excluir usuário]]
 - [[P2.4 - Criar usuário inicial]]
+- [[P2.5 - Registrar acesso]]
 
-## Requisitos funcionais (13)
+## Requisitos funcionais (15)
 - [[RF 2.1]] (Alta) — O sistema deve reconhecer o login de dois tipos de usuário: eletricista e secretária
 - [[RF 2.2]] (Alta) — ambos os perfis devem ter acesso às mesmas funcionalidades (agenda, atividade, cliente, orçamento e listagem d…
 - [[RF 2.3]] (Média) — não deve existir tela ou dado exclusivo de um perfil sobre o outro, com exceção das ações de cadastrar, editar…
@@ -29,5 +31,7 @@ Define os perfis de acesso ao sistema: eletricista e secretária. Os dois perfis
 - [[RF 2.11]] (Média) — somente a secretária pode excluir usuário, com confirmação na tela; a exclusão remove o registro definitivamen…
 - [[RF 2.12]] (Média) — a secretária não pode excluir, desativar nem alterar o perfil do próprio usuário
 - [[RF 2.13]] (Alta) — o usuário inicial com perfil secretária deve ser criado pela migration da tabela usuario, com nome, login e se…
+- [[RF 2.14]] (Média) — o sistema deve registrar o usuário, o IP e a data e hora de cada login realizado com sucesso
+- [[RF 2.15]] (Média) — os registros de acesso devem ser apagados automaticamente após 6 meses
 
 Voltar: [[00 - Visão Geral]]

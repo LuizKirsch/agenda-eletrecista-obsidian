@@ -3,8 +3,8 @@ tags: [lgpd, ajuste]
 id: "L5"
 tipo: requisito
 base: "Marco Civil art. 15; LGPD art. 7º, II"
-status: a analisar
-decisao:
+status: aceito
+decisao: "RF 2.14, RF 2.15"
 ---
 # L5 – Registro de acessos (6 meses)
 
@@ -25,9 +25,9 @@ O sistema não guarda nenhum registro de acesso hoje.
 ## Análise
 - [ ] Validar se entra no MVP ou vai para [[Fora do MVP]]
 - [ ] Definir rotina de expurgo dos 6 meses
-- [ ] Definir número de RF (módulo 2)
+- [x] Definir número de RF (módulo 2)
 
 ## Decisão
-_A preencher após a análise._
+Aceito como [[RF 2.14]] e [[RF 2.15]], com [[P2.5 - Registrar acesso]] (RN 44 e RN 45) e a nova entidade [[Registro de Acesso]]. Só logins com sucesso; expurgo automático dos registros com mais de 6 meses.
 
 > Origem: apresentação "A LGPD dentro de uma agenda de eletricista" (05/10/2026). Ver [[LGPD - Visão Geral]].

@@ -20,8 +20,9 @@ Armazena os clientes atendidos.
 | --- | --- | --- | --- | --- |
 | `id` | Identificador único | BIGINT Unsigned | 20 | PK NOT NULL |
 | `nome` | Nome do cliente (pessoa ou empresa) | VARCHAR | 120 | NOT NULL |
-| `telefone` | Telefone de contato | VARCHAR | 20 | NOT NULL, UNIQUE; DDD e 8 ou 9 dígitos |
+| `telefone` | Telefone de contato | VARCHAR | 20 | UNIQUE; DDD e 8 ou 9 dígitos; obrigatório no cadastro, NULL só em cliente anonimizado ([[RF 3.13]]) |
 | `criado_em` | Data e hora do cadastro | DATETIME |  | NOT NULL, padrão CURRENT_TIMESTAMP |
+| `anonimizado_em` | Data e hora da anonimização ([[P3.4 - Anonimizar cliente#RN 47\|RN 47]]) | DATETIME |  | NULL enquanto não anonimizado |
 
 ## Implementação
 - Migration: `migrations/20260928000001-create-cliente.js` · Model: `Cliente` em `models/index.js`

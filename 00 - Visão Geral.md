@@ -25,6 +25,7 @@ Sistema de agenda e gestão de Ordens de Serviço para um eletricista autônomo 
 
 ## Domínio
 - [[Usuário]]
+- [[Registro de Acesso]]
 - [[Cliente]]
 - [[Endereço]]
 - [[Observação de Endereço]]
@@ -56,12 +57,16 @@ Diagrama de contexto: [[Diagrama de Contexto.canvas|Diagrama de Contexto]]
 - [[P2.2 - Cadastrar usuário]]
 - [[P2.3 - Cadastrar, editar e excluir usuário]]
 - [[P2.4 - Criar usuário inicial]]
+- [[P2.5 - Registrar acesso]]
 - [[P3.1 - Cadastrar cliente, endereço e observação]]
 - [[P3.2 - Buscar cliente]]
 - [[P3.3 - Editar e excluir cliente, endereço e observação]]
+- [[P3.4 - Anonimizar cliente]]
+- [[P3.5 - Atender pedido do titular]]
+- [[P3.6 - Reter e eliminar dados]]
 
 ## LGPD
-- [[LGPD - Visão Geral]] — ajustes pendentes levantados na análise de LGPD (a analisar)
+- [[LGPD - Visão Geral]] — ajustes levantados na análise de LGPD; L1 a L6 viraram requisitos, L7 a L9 são documentos/processos (a analisar)
 
 ## Arquitetura
 - [[Stack e Ambiente]]

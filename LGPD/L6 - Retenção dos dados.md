@@ -3,8 +3,8 @@ tags: [lgpd, ajuste]
 id: "L6"
 tipo: regra
 base: "LGPD art. 15 e 16; CDC art. 27"
-status: a analisar
-decisao:
+status: aceito
+decisao: "RF 3.17"
 ---
 # L6 – Política de retenção
 
@@ -26,6 +26,6 @@ O projeto não define quando os dados deixam de ser necessários. O [[Requisitos
 - [ ] Decidir se o expurgo/anonimização ao fim do prazo é automático ou manual
 
 ## Decisão
-_A preencher após a análise._
+Aceito como [[RF 3.17]] e [[P3.6 - Reter e eliminar dados]] (RN 51 a RN 53). O último serviço é a data da última atividade concluída do cliente. Ao fim dos 5 anos o sistema só sinaliza; anonimizar ou excluir continua sendo ação manual.
 
 > Origem: apresentação "A LGPD dentro de uma agenda de eletricista" (05/10/2026). Ver [[LGPD - Visão Geral]].
