@@ -9,7 +9,7 @@ Armazena os clientes atendidos.
 **Tabela:** `cliente`
 **Módulos:** [[Cliente e Endereço]], [[Ordem de Serviço (módulo)|Ordem de Serviço]]
 
-> Cadastro mínimo, com apenas nome e telefone obrigatórios ([[RF 3.1]], [[RF 3.2]]). O telefone é único e só pode ser excluído o cliente sem OS vinculada ([[RF 3.11]]).
+> Cadastro mínimo, com apenas nome e telefone obrigatórios ([[RF 3.1]], [[RF 3.2]]). O telefone é único e só pode ser excluído o cliente sem OS vinculada ([[RF 3.11]]); com OS vinculada, o pedido de eliminação é atendido por anonimização ([[RF 3.13]]).
 
 ## Relacionamentos
 - 1 cliente → N [[Endereço]]

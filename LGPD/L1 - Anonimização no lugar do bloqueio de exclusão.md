@@ -35,6 +35,6 @@ A regra atual impede excluir cliente com OS vinculada, o que na prática bloquei
 - [x] Atualizar RF 3.11 / RN 42 na documentação técnica
 
 ## Decisão
-Aceito como [[RF 3.13]] e [[P3.4 - Anonimizar cliente]] (RN 46 a RN 48). Ação manual na ficha do cliente, com confirmação e irreversível. A exclusão do [[RF 3.11]] continua valendo para cliente sem OS; com OS vinculada, a alternativa passa a ser a anonimização. Em [[Cliente]], `telefone` deixa de ser NOT NULL (UNIQUE aceita vários NULL no MySQL) e entra `anonimizado_em`.
+Aceito como [[RF 3.13]] e [[P3.4 - Anonimizar cliente]] (RN 46 a RN 48). Ação manual na ficha do cliente, com confirmação e irreversível. O [[RF 3.11]] e o [[P3.3 - Editar e excluir cliente, endereço e observação#RN 42|RN 42]] foram alterados (alterado: LGPD): sem OS vinculada o cliente é excluído; com OS vinculada, o pedido de eliminação é atendido pela anonimização, sem bloqueio. Em [[Cliente]], `telefone` deixa de ser NOT NULL (UNIQUE aceita vários NULL no MySQL) e entra `anonimizado_em`.
 
 > Origem: apresentação "A LGPD dentro de uma agenda de eletricista" (05/10/2026). Ver [[LGPD - Visão Geral]].
