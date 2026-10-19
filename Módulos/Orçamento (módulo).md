@@ -8,8 +8,11 @@ Montagem de orçamentos a partir de um catálogo de itens de serviço com valor 
 
 ## Entidades
 - [[Orçamento]]
-- [[Item de Serviço]]
+- [[Item do Orçamento]]
+- [[Tipo de Atividade]] (catálogo, com valor padrão)
 - [[Ordem de Serviço]]
+
+Modelo de dados: [[Proposta - Modelo do Orçamento]]
 
 ## Processos e regras de negócio
 - Regras serão detalhadas na entrega 2.

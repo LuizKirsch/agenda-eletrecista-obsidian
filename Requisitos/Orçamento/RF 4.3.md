@@ -12,6 +12,6 @@ implementacao: pendente
 o sistema deve permitir alterar o valor de um item apenas dentro de um orçamento específico;
 
 **Módulo:** [[Orçamento (módulo)|Orçamento]]
-**Entidades:** [[Orçamento]], [[Item de Serviço]]
+**Entidades:** [[Orçamento]], [[Item do Orçamento]]
 
 > Fonte: Documentação Técnica V6, seção 4.

@@ -33,7 +33,7 @@ Sistema de agenda e gestão de Ordens de Serviço para um eletricista autônomo 
 - [[Ordem de Serviço]]
 - [[Atividade da OS]]
 - [[Orçamento]]
-- [[Item de Serviço]]
+- [[Item do Orçamento]]
 
 Mapa visual: [[Mapa do Domínio.canvas|Mapa do Domínio]]
 Diagrama de contexto: [[Diagrama de Contexto.canvas|Diagrama de Contexto]]

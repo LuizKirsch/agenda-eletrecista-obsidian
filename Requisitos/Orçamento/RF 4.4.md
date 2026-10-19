@@ -12,6 +12,6 @@ implementacao: pendente
 a alteração de valor não deve alterar o valor padrão do catálogo geral;
 
 **Módulo:** [[Orçamento (módulo)|Orçamento]]
-**Entidades:** —
+**Entidades:** [[Tipo de Atividade]], [[Item do Orçamento]]
 
 > Fonte: Documentação Técnica V6, seção 4.

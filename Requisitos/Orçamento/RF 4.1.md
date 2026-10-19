@@ -12,6 +12,6 @@ implementacao: pendente
 O sistema deve permitir cadastrar item de serviço com nome/descrição e valor padrão;
 
 **Módulo:** [[Orçamento (módulo)|Orçamento]]
-**Entidades:** [[Item de Serviço]]
+**Entidades:** [[Tipo de Atividade]]
 
 > Fonte: Documentação Técnica V6, seção 4.

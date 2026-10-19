@@ -12,6 +12,6 @@ implementacao: pendente
 o sistema deve permitir criar item avulso (nome e valor livres) vinculado a um orçamento específico;
 
 **Módulo:** [[Orçamento (módulo)|Orçamento]]
-**Entidades:** [[Orçamento]], [[Item de Serviço]]
+**Entidades:** [[Orçamento]], [[Item do Orçamento]]
 
 > Fonte: Documentação Técnica V6, seção 4.

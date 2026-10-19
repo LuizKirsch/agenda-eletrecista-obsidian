@@ -1,11 +1,6 @@
 ---
-tags: [entidade]
+tags: [entidade, substituida]
 ---
-# Item de Serviço
+# Item de Serviço (substituída)
 
-Item do catálogo de serviços, com nome/descrição e valor padrão, reutilizável em vários orçamentos ([[RF 4.1]], [[RF 4.2]]). O valor pode ser alterado dentro de um [[Orçamento]] sem mudar o valor padrão ([[RF 4.3]], [[RF 4.4]]).
-
-**Módulo:** [[Orçamento (módulo)|Orçamento]]
-
-## Dicionário de dados
-A definir — as tabelas do módulo serão detalhadas na entrega 2.
+> Substituída em 19/10/2026: o catálogo do orçamento passa a ser o [[Tipo de Atividade]] (com `valor_padrao`) e os itens de cada orçamento ficam em [[Item do Orçamento]]. Ver [[Proposta - Modelo do Orçamento]].

@@ -7,12 +7,13 @@ tabela: tipo_atividade
 Armazena o catálogo de tipos de atividade e sua duração padrão.
 
 **Tabela:** `tipo_atividade`
-**Módulos:** [[Atividade]], [[Ordem de Serviço (módulo)|Ordem de Serviço]]
+**Módulos:** [[Atividade]], [[Ordem de Serviço (módulo)|Ordem de Serviço]], [[Orçamento (módulo)|Orçamento]]
 
 > Mantida pelo módulo Atividade e usada na Ordem de Serviço para sugerir o horário de fim das atividades ([[RF 6.4]], [[RF 5.1]] a [[RF 5.8]]). A coluna nome usa a collation utf8mb4_0900_as_ci, que não diferencia maiúsculas de minúsculas, mas diferencia acentos ([[RF 5.4]]).
 
 ## Relacionamentos
 - 1 tipo → N [[Atividade da OS]]
+- 1 tipo → N [[Item do Orçamento]] (catálogo do orçamento)
 
 ## Dicionário de dados
 | Nome | Descrição | Tipo | Tamanho | Restrições |
@@ -20,6 +21,7 @@ Armazena o catálogo de tipos de atividade e sua duração padrão.
 | `id` | Identificador único | BIGINT Unsigned | 20 | PK NOT NULL |
 | `nome` | Nome do tipo de atividade | VARCHAR | 100 | NOT NULL, UNIQUE |
 | `duracao_padrao_min` | Duração padrão em minutos | INT |  | NOT NULL, entre 5 e 720 |
+| `valor_padrao` | Valor padrão cobrado pela atividade no orçamento | DECIMAL | 10,2 | NULL, ≥ 0 (proposta, ver [[Proposta - Modelo do Orçamento]]) |
 | `ativo` | Indica se o tipo pode ser usado em novas atividades | BOOLEAN |  | NOT NULL, padrão TRUE |
 
 ## Implementação

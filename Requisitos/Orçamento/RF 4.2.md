@@ -12,6 +12,6 @@ implementacao: pendente
 o catálogo de itens deve ser reutilizável em múltiplos orçamentos;
 
 **Módulo:** [[Orçamento (módulo)|Orçamento]]
-**Entidades:** [[Orçamento]], [[Item de Serviço]]
+**Entidades:** [[Tipo de Atividade]], [[Item do Orçamento]]
 
 > Fonte: Documentação Técnica V6, seção 4.
