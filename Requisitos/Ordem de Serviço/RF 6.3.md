@@ -4,13 +4,13 @@ id: "RF 6.3"
 id_v6: "RF 1.6"
 modulo: "[[Ordem de Serviço (módulo)]]"
 prioridade: Alta
-alterado: false
+alterado: true
 entrega: 1
-implementacao: completa
+implementacao: parcial
 ---
 # RF 6.3
 
-cada atividade da OS deve possuir tipo, data, horário de início, horário de fim e status próprios;
+cada atividade da OS deve possuir tipo, data, horário de início, horário de fim e status próprios; a atividade avulsa, gerada a partir de um item avulso do orçamento, possui descrição no lugar do tipo (alterado: decisão do projeto);
 
 **Módulo:** [[Ordem de Serviço (módulo)|Ordem de Serviço]]
 **Entidades:** [[Ordem de Serviço]], [[Atividade da OS]], [[Tipo de Atividade]]

@@ -12,6 +12,6 @@ implementacao: pendente
 o item avulso não deve ser salvo automaticamente no catálogo geral;
 
 **Módulo:** [[Orçamento (módulo)|Orçamento]]
-**Entidades:** [[Item do Orçamento]], [[Tipo de Atividade]]
+**Entidades:** [[Item de Serviço]], [[Tipo de Atividade]]
 
 > Fonte: Documentação Técnica V6, seção 4.

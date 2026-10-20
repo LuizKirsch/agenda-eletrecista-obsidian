@@ -13,7 +13,7 @@ Armazena o catálogo de tipos de atividade e sua duração padrão.
 
 ## Relacionamentos
 - 1 tipo → N [[Atividade da OS]]
-- 1 tipo → N [[Item do Orçamento]] (catálogo do orçamento)
+- 1 tipo → N [[Item de Serviço]] (catálogo do orçamento)
 
 ## Dicionário de dados
 | Nome | Descrição | Tipo | Tamanho | Restrições |

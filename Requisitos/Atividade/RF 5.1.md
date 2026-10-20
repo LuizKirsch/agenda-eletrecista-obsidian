@@ -3,13 +3,13 @@ tags: [requisito]
 id: "RF 5.1"
 modulo: "[[Atividade]]"
 prioridade: Alta
-alterado: false
+alterado: true
 entrega: 1
-implementacao: completa
+implementacao: parcial
 ---
 # RF 5.1
 
-O sistema deve manter um catálogo de tipos de atividade, cada um com nome e duração padrão, utilizado na criação das atividades das OS;
+O sistema deve manter um catálogo de tipos de atividade, cada um com nome, duração padrão e valor padrão, utilizado na criação das atividades das OS e dos itens de serviço dos orçamentos (alterado: decisão do projeto);
 
 **Módulo:** [[Atividade]]
 **Entidades:** [[Ordem de Serviço]], [[Atividade da OS]], [[Tipo de Atividade]]

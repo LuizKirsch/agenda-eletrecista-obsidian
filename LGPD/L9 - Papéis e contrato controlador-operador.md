@@ -5,6 +5,7 @@ tipo: processo
 base: "LGPD art. 5º, VI e VII; art. 39"
 status: a analisar
 decisao:
+versao: V2
 ---
  # L9 – Papéis e contrato controlador–operador
 

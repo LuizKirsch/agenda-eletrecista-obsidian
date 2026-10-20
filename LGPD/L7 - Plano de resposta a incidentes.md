@@ -5,6 +5,7 @@ tipo: processo
 base: "LGPD art. 46 e 48; Resolução CD/ANPD nº 15/2024"
 status: a analisar
 decisao:
+versao: V2
 ---
 # L7 – Plano de resposta a incidentes
 

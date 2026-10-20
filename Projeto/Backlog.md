@@ -16,7 +16,7 @@ Critérios de aceite completos na planilha `Product_Backlog__Tomada_de_Decisão.
 | 07 | Cadastro de cliente | [[Cliente e Endereço]] | M |
 | 08 | Múltiplos endereços por cliente | [[Cliente e Endereço]] | M |
 | 09 | Observações por endereço | [[Cliente e Endereço]] | M |
-| 10 | Catálogo de itens de serviço | [[Orçamento (módulo)\|Orçamento]] | M |
+| 10 | Valor padrão nos tipos de atividade | [[Orçamento (módulo)\|Orçamento]] | M |
 | 11 | Edição de valor por orçamento | [[Orçamento (módulo)\|Orçamento]] | M |
 | 12 | Itens avulsos no orçamento | [[Orçamento (módulo)\|Orçamento]] | M |
 | 13 | Vínculo do orçamento com a OS | [[Orçamento (módulo)\|Orçamento]] | M |

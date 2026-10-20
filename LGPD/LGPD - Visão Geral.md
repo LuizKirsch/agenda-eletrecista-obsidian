@@ -5,6 +5,8 @@ tags: [lgpd, indice]
 
 Pontos levantados na apresentação **"A LGPD dentro de uma agenda de eletricista"** (05/10/2026) que **não estavam no projeto original** (Documentação Técnica V6). Ficam aqui para análise; o que for aceito vira RF/RN e é levado para a documentação técnica.
 
+> **Adiado para a V2 do app (19/10/2026).** A LGPD não será tratada no MVP. Os RFs e RNs abaixo ficam registrados no vault com `versao: V2` e não entram na doc V7. Ver [[Fora do MVP#V2 do app]].
+
 Apresentação: https://claude.ai/artifact/AvtLwR4fPsRSEkyPZgnAst
 
 ## Já previsto no projeto

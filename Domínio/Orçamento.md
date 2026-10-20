@@ -13,8 +13,8 @@ Armazena os orçamentos de um cliente.
 
 ## Relacionamentos
 - N orçamentos → 1 [[Cliente]]
-- N orçamentos → 0..1 [[Endereço]]
-- 1 orçamento → N [[Item do Orçamento]]
+- N orçamentos → 1 [[Endereço]]
+- 1 orçamento → N [[Item de Serviço]]
 - 0..1 orçamento ↔ 0..1 [[Ordem de Serviço]] ([[RF 4.7]])
 
 ## Dicionário de dados
@@ -22,9 +22,9 @@ Armazena os orçamentos de um cliente.
 | --- | --- | --- | --- | --- |
 | `id` | Identificador único | BIGINT Unsigned | 20 | PK NOT NULL |
 | `cliente_id` | Cliente do orçamento | BIGINT Unsigned | 20 | FK cliente, NOT NULL, ON DELETE RESTRICT |
-| `endereco_id` | Endereço do serviço | BIGINT Unsigned | 20 | FK endereco, NULL, ON DELETE RESTRICT |
+| `endereco_id` | Endereço do serviço | BIGINT Unsigned | 20 | FK endereco, NOT NULL, ON DELETE RESTRICT |
 | `ordem_servico_id` | OS vinculada | BIGINT Unsigned | 20 | FK ordem_servico, NULL, UNIQUE |
-| `status` | Situação do orçamento | ENUM |  | 'aberto', 'aprovado', 'recusado'; padrão 'aberto' |
+| `status` | Situação do orçamento | ENUM |  | 'pendente', 'aceito', 'recusado'; padrão 'pendente' |
 | `observacao` | Observações livres | TEXT |  |  |
 | `criado_em` | Data de criação | DATETIME |  | NOT NULL |
 

@@ -20,7 +20,8 @@ Armazena as atividades agendadas de cada OS.
 | --- | --- | --- | --- | --- |
 | `id` | Identificador único | BIGINT Unsigned | 20 | PK NOT NULL |
 | `ordem_servico_id` | OS à qual pertence | BIGINT Unsigned | 20 | FK ordem_servico, NOT NULL |
-| `tipo_atividade_id` | Tipo da atividade | BIGINT Unsigned | 20 | FK tipo_atividade, NOT NULL, ON DELETE RESTRICT |
+| `tipo_atividade_id` | Tipo da atividade (NULL = avulsa) | BIGINT Unsigned | 20 | FK tipo_atividade, NULL, ON DELETE RESTRICT (proposta, ver [[Proposta - Modelo do Orçamento]]) |
+| `descricao` | Nome da atividade avulsa, vinda do orçamento | VARCHAR | 100 | obrigatório quando `tipo_atividade_id` é NULL (proposta) |
 | `sequencia` | Posição da atividade na OS | INT |  | NOT NULL |
 | `data` | Data da atividade | DATE |  | NOT NULL |
 | `hora_inicio` | Horário de início | TIME |  | NOT NULL |

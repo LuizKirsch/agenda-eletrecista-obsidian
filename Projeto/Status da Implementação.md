@@ -9,15 +9,16 @@ Comparação entre a Documentação Técnica V6 e o código em `server/` (até o
 | Módulo | Completos | Parciais | Pendentes |
 | --- | --- | --- | --- |
 | [[Agenda]] | 12 | 0 | 0 |
-| [[Ordem de Serviço (módulo)\|Ordem de Serviço]] | 16 | 3 | 0 |
-| [[Atividade]] | 8 | 0 | 0 |
+| [[Ordem de Serviço (módulo)\|Ordem de Serviço]] | 13 | 6 | 0 |
+| [[Atividade]] | 2 | 6 | 0 |
 | [[Cliente e Endereço]] | 7 | 1 | 4 |
 | [[Usuários e Acesso]] | 10 | 3 | 0 |
-| [[Orçamento (módulo)\|Orçamento]] | 0 | 0 | 7 |
+| [[Orçamento (módulo)\|Orçamento]] | 0 | 0 | 15 |
 
 ## Divergências com a doc V6
 
 ### Ordem de Serviço
+- **Endereço opcional na OS** ([[RF 6.1]], [[P6.1 - Criar OS#RN 34|RN 34]]): a migration cria `ordem_servico.endereco_id` sem NOT NULL, o `OsForm` envia `endereco_id: null` quando nenhum endereço é escolhido e o controller só exige o cliente. O endereço é obrigatório.
 - **Concluídas/canceladas editáveis na edição da OS** ([[RF 6.11]], [[RF 6.8]], [[P6.4 - Editar OS inteira#RN 9|RN 9]]): o `OsForm` carrega todas as atividades como linhas editáveis e removíveis, e `os.service.atualizar` atualiza ou apaga qualquer uma sem conferir o status. Além disso, `lerOs` não rejeita linhas com o mesmo `id`: a atividade é atualizada duas vezes e a sequência fica com buraco ([[P6.4 - Editar OS inteira#RN 35|RN 35]]).
 - **Busca e cadastro rápido no formulário da OS** ([[RF 6.2]]): o cliente é escolhido em um `<select>` com a lista inteira, sem busca e sem cadastro inline de cliente ou endereço.
 
@@ -29,6 +30,11 @@ Comparação entre a Documentação Técnica V6 e o código em `server/` (até o
 - **Editar e excluir** ([[RF 3.9]] a [[RF 3.12]], [[P3.3 - Editar e excluir cliente, endereço e observação|P3.3]]): ainda não existem rotas nem telas. As FKs de `endereco` e `endereco_observacao` foram criadas sem `ON DELETE CASCADE` ([[P3.3 - Editar e excluir cliente, endereço e observação#RN 43|RN 43]]).
 - **Busca sem acento no SQLite** ([[RF 3.8]]): no MySQL a collation padrão ignora acentos; no SQLite de desenvolvimento, não.
 
+### Atividade e Orçamento (decisões de 19/10/2026)
+- **Tipo nunca é excluído** ([[RF 5.6]], [[P5.1 - Gerenciar tipos de atividade#RN 19|RN 19]]): o código ainda permite excluir tipo sem uso; a exclusão deve sair.
+- **Valor padrão do tipo e uso em orçamentos** ([[RF 5.1]] a [[RF 5.3]], [[RF 5.5]], [[RF 5.7]]): falta a coluna `valor_padrao` e a contagem de uso em `orcamento_item`.
+- **Atividade avulsa** ([[RF 6.3]], [[RF 6.4]]): `atividade_os.tipo_atividade_id` é NOT NULL e não existe `descricao`.
+
 ### Orçamento
 - Entrega 2, ainda sem tabelas, rotas ou telas.
 
@@ -37,7 +43,7 @@ Ver a seção "Implementação" de cada entidade em `Domínio/`.
 - `cliente.telefone` sem UNIQUE.
 - FKs sem `ON DELETE` explícito; a exclusão da OS apaga as atividades no service, não por cascata.
 - `atividade_os.status` aceita NULL (tem só o DEFAULT `'agendada'`); uma linha com NULL escapa do filtro `status <> 'cancelada'` e fica fora da checagem de conflito ([[P6.5 - Verificar conflito de horário#RN 10|RN 10]]).
-- `cliente.telefone` é NOT NULL, mas a anonimização apaga o telefone ([[P3.4 - Anonimizar cliente#RN 47|RN 47]]); ao criar o UNIQUE, a coluna precisa aceitar NULL. `cliente.anonimizado_em` ainda não existe.
+- `ordem_servico.endereco_id` aceita NULL; deve ser NOT NULL ([[RF 6.1]]).
 - A migration de `usuario` cria a tabela e insere a secretária sem transação; se o insert falhar no MySQL, a tabela fica criada e o próximo `db:migrate` falha.
 
 ## Auditoria de 09/10/2026

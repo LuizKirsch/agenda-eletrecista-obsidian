@@ -1,8 +1,11 @@
 ---
 tags: [entidade, lgpd]
 tabela: registro_acesso
+versao: V2
 ---
 # Registro de Acesso
+
+> **V2 do app.** Adiado em 19/10/2026: os ajustes de LGPD não entram no MVP. Ver [[Fora do MVP#V2 do app]].
 
 Armazena os logins realizados no sistema, por 6 meses.
 

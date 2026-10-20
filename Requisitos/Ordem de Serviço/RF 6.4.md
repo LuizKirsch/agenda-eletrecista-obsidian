@@ -4,13 +4,13 @@ id: "RF 6.4"
 id_v6: "RF 1.8"
 modulo: "[[Ordem de Serviço (módulo)]]"
 prioridade: Média
-alterado: false
+alterado: true
 entrega: 1
-implementacao: completa
+implementacao: parcial
 ---
 # RF 6.4
 
-ao escolher o tipo ou alterar o horário de início de uma atividade, o sistema deve calcular o horário de fim a partir da duração padrão, permitindo ajuste manual;
+ao escolher o tipo ou alterar o horário de início de uma atividade, o sistema deve calcular o horário de fim a partir da duração padrão, permitindo ajuste manual; na atividade gerada a partir de um orçamento, o horário de fim vem do tempo do item de serviço (alterado: decisão do projeto);
 
 **Módulo:** [[Ordem de Serviço (módulo)|Ordem de Serviço]]
 **Entidades:** [[Atividade da OS]], [[Tipo de Atividade]]

@@ -40,6 +40,7 @@ views:
     filters:
       and:
         - implementacao != "completa"
+        - versao != "V2"
     groupBy:
       property: implementacao
       direction: ASC
@@ -49,3 +50,12 @@ views:
       - prioridade
       - entrega
       - implementacao
+  - type: table
+    name: V2
+    filters:
+      and:
+        - versao == "V2"
+    order:
+      - file.name
+      - modulo
+      - prioridade

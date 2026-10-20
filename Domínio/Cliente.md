@@ -9,7 +9,7 @@ Armazena os clientes atendidos.
 **Tabela:** `cliente`
 **Módulos:** [[Cliente e Endereço]], [[Ordem de Serviço (módulo)|Ordem de Serviço]]
 
-> Cadastro mínimo, com apenas nome e telefone obrigatórios ([[RF 3.1]], [[RF 3.2]]). O telefone é único e só pode ser excluído o cliente sem OS vinculada ([[RF 3.11]]); com OS vinculada, o pedido de eliminação é atendido por anonimização ([[RF 3.13]]).
+> Cadastro mínimo, com apenas nome e telefone obrigatórios ([[RF 3.1]], [[RF 3.2]]). O telefone é único e só pode ser excluído o cliente sem OS vinculada ([[RF 3.11]]).
 
 ## Relacionamentos
 - 1 cliente → N [[Endereço]]
@@ -20,9 +20,11 @@ Armazena os clientes atendidos.
 | --- | --- | --- | --- | --- |
 | `id` | Identificador único | BIGINT Unsigned | 20 | PK NOT NULL |
 | `nome` | Nome do cliente (pessoa ou empresa) | VARCHAR | 120 | NOT NULL |
-| `telefone` | Telefone de contato | VARCHAR | 20 | UNIQUE; DDD e 8 ou 9 dígitos; obrigatório no cadastro, NULL só em cliente anonimizado ([[RF 3.13]]) |
+| `telefone` | Telefone de contato | VARCHAR | 20 | NOT NULL, UNIQUE; DDD e 8 ou 9 dígitos |
 | `criado_em` | Data e hora do cadastro | DATETIME |  | NOT NULL, padrão CURRENT_TIMESTAMP |
-| `anonimizado_em` | Data e hora da anonimização ([[P3.4 - Anonimizar cliente#RN 47\|RN 47]]) | DATETIME |  | NULL enquanto não anonimizado |
+
+## V2 do app (LGPD)
+- Anonimização ([[RF 3.13]]): nova coluna `anonimizado_em` (DATETIME, NULL enquanto não anonimizado) e `telefone` passando a aceitar NULL, só em cliente anonimizado ([[P3.4 - Anonimizar cliente#RN V2.4|RN V2.4]]).
 
 ## Implementação
 - Migration: `migrations/20260928000001-create-cliente.js` · Model: `Cliente` em `models/index.js`

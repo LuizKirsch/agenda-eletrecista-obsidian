@@ -25,7 +25,7 @@ Sistema de agenda e gestão de Ordens de Serviço para um eletricista autônomo 
 
 ## Domínio
 - [[Usuário]]
-- [[Registro de Acesso]]
+- [[Registro de Acesso]] (V2)
 - [[Cliente]]
 - [[Endereço]]
 - [[Observação de Endereço]]
@@ -33,7 +33,7 @@ Sistema de agenda e gestão de Ordens de Serviço para um eletricista autônomo 
 - [[Ordem de Serviço]]
 - [[Atividade da OS]]
 - [[Orçamento]]
-- [[Item do Orçamento]]
+- [[Item de Serviço]]
 
 Mapa visual: [[Mapa do Domínio.canvas|Mapa do Domínio]]
 Diagrama de contexto: [[Diagrama de Contexto.canvas|Diagrama de Contexto]]
@@ -53,20 +53,23 @@ Diagrama de contexto: [[Diagrama de Contexto.canvas|Diagrama de Contexto]]
 - [[P6.7 - Excluir]]
 - [[P6.8 - Adicionar atividade a OS existente]]
 - [[P5.1 - Gerenciar tipos de atividade]]
+- [[P4.1 - Montar orçamento]]
+- [[P4.2 - Aceitar ou recusar orçamento]]
+- [[P4.3 - Editar e excluir orçamento]]
 - [[P2.1 - Autenticar]]
 - [[P2.2 - Cadastrar usuário]]
 - [[P2.3 - Cadastrar, editar e excluir usuário]]
 - [[P2.4 - Criar usuário inicial]]
-- [[P2.5 - Registrar acesso]]
+- [[P2.5 - Registrar acesso]] (V2)
 - [[P3.1 - Cadastrar cliente, endereço e observação]]
 - [[P3.2 - Buscar cliente]]
 - [[P3.3 - Editar e excluir cliente, endereço e observação]]
-- [[P3.4 - Anonimizar cliente]]
-- [[P3.5 - Atender pedido do titular]]
-- [[P3.6 - Reter e eliminar dados]]
+- [[P3.4 - Anonimizar cliente]] (V2)
+- [[P3.5 - Atender pedido do titular]] (V2)
+- [[P3.6 - Reter e eliminar dados]] (V2)
 
 ## LGPD
-- [[LGPD - Visão Geral]] — ajustes levantados na análise de LGPD; L1 a L6 viraram requisitos, L7 a L9 são documentos/processos (a analisar)
+- [[LGPD - Visão Geral]] — ajustes levantados na análise de LGPD, **adiados para a V2 do app** ([[Fora do MVP#V2 do app]]); L1 a L6 viraram requisitos, L7 a L9 são documentos/processos (a analisar)
 
 ## Arquitetura
 - [[Stack e Ambiente]]

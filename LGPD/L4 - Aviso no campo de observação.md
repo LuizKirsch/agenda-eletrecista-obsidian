@@ -5,6 +5,7 @@ tipo: requisito
 base: "LGPD art. 6º, III; art. 11; art. 14"
 status: aceito
 decisao: "RF 3.16"
+versao: V2
 ---
 # L4 – Aviso no campo de observação
 

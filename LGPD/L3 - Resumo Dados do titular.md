@@ -5,6 +5,7 @@ tipo: requisito
 base: "LGPD art. 18, I e II; art. 19"
 status: aceito
 decisao: "RF 3.15"
+versao: V2
 ---
 # L3 – Resumo "Dados do titular" na ficha do cliente
 
@@ -27,6 +28,6 @@ O cliente não tem login, então o atendimento dos direitos fica do lado de quem
 - [x] Definir número de RF (módulo 3)
 
 ## Decisão
-Aceito como [[RF 3.15]], separado da exportação ([[RF 3.14]]): o resumo é o documento legível para enviar pelo WhatsApp; a exportação atende a portabilidade. Prazo e confirmação de identidade em [[P3.5 - Atender pedido do titular#RN 50|RN 50]].
+Aceito como [[RF 3.15]], separado da exportação ([[RF 3.14]]): o resumo é o documento legível para enviar pelo WhatsApp; a exportação atende a portabilidade. Prazo e confirmação de identidade em [[P3.5 - Atender pedido do titular#RN V2.7|RN V2.7]].
 
 > Origem: apresentação "A LGPD dentro de uma agenda de eletricista" (05/10/2026). Ver [[LGPD - Visão Geral]].

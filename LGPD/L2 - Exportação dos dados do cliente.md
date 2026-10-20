@@ -5,6 +5,7 @@ tipo: requisito
 base: "LGPD art. 18, V"
 status: aceito
 decisao: "RF 3.14"
+versao: V2
 ---
 # L2 – Exportação dos dados do cliente
 
@@ -27,6 +28,6 @@ O projeto não previa nenhuma exportação; a portabilidade é direito do titula
 - [x] Definir número de RF (módulo 3)
 
 ## Decisão
-Aceito como [[RF 3.14]], com os dois formatos propostos (JSON e CSV). Regras em [[P3.5 - Atender pedido do titular]] (RN 49 e RN 50).
+Aceito como [[RF 3.14]], com os dois formatos propostos (JSON e CSV). Regras em [[P3.5 - Atender pedido do titular]] (RN V2.6 e RN V2.7).
 
 > Origem: apresentação "A LGPD dentro de uma agenda de eletricista" (05/10/2026). Ver [[LGPD - Visão Geral]].

@@ -7,8 +7,11 @@ alterado: false
 entrega:
 implementacao: pendente
 lgpd: "[[L1 - Anonimização no lugar do bloqueio de exclusão|L1]]"
+versao: V2
 ---
 # RF 3.13
+
+> **V2 do app.** Adiado em 19/10/2026: os ajustes de LGPD não entram no MVP. Ver [[Fora do MVP#V2 do app]].
 
 o sistema deve permitir anonimizar, com confirmação, um cliente que possua OS vinculada: o nome passa a ser "Cliente anonimizado nº X", o telefone é apagado, o número, o complemento e o ponto de referência dos endereços são apagados e as observações são excluídas; as OS são mantidas, sem identificar o titular, e a anonimização não pode ser desfeita;
 

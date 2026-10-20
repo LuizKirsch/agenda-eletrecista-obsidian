@@ -7,8 +7,11 @@ alterado: false
 entrega:
 implementacao: pendente
 lgpd: "[[L2 - Exportação dos dados do cliente|L2]]"
+versao: V2
 ---
 # RF 3.14
+
+> **V2 do app.** Adiado em 19/10/2026: os ajustes de LGPD não entram no MVP. Ver [[Fora do MVP#V2 do app]].
 
 o sistema deve permitir exportar, a partir da ficha do cliente, os dados do cliente (cadastro, endereços, observações e OS com suas atividades) em JSON e em CSV;
 

@@ -5,6 +5,7 @@ tipo: requisito
 base: "Marco Civil art. 15; LGPD art. 7º, II"
 status: aceito
 decisao: "RF 2.14, RF 2.15"
+versao: V2
 ---
 # L5 – Registro de acessos (6 meses)
 
@@ -28,6 +29,6 @@ O sistema não guarda nenhum registro de acesso hoje.
 - [x] Definir número de RF (módulo 2)
 
 ## Decisão
-Aceito como [[RF 2.14]] e [[RF 2.15]], com [[P2.5 - Registrar acesso]] (RN 44 e RN 45) e a nova entidade [[Registro de Acesso]]. Só logins com sucesso; expurgo automático dos registros com mais de 6 meses.
+Aceito como [[RF 2.14]] e [[RF 2.15]], com [[P2.5 - Registrar acesso]] (RN V2.1 e RN V2.2) e a nova entidade [[Registro de Acesso]]. Só logins com sucesso; expurgo automático dos registros com mais de 6 meses.
 
 > Origem: apresentação "A LGPD dentro de uma agenda de eletricista" (05/10/2026). Ver [[LGPD - Visão Geral]].

@@ -7,8 +7,11 @@ alterado: false
 entrega:
 implementacao: pendente
 lgpd: "[[L6 - Retenção dos dados|L6]]"
+versao: V2
 ---
 # RF 3.17
+
+> **V2 do app.** Adiado em 19/10/2026: os ajustes de LGPD não entram no MVP. Ver [[Fora do MVP#V2 do app]].
 
 o sistema deve sinalizar na listagem de clientes aqueles cujo último serviço tenha mais de 5 anos, para que sejam anonimizados ([[RF 3.13]]) ou excluídos ([[RF 3.11]]);
 

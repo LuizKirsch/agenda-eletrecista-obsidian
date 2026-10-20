@@ -5,6 +5,7 @@ tipo: processo
 base: "LGPD art. 9º e 41; Resolução CD/ANPD nº 2/2022"
 status: a analisar
 decisao:
+versao: V2
 ---
 # L8 – Política de privacidade e canal de contato
 

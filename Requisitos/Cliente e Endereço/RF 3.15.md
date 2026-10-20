@@ -7,8 +7,11 @@ alterado: false
 entrega:
 implementacao: pendente
 lgpd: "[[L3 - Resumo Dados do titular|L3]]"
+versao: V2
 ---
 # RF 3.15
+
+> **V2 do app.** Adiado em 19/10/2026: os ajustes de LGPD não entram no MVP. Ver [[Fora do MVP#V2 do app]].
 
 o sistema deve gerar, na ficha do cliente, um resumo "Dados do titular" em PDF de uma página, com o cadastro, os endereços, as observações e a relação das OS do cliente, para envio ao titular quando ele solicitar;
 

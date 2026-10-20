@@ -86,7 +86,7 @@ Conferência: 12 + 17 = 29 RF atuais; RF 1.14 e RF 1.22 geram uma parte em cada 
 - [x] [[Planejamento de Entregas]]: a entrega 1 passa a incluir a OS
 - [x] [[Status da Implementação]], [[API REST]], [[Frontend]], [[Decisão - Datas e Horas como Texto]]: atualizar as referências
 - [x] [[Diagrama de Contexto.canvas|Diagrama de Contexto]] e `00 - Visão Geral`: incluir o módulo OS
-- [ ] Doc técnica V7 e [[Histórico de Versões]]
+- [x] Doc técnica V7 (rascunho) e [[Histórico de Versões]]
 
 ## Decisões
 - Agenda renumerada de RF 1.1 a 1.12 (sem lacunas); o número da V6 fica na propriedade `id_v6` de cada RF.

@@ -4,7 +4,7 @@ entrega: 1
 ---
 # Ordem de Serviço (módulo)
 
-Mantém as Ordens de Serviço (OS) do eletricista e da secretária. Cada OS reúne cliente, endereço e observações e é composta por uma ou mais atividades, cada uma com tipo, data, horário e status próprios (agendada, concluída ou cancelada). O tipo e a duração sugerida de cada atividade vêm do catálogo mantido no módulo [[Atividade]]. O cliente é obrigatório e o endereço é opcional; os dois podem ser cadastrados sem sair da OS. O módulo permite criar e editar a OS, remarcar a OS inteira ou apenas uma atividade, concluir, cancelar e excluir, e sinaliza conflitos de horário sem bloquear o salvamento. A visualização e os gestos na tela ficam no módulo [[Agenda]].
+Mantém as Ordens de Serviço (OS) do eletricista e da secretária. Cada OS reúne cliente, endereço e observações e é composta por uma ou mais atividades, cada uma com tipo, data, horário e status próprios (agendada, concluída ou cancelada). O tipo e a duração sugerida de cada atividade vêm do catálogo mantido no módulo [[Atividade]]. Cliente e endereço são obrigatórios e podem ser cadastrados sem sair da OS. O módulo permite criar e editar a OS, remarcar a OS inteira ou apenas uma atividade, concluir, cancelar e excluir, e sinaliza conflitos de horário sem bloquear o salvamento. A visualização e os gestos na tela ficam no módulo [[Agenda]].
 
 ## Entidades
 - [[Ordem de Serviço]]
@@ -26,7 +26,7 @@ Mantém as Ordens de Serviço (OS) do eletricista e da secretária. Cada OS reú
 ## Requisitos funcionais (19)
 - [[RF 6.1]] (Alta) — o sistema deve permitir criar uma Ordem de Serviço (OS) informando cliente, endereço, observações e uma ou mai…
 - [[RF 6.2]] (Alta) — na criação e na edição da OS, o sistema deve permitir buscar o cliente por parte do nome ou do telefone e, se…
-- [[RF 6.3]] (Alta) — cada atividade da OS deve possuir tipo, data, horário de início, horário de fim e status próprios
+- [[RF 6.3]] (Alta) — cada atividade da OS deve possuir tipo, data, horário de início, horário de fim e status próprios; a atividade…
 - [[RF 6.4]] (Média) — ao escolher o tipo ou alterar o horário de início de uma atividade, o sistema deve calcular o horário de fim a…
 - [[RF 6.5]] (Média) — ao adicionar uma nova atividade à OS, o sistema deve sugerir início no horário de fim da atividade anterior, n…
 - [[RF 6.6]] (Alta) — o sistema deve impedir o salvamento de uma atividade cujo horário de fim não seja posterior ao de início

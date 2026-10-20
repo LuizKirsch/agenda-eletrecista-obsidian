@@ -3,13 +3,13 @@ tags: [requisito]
 id: "RF 5.7"
 modulo: "[[Atividade]]"
 prioridade: Média
-alterado: false
+alterado: true
 entrega: 1
-implementacao: completa
+implementacao: parcial
 ---
 # RF 5.7
 
-o sistema deve exibir, para cada tipo de atividade, a quantidade de atividades de OS que o utilizam;
+o sistema deve exibir, para cada tipo de atividade, a quantidade de atividades de OS e de itens de serviço de orçamentos que o utilizam (alterado: decisão do projeto);
 
 **Módulo:** [[Atividade]]
 **Entidades:** [[Ordem de Serviço]], [[Atividade da OS]], [[Tipo de Atividade]]
