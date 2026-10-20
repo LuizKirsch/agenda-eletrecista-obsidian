@@ -1,0 +1,49 @@
+sequenceDiagram
+    autonumber
+    actor U as Secretária ou eletricista
+    participant F as Agenda / OsForm<br/>(React)
+    participant A as api.js<br/>(fetch com cookie)
+    participant M as autenticar<br/>(middleware)
+    participant C as os.controller
+    participant S as os.service
+    participant D as Banco de dados<br/>(Sequelize / MySQL)
+
+    U->>F: clica em um horário livre da agenda
+    F-->>U: formulário "Nova OS" com data e hora de início
+    U->>F: escolhe cliente, endereço e tipo de cada atividade
+    F->>F: calcula o fim pela duração padrão do tipo
+    U->>F: confirma (Criar OS)
+    F->>A: criar OS (cliente, endereço, observações, atividades)
+    A->>M: POST /api/os com o token da sessão
+    M->>D: busca o usuário do token
+    alt token inválido ou usuário inativo
+        M-->>A: 401 – sessão expirada
+        A-->>F: erro
+        F-->>U: volta para o login
+    end
+    M->>C: criar(req)
+    C->>C: lerOs – cliente, ao menos uma atividade,<br/>data e horários, fim depois do início
+    alt dados inválidos
+        C-->>A: 400 – mensagem do campo
+        A-->>F: erro
+        F-->>U: exibe a mensagem no formulário
+    end
+    C->>S: criar(dados)
+    S->>D: abre a transação
+    S->>D: cliente existe? endereço pertence ao cliente?<br/>tipos de atividade ativos?
+    alt regra de negócio violada
+        S->>D: desfaz a transação
+        S-->>A: 400 ou 404 – mensagem
+        A-->>F: erro
+        F-->>U: exibe a mensagem no formulário
+    end
+    S->>D: grava a OS
+    S->>D: grava as atividades como "agendada",<br/>com sequência de 1 a N
+    S->>D: verifica sobreposição com atividades<br/>não canceladas no mesmo dia
+    S->>D: confirma a transação
+    S-->>C: id da OS e aviso_conflito
+    C-->>A: 201 – id e aviso_conflito
+    A-->>F: OS criada
+    F->>A: GET /api/agenda da semana
+    A-->>F: atividades da semana
+    F-->>U: agenda atualizada e, se houver,<br/>aviso de conflito (não bloqueia)

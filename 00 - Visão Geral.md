@@ -13,6 +13,7 @@ Sistema de agenda e gestão de Ordens de Serviço para um eletricista autônomo 
 - [[Status da Implementação]]
 - [[Histórico de Commits]]
 - [[Fora do MVP]]
+- [[Pendências da Doc V7]]
 - [[Proposta - Módulo Ordem de Serviço]] (aplicada)
 
 ## Módulos
