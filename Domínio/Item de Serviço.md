@@ -28,4 +28,6 @@ Armazena os itens de serviço de cada orçamento, ou seja, as atividades vincula
 | `sequencia` | Posição do item no orçamento | INT |  | NOT NULL |
 
 ## Implementação
-- Pendente (entrega 2).
+- Migration: `migrations/20261027000001-create-orcamento.js` · Model: `OrcamentoItem` em `models/index.js`
+- CHECKs `chk_orcamento_item_quantidade` (> 0), `chk_orcamento_item_valor` (≥ 0) e `chk_orcamento_item_duracao` (5 a 720).
+- Na edição do orçamento os itens são apagados e recriados; nada fora do orçamento aponta para eles.

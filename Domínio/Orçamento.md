@@ -29,4 +29,6 @@ Armazena os orçamentos de um cliente.
 | `criado_em` | Data de criação | DATETIME |  | NOT NULL |
 
 ## Implementação
-- Pendente (entrega 2).
+- Migration: `migrations/20261027000001-create-orcamento.js` · Model: `Orcamento` em `models/index.js` · Regras em `services/orcamento.service.js`
+- `ordem_servico_id` com `ON DELETE SET NULL`: excluir a OS gerada desfaz só o vínculo, e o orçamento aceito continua como histórico (decisão de implementação, 27/10/2026).
+- O vínculo com a OS é criado só pelo aceite ([[RF 4.13]]); não há tela para vincular um orçamento a uma OS já existente.

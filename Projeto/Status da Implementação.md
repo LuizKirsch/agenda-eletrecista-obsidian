@@ -1,19 +1,19 @@
 ---
 tags: [projeto]
-atualizado: 2026-10-09
+atualizado: 2026-10-27
 ---
 # Status da Implementação
 
-Comparação entre a Documentação Técnica V6 e o código em `server/` (até o commit `50ef569`, 05/10/2026). Cada RF tem a propriedade `implementacao` (`completa`, `parcial` ou `pendente`), e a view **Implementação** de [[Requisitos.base|Requisitos]] lista os que faltam.
+Comparação entre a Documentação Técnica V6 e o código em `server/` (até o commit `50ef569`, 05/10/2026, mais o módulo Orçamento implementado em 27/10/2026, ainda sem commit). Cada RF tem a propriedade `implementacao` (`completa`, `parcial` ou `pendente`), e a view **Implementação** de [[Requisitos.base|Requisitos]] lista os que faltam.
 
 | Módulo | Completos | Parciais | Pendentes |
 | --- | --- | --- | --- |
 | [[Agenda]] | 12 | 0 | 0 |
-| [[Ordem de Serviço (módulo)\|Ordem de Serviço]] | 13 | 6 | 0 |
-| [[Atividade]] | 2 | 6 | 0 |
+| [[Ordem de Serviço (módulo)\|Ordem de Serviço]] | 15 | 4 | 0 |
+| [[Atividade]] | 7 | 1 | 0 |
 | [[Cliente e Endereço]] | 7 | 1 | 4 |
 | [[Usuários e Acesso]] | 10 | 3 | 0 |
-| [[Orçamento (módulo)\|Orçamento]] | 0 | 0 | 15 |
+| [[Orçamento (módulo)\|Orçamento]] | 15 | 0 | 0 |
 
 ## Divergências com a doc V6
 
@@ -31,12 +31,13 @@ Comparação entre a Documentação Técnica V6 e o código em `server/` (até o
 - **Busca sem acento no SQLite** ([[RF 3.8]]): no MySQL a collation padrão ignora acentos; no SQLite de desenvolvimento, não.
 
 ### Atividade e Orçamento (decisões de 19/10/2026)
-- **Tipo nunca é excluído** ([[RF 5.6]], [[P5.1 - Gerenciar tipos de atividade#RN 19|RN 19]]): o código ainda permite excluir tipo sem uso; a exclusão deve sair.
-- **Valor padrão do tipo e uso em orçamentos** ([[RF 5.1]] a [[RF 5.3]], [[RF 5.5]], [[RF 5.7]]): falta a coluna `valor_padrao` e a contagem de uso em `orcamento_item`.
-- **Atividade avulsa** ([[RF 6.3]], [[RF 6.4]]): `atividade_os.tipo_atividade_id` é NOT NULL e não existe `descricao`.
+- **Tipo nunca é excluído** ([[RF 5.6]], [[P5.1 - Gerenciar tipos de atividade#RN 19|RN 19]]): o código ainda permite excluir tipo sem uso (agora contando também os itens de orçamento); a exclusão deve sair.
+- Resolvidos em 27/10/2026: valor padrão do tipo e uso em orçamentos ([[RF 5.1]] a [[RF 5.3]], [[RF 5.5]], [[RF 5.7]]) e atividade avulsa na OS ([[RF 6.3]], [[RF 6.4]]).
 
 ### Orçamento
-- Entrega 2, ainda sem tabelas, rotas ou telas.
+- Implementado em 27/10/2026 (`orcamento.service`, telas `/orcamentos`). O vínculo com a OS só nasce do aceite; vincular um orçamento a uma OS já existente ([[RF 4.7]], caminho citado na [[Proposta - Modelo do Orçamento]]) não tem tela.
+- Excluir a OS gerada não apaga o orçamento: `orcamento.ordem_servico_id` tem `ON DELETE SET NULL`, e o orçamento continua aceito, sem OS.
+- A migration altera `atividade_os` e `tipo_atividade`; no SQLite isso recria as tabelas, e a migration restaura o CHECK e o índice de `atividade_os`.
 
 ## Diferenças no banco
 Ver a seção "Implementação" de cada entidade em `Domínio/`.

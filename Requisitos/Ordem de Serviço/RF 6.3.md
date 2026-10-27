@@ -6,7 +6,7 @@ modulo: "[[Ordem de Serviço (módulo)]]"
 prioridade: Alta
 alterado: true
 entrega: 1
-implementacao: parcial
+implementacao: completa
 ---
 # RF 6.3
 

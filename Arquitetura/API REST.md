@@ -44,9 +44,9 @@ Edição e exclusão ([[RF 3.9]] a [[RF 3.12]]) ainda não têm rotas.
 ## Tipos de atividade
 | Método | Rota | Descrição |
 | --- | --- | --- |
-| GET | `/tipos-atividade?ativos=1` | Lista com `uso` (quantidade de atividades) ([[RF 5.7]]); `ativos=1` filtra os ativos |
-| POST | `/tipos-atividade` | `{ nome, duracao_padrao_min }` (5–720) ([[RF 5.2]]); nome repetido → 409 ([[RF 5.4]]) |
-| PUT | `/tipos-atividade/:id` | Edita nome e duração ([[RF 5.3]]) |
+| GET | `/tipos-atividade?ativos=1` | Lista com `valor_padrao` e `uso` (atividades de OS + itens de orçamento) ([[RF 5.7]]); `ativos=1` filtra os ativos |
+| POST | `/tipos-atividade` | `{ nome, duracao_padrao_min, valor_padrao }` (5–720; valor opcional, ≥ 0, 2 casas) ([[RF 5.2]]); nome repetido → 409 ([[RF 5.4]]) |
+| PUT | `/tipos-atividade/:id` | Edita nome, duração e valor padrão ([[RF 5.3]]) |
 | PATCH | `/tipos-atividade/:id/situacao` | `{ ativo }`; recusa desativar o último ativo ([[RF 5.5]], [[RF 5.8]]) |
 | DELETE | `/tipos-atividade/:id` | Só sem uso; recusa excluir o último ativo ([[RF 5.6]]) |
 
@@ -63,6 +63,19 @@ Edição e exclusão ([[RF 3.9]] a [[RF 3.12]]) ainda não têm rotas.
 | PATCH | `/atividades-os/:id/horario` | `{ data, hora_inicio, hora_fim }`, só agendada ([[P6.3 - Remarcar atividade]]) |
 | PATCH | `/atividades-os/:id/status` | `{ status: 'concluida' \| 'cancelada' }`, só agendada ([[RF 6.15]]) |
 | DELETE | `/atividades-os/:id` | Só concluída/cancelada; se for a última, exclui a OS; senão renumera ([[P6.7 - Excluir]]) |
+
+## Orçamentos
+| Método | Rota | Descrição |
+| --- | --- | --- |
+| GET | `/orcamentos` | Lista `id, cliente, criado_em, status, total`, do mais recente para o mais antigo ([[RF 4.14]]) |
+| POST | `/orcamentos` | `{ cliente_id, endereco_id, observacao, itens[] }`; item: `{ tipo_atividade_id \| null, descricao, quantidade, valor_unitario, duracao_min }` ([[P4.1 - Montar orçamento]]) |
+| GET | `/orcamentos/:id` | Orçamento com cliente, endereço, itens (com `tipo` ou `null` no avulso), `total` e `ordem_servico_id` |
+| PUT | `/orcamentos/:id` | Só pendente; substitui dados e itens ([[P4.3 - Editar e excluir orçamento#RN 54\|RN 54]]) |
+| DELETE | `/orcamentos/:id` | Só pendente; exclui os itens ([[P4.3 - Editar e excluir orçamento#RN 55\|RN 55]]) |
+| POST | `/orcamentos/:id/aceitar` | `{ data, hora_inicio }` → `{ os_id, aviso_conflito }`; gera a OS encadeando um item por atividade; 409 se não couber no dia ([[P4.2 - Aceitar ou recusar orçamento]]) |
+| POST | `/orcamentos/:id/recusar` | Só pendente ([[RF 4.12]]) |
+
+O total é calculado em centavos a cada leitura, nunca gravado ([[P4.1 - Montar orçamento#RN 48|RN 48]]).
 
 ## Regra de conflito
 Fica em um único lugar, `agenda.service.idsEmConflito`: há conflito entre atividades não canceladas, na mesma data, com intervalos sobrepostos. Atividades encostadas (o fim de uma igual ao início da outra) não conflitam.
