@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Defs_P3.3" targetNamespace="http://agenda.local/bpmn">
+<bpmn:process id="P_P3.3" name="3.3 – Editar e excluir cliente, endereço e observação" isExecutable="false">
+<bpmn:laneSet id="LS1">
+<bpmn:lane id="L_0" name="Usuário"><bpmn:flowNodeRef>N_s</bpmn:flowNodeRef><bpmn:flowNodeRef>N_g1</bpmn:flowNodeRef><bpmn:flowNodeRef>N_ed</bpmn:flowNodeRef></bpmn:lane>
+<bpmn:lane id="L_1" name="Sistema"><bpmn:flowNodeRef>N_gv</bpmn:flowNodeRef><bpmn:flowNodeRef>N_er</bpmn:flowNodeRef><bpmn:flowNodeRef>N_sv</bpmn:flowNodeRef><bpmn:flowNodeRef>N_z1</bpmn:flowNodeRef><bpmn:flowNodeRef>N_gx</bpmn:flowNodeRef><bpmn:flowNodeRef>N_bl</bpmn:flowNodeRef><bpmn:flowNodeRef>N_cf</bpmn:flowNodeRef><bpmn:flowNodeRef>N_z3</bpmn:flowNodeRef></bpmn:lane>
+</bpmn:laneSet>
+<bpmn:startEvent id="N_s" name="Seleciona cliente, endereço ou observação"/>
+<bpmn:exclusiveGateway id="N_g1" name="Editar ou excluir?"/>
+<bpmn:task id="N_ed" name="Altera os dados"/>
+<bpmn:exclusiveGateway id="N_gv" name="Dados válidos conforme o cadastro? (RN 41, RN 37)"/>
+<bpmn:endEvent id="N_er" name="Erro exibido no formulário"/>
+<bpmn:task id="N_sv" name="Salva; a observação mantém a data de registro original (RN 41)"/>
+<bpmn:endEvent id="N_z1" name="Dados atualizados"/>
+<bpmn:exclusiveGateway id="N_gx" name="Cliente ou endereço com OS vinculada? (RN 42)"/>
+<bpmn:endEvent id="N_bl" name="Exclusão bloqueada"/>
+<bpmn:task id="N_cf" name="Pede confirmação e exclui; cliente leva endereços e observações, endereço leva observações (RN 42, RN 43)"/>
+<bpmn:endEvent id="N_z3" name="Registro excluído"/>
+<bpmn:sequenceFlow id="F_0" sourceRef="N_s" targetRef="N_g1"/>
+<bpmn:sequenceFlow id="F_1" sourceRef="N_g1" targetRef="N_ed" name="Editar"/>
+<bpmn:sequenceFlow id="F_2" sourceRef="N_ed" targetRef="N_gv"/>
+<bpmn:sequenceFlow id="F_3" sourceRef="N_gv" targetRef="N_er" name="Não"/>
+<bpmn:sequenceFlow id="F_4" sourceRef="N_gv" targetRef="N_sv" name="Sim"/>
+<bpmn:sequenceFlow id="F_5" sourceRef="N_sv" targetRef="N_z1"/>
+<bpmn:sequenceFlow id="F_6" sourceRef="N_g1" targetRef="N_gx" name="Excluir"/>
+<bpmn:sequenceFlow id="F_7" sourceRef="N_gx" targetRef="N_bl" name="Sim"/>
+<bpmn:sequenceFlow id="F_8" sourceRef="N_gx" targetRef="N_cf" name="Não"/>
+<bpmn:sequenceFlow id="F_9" sourceRef="N_cf" targetRef="N_z3"/>
+</bpmn:process><bpmndi:BPMNDiagram id="D1"><bpmndi:BPMNPlane id="PL1" bpmnElement="P_P3.3">
+<bpmndi:BPMNShape id="LS_0" bpmnElement="L_0" isHorizontal="true"><dc:Bounds x="30" y="60" width="1528" height="130"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="LS_1" bpmnElement="L_1" isHorizontal="true"><dc:Bounds x="30" y="190" width="1528" height="520"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="S_s" bpmnElement="N_s"><dc:Bounds x="172.0" y="107.0" width="36" height="36"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="S_g1" bpmnElement="N_g1"><dc:Bounds x="380.0" y="97.0" width="56" height="56"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="S_ed" bpmnElement="N_ed"><dc:Bounds x="530.0" y="83.0" width="192" height="84"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="S_gv" bpmnElement="N_gv"><dc:Bounds x="816.0" y="227.0" width="56" height="56"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="S_er" bpmnElement="N_er"><dc:Bounds x="826.0" y="367.0" width="36" height="36"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="S_sv" bpmnElement="N_sv"><dc:Bounds x="966.0" y="213.0" width="192" height="84"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="S_z1" bpmnElement="N_z1"><dc:Bounds x="1262.0" y="237.0" width="36" height="36"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="S_gx" bpmnElement="N_gx"><dc:Bounds x="598.0" y="487.0" width="56" height="56"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="S_bl" bpmnElement="N_bl"><dc:Bounds x="826.0" y="497.0" width="36" height="36"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="S_cf" bpmnElement="N_cf"><dc:Bounds x="748.0" y="603.0" width="192" height="84"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="S_z3" bpmnElement="N_z3"><dc:Bounds x="1044.0" y="627.0" width="36" height="36"/></bpmndi:BPMNShape>
+<bpmndi:BPMNEdge id="E_0" bpmnElement="F_0"><di:waypoint x="208.0" y="125.0"/><di:waypoint x="380.0" y="125.0"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="E_1" bpmnElement="F_1"><di:waypoint x="436.0" y="125.0"/><di:waypoint x="530.0" y="125.0"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="E_2" bpmnElement="F_2"><di:waypoint x="722.0" y="125.0"/><di:waypoint x="769.0" y="125.0"/><di:waypoint x="769.0" y="255.0"/><di:waypoint x="816.0" y="255.0"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="E_3" bpmnElement="F_3"><di:waypoint x="844" y="283.0"/><di:waypoint x="844" y="367.0"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="E_4" bpmnElement="F_4"><di:waypoint x="872.0" y="255.0"/><di:waypoint x="966.0" y="255.0"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="E_5" bpmnElement="F_5"><di:waypoint x="1158.0" y="255.0"/><di:waypoint x="1262.0" y="255.0"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="E_6" bpmnElement="F_6"><di:waypoint x="436.0" y="125.0"/><di:waypoint x="458.0" y="125.0"/><di:waypoint x="458.0" y="515.0"/><di:waypoint x="598.0" y="515.0"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="E_7" bpmnElement="F_7"><di:waypoint x="654.0" y="515.0"/><di:waypoint x="826.0" y="515.0"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="E_8" bpmnElement="F_8"><di:waypoint x="654.0" y="515.0"/><di:waypoint x="676.0" y="515.0"/><di:waypoint x="676.0" y="645.0"/><di:waypoint x="748.0" y="645.0"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="E_9" bpmnElement="F_9"><di:waypoint x="940.0" y="645.0"/><di:waypoint x="1044.0" y="645.0"/></bpmndi:BPMNEdge>
+</bpmndi:BPMNPlane></bpmndi:BPMNDiagram></bpmn:definitions>

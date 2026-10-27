@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Defs_P3.2" targetNamespace="http://agenda.local/bpmn">
+<bpmn:process id="P_P3.2" name="3.2 – Buscar cliente" isExecutable="false">
+<bpmn:laneSet id="LS1">
+<bpmn:lane id="L_0" name="Usuário"><bpmn:flowNodeRef>N_s</bpmn:flowNodeRef><bpmn:flowNodeRef>N_u</bpmn:flowNodeRef><bpmn:flowNodeRef>N_z</bpmn:flowNodeRef></bpmn:lane>
+<bpmn:lane id="L_1" name="Sistema"><bpmn:flowNodeRef>N_t</bpmn:flowNodeRef><bpmn:flowNodeRef>N_g</bpmn:flowNodeRef><bpmn:flowNodeRef>N_e</bpmn:flowNodeRef><bpmn:flowNodeRef>N_r</bpmn:flowNodeRef></bpmn:lane>
+</bpmn:laneSet>
+<bpmn:startEvent id="N_s" name="Digita parte do nome ou do telefone"/>
+<bpmn:task id="N_t" name="Busca sem diferenciar maiúsculas, minúsculas e acentos (RN 39)"/>
+<bpmn:exclusiveGateway id="N_g" name="Encontrou cliente?"/>
+<bpmn:endEvent id="N_e" name="Oferece Novo cliente"/>
+<bpmn:task id="N_r" name="Exibe a lista em ordem alfabética (RN 39)"/>
+<bpmn:task id="N_u" name="Seleciona o cliente"/>
+<bpmn:endEvent id="N_z" name="Cliente selecionado"/>
+<bpmn:sequenceFlow id="F_0" sourceRef="N_s" targetRef="N_t"/>
+<bpmn:sequenceFlow id="F_1" sourceRef="N_t" targetRef="N_g"/>
+<bpmn:sequenceFlow id="F_2" sourceRef="N_g" targetRef="N_e" name="Não"/>
+<bpmn:sequenceFlow id="F_3" sourceRef="N_g" targetRef="N_r" name="Sim"/>
+<bpmn:sequenceFlow id="F_4" sourceRef="N_r" targetRef="N_u"/>
+<bpmn:sequenceFlow id="F_5" sourceRef="N_u" targetRef="N_z"/>
+</bpmn:process><bpmndi:BPMNDiagram id="D1"><bpmndi:BPMNPlane id="PL1" bpmnElement="P_P3.2">
+<bpmndi:BPMNShape id="LS_0" bpmnElement="L_0" isHorizontal="true"><dc:Bounds x="30" y="60" width="1528" height="130"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="LS_1" bpmnElement="L_1" isHorizontal="true"><dc:Bounds x="30" y="190" width="1528" height="260"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="S_s" bpmnElement="N_s"><dc:Bounds x="172.0" y="107.0" width="36" height="36"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="S_t" bpmnElement="N_t"><dc:Bounds x="312.0" y="213.0" width="192" height="84"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="S_g" bpmnElement="N_g"><dc:Bounds x="598.0" y="227.0" width="56" height="56"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="S_e" bpmnElement="N_e"><dc:Bounds x="608.0" y="367.0" width="36" height="36"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="S_r" bpmnElement="N_r"><dc:Bounds x="748.0" y="213.0" width="192" height="84"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="S_u" bpmnElement="N_u"><dc:Bounds x="966.0" y="83.0" width="192" height="84"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="S_z" bpmnElement="N_z"><dc:Bounds x="1262.0" y="107.0" width="36" height="36"/></bpmndi:BPMNShape>
+<bpmndi:BPMNEdge id="E_0" bpmnElement="F_0"><di:waypoint x="208.0" y="125.0"/><di:waypoint x="260.0" y="125.0"/><di:waypoint x="260.0" y="255.0"/><di:waypoint x="312.0" y="255.0"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="E_1" bpmnElement="F_1"><di:waypoint x="504.0" y="255.0"/><di:waypoint x="598.0" y="255.0"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="E_2" bpmnElement="F_2"><di:waypoint x="626" y="283.0"/><di:waypoint x="626" y="367.0"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="E_3" bpmnElement="F_3"><di:waypoint x="654.0" y="255.0"/><di:waypoint x="748.0" y="255.0"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="E_4" bpmnElement="F_4"><di:waypoint x="940.0" y="255.0"/><di:waypoint x="953.0" y="255.0"/><di:waypoint x="953.0" y="125.0"/><di:waypoint x="966.0" y="125.0"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="E_5" bpmnElement="F_5"><di:waypoint x="1158.0" y="125.0"/><di:waypoint x="1262.0" y="125.0"/></bpmndi:BPMNEdge>
+</bpmndi:BPMNPlane></bpmndi:BPMNDiagram></bpmn:definitions>

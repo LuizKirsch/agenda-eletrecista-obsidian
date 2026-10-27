@@ -10,12 +10,11 @@ React 19 + React Router + Vite em `server/client/`, sem biblioteca de UI. Em des
 | --- | --- | --- |
 | `/login` | Login | [[RF 2.4]] |
 | `/agenda` | Visão semanal (entrada após o login) | [[RF 1.1]] a [[RF 6.7]] |
-| `/clientes` | Lista com busca (debounce de 300 ms) e "Novo cliente" | [[RF 3.8]] |
-| `/clientes/novo` | Cadastro de cliente | [[RF 3.1]], [[RF 3.2]] |
-| `/clientes/:id` | Cliente, endereços e formulário de novo endereço | [[RF 3.3]] |
-| `/enderecos/:id` | Endereço e observações | [[RF 3.5]], [[RF 3.7]] |
-| `/usuarios` | Lista e formulário de usuário | [[RF 2.8]] a [[RF 2.12]] |
-| (modal) | Tipos de atividade, aberto pela barra lateral ou pela agenda | [[RF 1.5]], [[RF 5.1]] a [[RF 5.8]] |
+| `/clientes` | Lista com busca (debounce de 300 ms); "Novo cliente" abre um diálogo e, ao salvar, vai para a ficha | [[RF 3.1]], [[RF 3.2]], [[RF 3.8]] |
+| `/clientes/:id` | Cliente e endereços em cartões; "Adicionar endereço" abre um diálogo | [[RF 3.3]] |
+| `/enderecos/:id` | Endereço e observações; "Nova observação" abre um diálogo com o aviso da [[RF 3.16]] | [[RF 3.5]], [[RF 3.7]], [[RF 3.16]] |
+| `/usuarios` | Tabela de usuários; novo/editar em diálogo | [[RF 2.8]] a [[RF 2.12]] |
+| `/tipos-atividade` | Tabela de tipos; novo/editar em diálogo. A agenda redireciona para cá quando não há tipo ativo | [[RF 1.5]], [[RF 5.1]] a [[RF 5.8]] |
 
 ## Arquivos principais
 - `auth.jsx` — contexto de sessão (`/auth/me` ao abrir); um 401 com usuário logado mostra "Sua sessão expirou".
@@ -35,8 +34,11 @@ React 19 + React Router + Vite em `server/client/`, sem biblioteca de UI. Em des
 - Toda alteração fecha o modal e recarrega a semana ([[RF 1.12]]); `aviso_conflito` mostra um aviso em destaque ([[RF 6.13]]).
 
 ## Visual
-- Fontes IBM Plex Sans (texto) e JetBrains Mono (horários), via Google Fonts.
-- Paleta em variáveis CSS no `:root` de `estilo.css` (primária âmbar `#894d00`, secundária `#276862`).
-- Botões com 36 px de altura, que sobem para 44 px em telas com menos de 768 px ([[Requisitos Não Funcionais|RNF-7]]).
+- Fonte Inter, via Google Fonts; ícones em SVG inline (`icones.jsx`).
+- Superfícies claras com relevo suave (neumorfismo discreto), tokens no `:root` de `estilo.css`; cor principal verde-petróleo `#0f766e`, âmbar só na marca.
+- Listas e formulários separados: a página mostra a lista e o cadastro/edição abre em `Modal` (variante `dialogo`, centralizado; ou `painel`, à direita).
+- Celular (< 768 px): barra inferior com Agenda, Clientes, Tipos e Usuários; conta e "Sair" no avatar do topo; tabelas viram cartões; diálogos viram folhas que sobem de baixo.
+- Agenda no celular: faixa com os 7 dias e lista só com os horários agendados (`agenda/ListaSemana.jsx`), sem arraste; remarcar pelo detalhe da OS.
+- Botões com 40 px de altura, que sobem para 44 px em telas com menos de 768 px ([[Requisitos Não Funcionais|RNF-7]]).
 
 Ver: [[API REST]], [[Stack e Ambiente]]

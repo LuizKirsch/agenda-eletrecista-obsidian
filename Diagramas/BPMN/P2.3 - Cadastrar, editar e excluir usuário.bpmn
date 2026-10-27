@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Defs_P2.3" targetNamespace="http://agenda.local/bpmn">
+<bpmn:process id="P_P2.3" name="2.3 – Cadastrar, editar e excluir usuário" isExecutable="false">
+<bpmn:laneSet id="LS1">
+<bpmn:lane id="L_0" name="Secretária"><bpmn:flowNodeRef>N_s</bpmn:flowNodeRef><bpmn:flowNodeRef>N_g1</bpmn:flowNodeRef></bpmn:lane>
+<bpmn:lane id="L_1" name="Sistema"><bpmn:flowNodeRef>N_a1</bpmn:flowNodeRef><bpmn:flowNodeRef>N_z1</bpmn:flowNodeRef><bpmn:flowNodeRef>N_gs</bpmn:flowNodeRef><bpmn:flowNodeRef>N_bl</bpmn:flowNodeRef><bpmn:flowNodeRef>N_ga</bpmn:flowNodeRef><bpmn:flowNodeRef>N_a2</bpmn:flowNodeRef><bpmn:flowNodeRef>N_z2</bpmn:flowNodeRef><bpmn:flowNodeRef>N_a3</bpmn:flowNodeRef><bpmn:flowNodeRef>N_z3</bpmn:flowNodeRef></bpmn:lane>
+</bpmn:laneSet>
+<bpmn:startEvent id="N_s" name="Acessa a listagem de usuários (só a secretária cadastra, edita e exclui, RN 29)"/>
+<bpmn:exclusiveGateway id="N_g1" name="Qual ação?"/>
+<bpmn:task id="N_a1" name="Valida e grava o novo usuário (processo 2.2)"/>
+<bpmn:endEvent id="N_z1" name="Usuário cadastrado"/>
+<bpmn:exclusiveGateway id="N_gs" name="Exclui, desativa ou muda o perfil do próprio usuário? (RN 31)"/>
+<bpmn:endEvent id="N_bl" name="Ação bloqueada"/>
+<bpmn:exclusiveGateway id="N_ga" name="Ação escolhida"/>
+<bpmn:task id="N_a2" name="Grava as alterações; senha em branco mantém a atual (RN 30)"/>
+<bpmn:endEvent id="N_z2" name="Usuário atualizado"/>
+<bpmn:task id="N_a3" name="Pede confirmação e remove o registro definitivamente (RN 32)"/>
+<bpmn:endEvent id="N_z3" name="Usuário excluído"/>
+<bpmn:sequenceFlow id="F_0" sourceRef="N_s" targetRef="N_g1"/>
+<bpmn:sequenceFlow id="F_1" sourceRef="N_g1" targetRef="N_a1" name="Cadastrar"/>
+<bpmn:sequenceFlow id="F_2" sourceRef="N_a1" targetRef="N_z1"/>
+<bpmn:sequenceFlow id="F_3" sourceRef="N_g1" targetRef="N_gs" name="Editar/excluir"/>
+<bpmn:sequenceFlow id="F_4" sourceRef="N_gs" targetRef="N_bl" name="Sim"/>
+<bpmn:sequenceFlow id="F_5" sourceRef="N_gs" targetRef="N_ga" name="Não"/>
+<bpmn:sequenceFlow id="F_6" sourceRef="N_ga" targetRef="N_a2" name="Editar"/>
+<bpmn:sequenceFlow id="F_7" sourceRef="N_a2" targetRef="N_z2"/>
+<bpmn:sequenceFlow id="F_8" sourceRef="N_ga" targetRef="N_a3" name="Excluir"/>
+<bpmn:sequenceFlow id="F_9" sourceRef="N_a3" targetRef="N_z3"/>
+</bpmn:process><bpmndi:BPMNDiagram id="D1"><bpmndi:BPMNPlane id="PL1" bpmnElement="P_P2.3">
+<bpmndi:BPMNShape id="LS_0" bpmnElement="L_0" isHorizontal="true"><dc:Bounds x="30" y="60" width="1528" height="130"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="LS_1" bpmnElement="L_1" isHorizontal="true"><dc:Bounds x="30" y="190" width="1528" height="520"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="S_s" bpmnElement="N_s"><dc:Bounds x="172.0" y="107.0" width="36" height="36"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="S_g1" bpmnElement="N_g1"><dc:Bounds x="380.0" y="97.0" width="56" height="56"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="S_a1" bpmnElement="N_a1"><dc:Bounds x="530.0" y="213.0" width="192" height="84"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="S_z1" bpmnElement="N_z1"><dc:Bounds x="826.0" y="237.0" width="36" height="36"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="S_gs" bpmnElement="N_gs"><dc:Bounds x="598.0" y="357.0" width="56" height="56"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="S_bl" bpmnElement="N_bl"><dc:Bounds x="826.0" y="367.0" width="36" height="36"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="S_ga" bpmnElement="N_ga"><dc:Bounds x="816.0" y="487.0" width="56" height="56"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="S_a2" bpmnElement="N_a2"><dc:Bounds x="966.0" y="473.0" width="192" height="84"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="S_z2" bpmnElement="N_z2"><dc:Bounds x="1262.0" y="497.0" width="36" height="36"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="S_a3" bpmnElement="N_a3"><dc:Bounds x="966.0" y="603.0" width="192" height="84"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="S_z3" bpmnElement="N_z3"><dc:Bounds x="1262.0" y="627.0" width="36" height="36"/></bpmndi:BPMNShape>
+<bpmndi:BPMNEdge id="E_0" bpmnElement="F_0"><di:waypoint x="208.0" y="125.0"/><di:waypoint x="380.0" y="125.0"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="E_1" bpmnElement="F_1"><di:waypoint x="436.0" y="125.0"/><di:waypoint x="458.0" y="125.0"/><di:waypoint x="458.0" y="255.0"/><di:waypoint x="530.0" y="255.0"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="E_2" bpmnElement="F_2"><di:waypoint x="722.0" y="255.0"/><di:waypoint x="826.0" y="255.0"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="E_3" bpmnElement="F_3"><di:waypoint x="436.0" y="125.0"/><di:waypoint x="458.0" y="125.0"/><di:waypoint x="458.0" y="385.0"/><di:waypoint x="598.0" y="385.0"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="E_4" bpmnElement="F_4"><di:waypoint x="654.0" y="385.0"/><di:waypoint x="826.0" y="385.0"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="E_5" bpmnElement="F_5"><di:waypoint x="654.0" y="385.0"/><di:waypoint x="676.0" y="385.0"/><di:waypoint x="676.0" y="515.0"/><di:waypoint x="816.0" y="515.0"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="E_6" bpmnElement="F_6"><di:waypoint x="872.0" y="515.0"/><di:waypoint x="966.0" y="515.0"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="E_7" bpmnElement="F_7"><di:waypoint x="1158.0" y="515.0"/><di:waypoint x="1262.0" y="515.0"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="E_8" bpmnElement="F_8"><di:waypoint x="872.0" y="515.0"/><di:waypoint x="894.0" y="515.0"/><di:waypoint x="894.0" y="645.0"/><di:waypoint x="966.0" y="645.0"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="E_9" bpmnElement="F_9"><di:waypoint x="1158.0" y="645.0"/><di:waypoint x="1262.0" y="645.0"/></bpmndi:BPMNEdge>
+</bpmndi:BPMNPlane></bpmndi:BPMNDiagram></bpmn:definitions>
