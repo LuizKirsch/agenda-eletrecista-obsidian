@@ -12,7 +12,7 @@ React 19 + React Router + Vite em `server/client/`, sem biblioteca de UI. Em des
 | `/agenda` | Visão semanal (entrada após o login) | [[RF 1.1]] a [[RF 6.7]] |
 | `/clientes` | Lista com busca (debounce de 300 ms); "Novo cliente" abre um diálogo e, ao salvar, vai para a ficha | [[RF 3.1]], [[RF 3.2]], [[RF 3.8]] |
 | `/clientes/:id` | Cliente e endereços em cartões; "Adicionar endereço" e "Editar" abrem diálogos; "Excluir" confirma e volta à lista | [[RF 3.3]], [[RF 3.9]], [[RF 3.11]] |
-| `/enderecos/:id` | Endereço e observações; "Nova observação" abre um diálogo com o aviso da [[RF 3.16]]; editar e excluir o endereço no topo e cada observação no próprio cartão | [[RF 3.5]], [[RF 3.7]], [[RF 3.10]] a [[RF 3.12]], [[RF 3.16]] |
+| `/enderecos/:id` | Endereço e observações; "Nova observação" abre um diálogo com o aviso da [[RF 3.13]]; editar e excluir o endereço no topo e cada observação no próprio cartão | [[RF 3.5]], [[RF 3.7]], [[RF 3.10]] a [[RF 3.12]], [[RF 3.13]] |
 | `/usuarios` | Tabela de usuários; novo/editar em diálogo | [[RF 2.8]] a [[RF 2.12]] |
 | `/tipos-atividade` | Tabela de tipos com valor padrão; novo/editar em diálogo. A agenda redireciona para cá quando não há tipo ativo | [[RF 1.5]], [[RF 5.1]] a [[RF 5.8]] |
 | `/orcamentos` | Tabela de orçamentos; "Novo orçamento" abre o formulário em painel e, ao salvar, vai para o detalhe | [[RF 4.8]] a [[RF 4.10]], [[RF 4.14]] |

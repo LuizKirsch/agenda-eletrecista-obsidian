@@ -5,7 +5,7 @@ tags: [lgpd, indice]
 
 Pontos levantados na apresentação **"A LGPD dentro de uma agenda de eletricista"** (05/10/2026) que **não estavam no projeto original** (Documentação Técnica V6). Ficam aqui para análise; o que for aceito vira RF/RN e é levado para a documentação técnica.
 
-> **Adiado para a V2 do app (19/10/2026).** A LGPD não será tratada no MVP. Os RFs e RNs abaixo ficam registrados no vault com `versao: V2` e não entram na doc V7. Ver [[Fora do MVP#V2 do app]].
+> **Adiado para a V2 do app (19/10/2026).** A LGPD não será tratada no MVP. Em 28/10/2026 os RFs e RNs propostos saíram da doc; o texto de cada um ficou na nota L correspondente. Só o L4 ([[RF 3.13]]) ficou no MVP, porque já estava implementado. Ver [[Fora do MVP#V2 do app]].
 
 Apresentação: https://claude.ai/artifact/AvtLwR4fPsRSEkyPZgnAst
 
@@ -17,12 +17,12 @@ Apresentação: https://claude.ai/artifact/AvtLwR4fPsRSEkyPZgnAst
 ## Ajustes pendentes
 | ID | Ajuste | Tipo | Base | Status |
 | --- | --- | --- | --- | --- |
-| [[L1 - Anonimização no lugar do bloqueio de exclusão\|L1]] | Anonimização no lugar do bloqueio de exclusão | requisito | LGPD art. 18, IV | aceito → [[RF 3.13]] |
-| [[L2 - Exportação dos dados do cliente\|L2]] | Exportação dos dados do cliente | requisito | LGPD art. 18, V | aceito → [[RF 3.14]] |
-| [[L3 - Resumo Dados do titular\|L3]] | Resumo "Dados do titular" na ficha do cliente | requisito | LGPD art. 18, I e II; art. 19 | aceito → [[RF 3.15]] |
-| [[L4 - Aviso no campo de observação\|L4]] | Aviso no campo de observação | requisito | LGPD art. 6º, III; art. 11; art. 14 | aceito → [[RF 3.16]] |
-| [[L5 - Registro de acessos\|L5]] | Registro de acessos (6 meses) | requisito | Marco Civil art. 15; LGPD art. 7º, II | aceito → [[RF 2.14]], [[RF 2.15]] |
-| [[L6 - Retenção dos dados\|L6]] | Política de retenção | regra | LGPD art. 15 e 16; CDC art. 27 | aceito → [[RF 3.17]] |
+| [[L1 - Anonimização no lugar do bloqueio de exclusão\|L1]] | Anonimização no lugar do bloqueio de exclusão | requisito | LGPD art. 18, IV | aceito → RF V2.3 |
+| [[L2 - Exportação dos dados do cliente\|L2]] | Exportação dos dados do cliente | requisito | LGPD art. 18, V | aceito → RF V2.4 |
+| [[L3 - Resumo Dados do titular\|L3]] | Resumo "Dados do titular" na ficha do cliente | requisito | LGPD art. 18, I e II; art. 19 | aceito → RF V2.5 |
+| [[L4 - Aviso no campo de observação\|L4]] | Aviso no campo de observação | requisito | LGPD art. 6º, III; art. 11; art. 14 | aceito → [[RF 3.13]] |
+| [[L5 - Registro de acessos\|L5]] | Registro de acessos (6 meses) | requisito | Marco Civil art. 15; LGPD art. 7º, II | aceito → RF V2.1, RF V2.2 |
+| [[L6 - Retenção dos dados\|L6]] | Política de retenção | regra | LGPD art. 15 e 16; CDC art. 27 | aceito → RF V2.6 |
 | [[L7 - Plano de resposta a incidentes\|L7]] | Plano de resposta a incidentes | processo | LGPD art. 46 e 48; Resolução CD/ANPD nº 15/2024 | a analisar |
 | [[L8 - Política de privacidade e canal de contato\|L8]] | Política de privacidade e canal de contato | processo | LGPD art. 9º e 41; Resolução CD/ANPD nº 2/2022 | a analisar |
 | [[L9 - Papéis e contrato controlador-operador\|L9]] | Papéis e contrato controlador–operador | processo | LGPD art. 5º, VI e VII; art. 39 | a analisar |

@@ -26,7 +26,7 @@ Revisão de todas as RFs (88) e RNs (55 + 10 da V2) em 27/10/2026, cruzando umas
 | 9 | Atividade avulsa na edição da OS | [[P6.4 - Editar OS inteira#RN 58\|RN 58]]: descrição fixa, só data e horários mudam |
 | 10 | Concluir ou cancelar não tinha volta definida | [[P6.6 - Concluir ou cancelar#RN 59\|RN 59]]: não pode ser desfeito; corrige excluindo e cadastrando de novo |
 | 11 | Editar cliente ou endereço muda o histórico | [[P3.3 - Editar e excluir cliente, endereço e observação#RN 61\|RN 61]]: OS e orçamento mostram os dados atuais (decisão registrada) |
-| 12 | As regras de LGPD da V2 ignoravam o orçamento | [[P3.4 - Anonimizar cliente\|RN V2.3 e V2.4]], [[P3.5 - Atender pedido do titular\|RN V2.6]] e [[P3.6 - Reter e eliminar dados\|RN V2.8]] passam a incluir orçamentos |
+| 12 | As regras de LGPD da V2 ignoravam o orçamento | RN V2.3 e V2.4, RN V2.6 e RN V2.8 passam a incluir orçamentos (em 28/10/2026 essas regras saíram da doc; o texto está nas notas da pasta LGPD) |
 | 13 | Datas no passado | [[P6.1 - Criar OS#RN 60\|RN 60]]: permitidas, para registrar serviço já feito |
 
 ## Redação
@@ -42,7 +42,7 @@ Revisão de todas as RFs (88) e RNs (55 + 10 da V2) em 27/10/2026, cruzando umas
 
 ## Status corrigido
 - [[RF 1.5]]: completa, depois de reescrito.
-- [[RF 3.16]]: já estava implementado (aviso no formulário de observação), apesar de listado na V2.
+- [[RF 3.13]]: já estava implementado (aviso no formulário de observação), apesar de listado na V2.
 
 ## Para o grupo decidir
 - [[P6.6 - Concluir ou cancelar#RN 59|RN 59]] e [[P3.3 - Editar e excluir cliente, endereço e observação#RN 61|RN 61]] registram o comportamento atual; vale confirmar se é o desejado.

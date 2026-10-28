@@ -4,7 +4,7 @@ id: "L3"
 tipo: requisito
 base: "LGPD art. 18, I e II; art. 19"
 status: aceito
-decisao: "RF 3.15"
+decisao: "RF V2.5"
 versao: V2
 ---
 # L3 – Resumo "Dados do titular" na ficha do cliente
@@ -28,6 +28,20 @@ O cliente não tem login, então o atendimento dos direitos fica do lado de quem
 - [x] Definir número de RF (módulo 3)
 
 ## Decisão
-Aceito como [[RF 3.15]], separado da exportação ([[RF 3.14]]): o resumo é o documento legível para enviar pelo WhatsApp; a exportação atende a portabilidade. Prazo e confirmação de identidade em [[P3.5 - Atender pedido do titular#RN V2.7|RN V2.7]].
+Aceito como RF V2.5, separado da exportação (RF V2.4): o resumo é o documento legível para enviar pelo WhatsApp; a exportação atende a portabilidade. Prazo e confirmação de identidade em RN V2.7.
 
 > Origem: apresentação "A LGPD dentro de uma agenda de eletricista" (05/10/2026). Ver [[LGPD - Visão Geral]].
+
+## Texto proposto para a V2
+
+> Retirado da doc em 28/10/2026, junto com os demais RFs e RNs de LGPD; guardado aqui para quando a V2 começar. A numeração é provisória.
+
+**RF V2.5** — o sistema deve gerar, na ficha do cliente, um resumo "Dados do titular" em PDF de uma página, com o cadastro, os endereços, as observações e a relação das OS do cliente, para envio ao titular quando ele solicitar;
+
+**P3.5 - Atender pedido do titular**
+
+#### RN V2.6
+A exportação e o resumo "Dados do titular" incluem o cadastro do cliente, seus endereços, as observações dos endereços, as OS com suas atividades e os orçamentos com seus itens;
+
+#### RN V2.7
+Antes de enviar os dados, a secretária confirma a identidade do titular pelo telefone cadastrado; o pedido é confirmado na hora e a resposta completa é enviada em até 15 dias.

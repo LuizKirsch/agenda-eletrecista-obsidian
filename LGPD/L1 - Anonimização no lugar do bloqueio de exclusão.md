@@ -4,7 +4,7 @@ id: "L1"
 tipo: requisito
 base: "LGPD art. 18, IV"
 status: aceito
-decisao: "RF 3.13"
+decisao: "RF V2.3"
 versao: V2
 ---
 # L1 – Anonimização no lugar do bloqueio de exclusão
@@ -36,6 +36,23 @@ A regra atual impede excluir cliente com OS vinculada, o que na prática bloquei
 - [x] Atualizar RF 3.11 / RN 42 na documentação técnica
 
 ## Decisão
-Aceito como [[RF 3.13]] e [[P3.4 - Anonimizar cliente]] (RN V2.3 a RN V2.5). Ação manual na ficha do cliente, com confirmação e irreversível. O [[RF 3.11]] e o [[P3.3 - Editar e excluir cliente, endereço e observação#RN 42|RN 42]] foram alterados (alterado: LGPD): sem OS vinculada o cliente é excluído; com OS vinculada, o pedido de eliminação é atendido pela anonimização, sem bloqueio. Em [[Cliente]], `telefone` deixa de ser NOT NULL (UNIQUE aceita vários NULL no MySQL) e entra `anonimizado_em`.
+Aceito como RF V2.3 e P3.4 - Anonimizar cliente (RN V2.3 a RN V2.5). Ação manual na ficha do cliente, com confirmação e irreversível. O [[RF 3.11]] e o [[P3.3 - Editar e excluir cliente, endereço e observação#RN 42|RN 42]] foram alterados (alterado: LGPD): sem OS vinculada o cliente é excluído; com OS vinculada, o pedido de eliminação é atendido pela anonimização, sem bloqueio. Em [[Cliente]], `telefone` deixa de ser NOT NULL (UNIQUE aceita vários NULL no MySQL) e entra `anonimizado_em`.
 
 > Origem: apresentação "A LGPD dentro de uma agenda de eletricista" (05/10/2026). Ver [[LGPD - Visão Geral]].
+
+## Texto proposto para a V2
+
+> Retirado da doc em 28/10/2026, junto com os demais RFs e RNs de LGPD; guardado aqui para quando a V2 começar. A numeração é provisória.
+
+**RF V2.3** — o sistema deve permitir anonimizar, com confirmação, um cliente que possua OS vinculada: o nome passa a ser "Cliente anonimizado nº X", o telefone é apagado, o número, o complemento e o ponto de referência dos endereços são apagados e as observações são excluídas; as OS são mantidas, sem identificar o titular, e a anonimização não pode ser desfeita;
+
+**P3.4 - Anonimizar cliente**
+
+#### RN V2.3
+A anonimização se aplica ao cliente com OS vinculada; o cliente sem OS vinculada é excluído normalmente, com seus orçamentos ([[P3.3 - Editar e excluir cliente, endereço e observação#RN 42|RN 42]], [[P3.3 - Editar e excluir cliente, endereço e observação#RN 43|RN 43]]);
+
+#### RN V2.4
+Ao anonimizar, o nome passa a ser "Cliente anonimizado nº X" (X = identificador do cliente), o telefone é apagado, o número, o complemento e o ponto de referência dos endereços são apagados, as observações dos endereços e as observações dos orçamentos são excluídas e a data da anonimização é registrada; as OS e suas atividades são mantidas;
+
+#### RN V2.5
+A anonimização exige confirmação e não pode ser desfeita.

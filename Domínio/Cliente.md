@@ -23,8 +23,6 @@ Armazena os clientes atendidos.
 | `telefone` | Telefone de contato | VARCHAR | 20 | NOT NULL, UNIQUE; DDD e 8 ou 9 dígitos |
 | `criado_em` | Data e hora do cadastro | DATETIME |  | NOT NULL, padrão CURRENT_TIMESTAMP |
 
-## V2 do app (LGPD)
-- Anonimização ([[RF 3.13]]): nova coluna `anonimizado_em` (DATETIME, NULL enquanto não anonimizado) e `telefone` passando a aceitar NULL, só em cliente anonimizado ([[P3.4 - Anonimizar cliente#RN V2.4|RN V2.4]]).
 
 ## Implementação
 - Migration: `migrations/20260928000001-create-cliente.js` · Model: `Cliente` em `models/index.js`

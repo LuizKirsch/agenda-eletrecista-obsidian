@@ -37,7 +37,7 @@ Módulos [[Cliente e Endereço]], [[Atividade]] e [[Agenda]] implementados. Incl
 ## V7 (em elaboração)
 - Ordem de Serviço separada da [[Agenda]] em módulo próprio ([[Ordem de Serviço (módulo)|Ordem de Serviço]]): RF 6.1 a 6.19 e P6.1 a P6.8; Agenda renumerada para RF 1.1 a 1.12 e P1.1. RF 1.14 e RF 1.22 da V6 divididos entre os dois módulos. Ver [[Proposta - Módulo Ordem de Serviço]].
 - Requisitos de LGPD ([[LGPD - Visão Geral]]) **adiados para a V2 do app** e fora da doc V7 ([[Fora do MVP#V2 do app]]). [[RF 3.11]] e RN 42 mantêm o texto da V6.
-- Endereço da OS continua obrigatório, como na V6 ([[RF 6.1]], [[P6.1 - Criar OS#RN 34|RN 34]]). Na V2 do app, o endereço poderá ser anonimizado ([[RF 3.13]]) sem sair da OS.
+- Endereço da OS continua obrigatório, como na V6 ([[RF 6.1]], [[P6.1 - Criar OS#RN 34|RN 34]]). Na V2 do app, o endereço poderá ser anonimizado (RF V2.3) sem sair da OS.
 - Modelo de dados do [[Orçamento (módulo)|Orçamento]] (em discussão): catálogo passa a ser o [[Tipo de Atividade]] com `valor_padrao`; novas tabelas `orcamento` e `orcamento_item`; [[Item de Serviço]] passa a ser a atividade vinculada ao orçamento, e não mais um catálogo próprio. Ver [[Proposta - Modelo do Orçamento]].
 - Orçamento fechado (19/10/2026): RF 4.1, 4.2 e 4.5 alterados; novos RF 4.8 a 4.15 e processos [[P4.1 - Montar orçamento|P4.1]], [[P4.2 - Aceitar ou recusar orçamento|P4.2]] e [[P4.3 - Editar e excluir orçamento|P4.3]] (RN 44 a RN 55); cliente e endereço obrigatórios no orçamento. Atividade: RF 5.1 a 5.3, 5.5 a 5.7 e RN 17, 19 e 20 alterados (valor padrão; tipo nunca é excluído, só desativado). OS: RF 6.3 e 6.4 alterados (atividade avulsa vinda do orçamento).
 - RNs da V2 (LGPD) passam a usar numeração provisória RN V2.1 a RN V2.10.
