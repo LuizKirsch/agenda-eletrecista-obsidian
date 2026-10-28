@@ -1,6 +1,6 @@
 ---
 tags: [projeto]
-atualizado: 2026-10-27
+atualizado: 2026-10-28
 ---
 # Status da Implementação
 
@@ -11,7 +11,7 @@ Comparação entre a Documentação Técnica V6 e o código em `server/` (até o
 | [[Agenda]] | 12 | 0 | 0 |
 | [[Ordem de Serviço (módulo)\|Ordem de Serviço]] | 18 | 2 | 0 |
 | [[Atividade]] | 7 | 1 | 0 |
-| [[Cliente e Endereço]] | 10 | 2 | 0 |
+| [[Cliente e Endereço]] | 11 | 2 | 0 |
 | [[Usuários e Acesso]] | 10 | 3 | 0 |
 | [[Orçamento (módulo)\|Orçamento]] | 16 | 0 | 0 |
 
@@ -36,7 +36,7 @@ Comparação entre a Documentação Técnica V6 e o código em `server/` (até o
 
 ### Validação das RFs e RNs (27/10/2026)
 Detalhes em [[Validação de RFs e RNs]].
-- Furos corrigidos nas regras e no código: orçamento não bloqueia mais a exclusão de cliente/endereço e é excluído junto ([[P3.3 - Editar e excluir cliente, endereço e observação#RN 42|RN 42]], [[P3.3 - Editar e excluir cliente, endereço e observação#RN 43|RN 43]]); OS vinda de orçamento não troca de cliente ([[P6.4 - Editar OS inteira#RN 57|RN 57]]); a soma dos tempos do orçamento cabe em um dia ([[P4.1 - Montar orçamento#RN 47|RN 47]]); a RN 21 vale só para a criação manual de OS.
+- Furos corrigidos nas regras e no código: orçamento não bloqueia mais a exclusão de cliente/endereço e é excluído junto ([[P3.3 - Editar e excluir cliente, endereço e observação#RN 42|RN 42]], [[P3.3 - Editar e excluir cliente, endereço e observação#RN 43|RN 43]]); OS vinda de orçamento não troca de cliente ([[P6.4 - Editar OS inteira#RN 57|RN 57]]); o aceite do orçamento gera OS em vários dias ([[P4.2 - Aceitar ou recusar orçamento#RN 51|RN 51]], revisto em 28/10/2026); a RN 21 vale só para a criação manual de OS.
 - Decisões registradas como RN, sem mudança de código: [[P4.2 - Aceitar ou recusar orçamento#RN 56|RN 56]], [[P6.4 - Editar OS inteira#RN 58|RN 58]], [[P6.6 - Concluir ou cancelar#RN 59|RN 59]], [[P6.1 - Criar OS#RN 60|RN 60]], [[P3.3 - Editar e excluir cliente, endereço e observação#RN 61|RN 61]].
 - [[RF 1.5]] reescrito para o menu principal; [[RF 3.16]] já estava implementado.
 

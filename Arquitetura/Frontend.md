@@ -16,7 +16,7 @@ React 19 + React Router + Vite em `server/client/`, sem biblioteca de UI. Em des
 | `/usuarios` | Tabela de usuários; novo/editar em diálogo | [[RF 2.8]] a [[RF 2.12]] |
 | `/tipos-atividade` | Tabela de tipos com valor padrão; novo/editar em diálogo. A agenda redireciona para cá quando não há tipo ativo | [[RF 1.5]], [[RF 5.1]] a [[RF 5.8]] |
 | `/orcamentos` | Tabela de orçamentos; "Novo orçamento" abre o formulário em painel e, ao salvar, vai para o detalhe | [[RF 4.8]] a [[RF 4.10]], [[RF 4.14]] |
-| `/orcamentos/:id` | Detalhe com itens e total; pendente tem Editar, Recusar, Excluir e Aceitar (diálogo com data e início, mostra o horário de término). Aceito ou recusado fica só leitura | [[RF 4.11]] a [[RF 4.13]], [[RF 4.15]] |
+| `/orcamentos/:id` | Detalhe com itens e total; pendente tem Editar, Recusar, Excluir e Aceitar (diálogo com data e início gerais, que sugere a agenda item a item, passando para o dia seguinte o que não couber; data e início de cada item são editáveis). Aceito ou recusado fica só leitura | [[RF 4.11]] a [[RF 4.13]], [[RF 4.15]] |
 
 ## Arquivos principais
 - `auth.jsx` — contexto de sessão (`/auth/me` ao abrir); um 401 com usuário logado mostra "Sua sessão expirou".

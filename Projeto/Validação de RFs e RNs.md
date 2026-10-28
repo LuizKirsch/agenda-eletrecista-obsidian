@@ -13,7 +13,7 @@ Revisão de todas as RFs (88) e RNs (55 + 10 da V2) em 27/10/2026, cruzando umas
 | 1 | Cliente com orçamento aceito ou recusado nunca podia ser excluído: a [[P3.3 - Editar e excluir cliente, endereço e observação#RN 42\|RN 42]] bloqueava por orçamento e a [[P4.3 - Editar e excluir orçamento#RN 54\|RN 54]] só exclui orçamento pendente. Na V2, quem tinha só orçamento não podia ser excluído nem anonimizado | Só OS bloqueia; os orçamentos são excluídos junto ([[P3.3 - Editar e excluir cliente, endereço e observação#RN 42\|RN 42]], [[P3.3 - Editar e excluir cliente, endereço e observação#RN 43\|RN 43]], [[RF 3.11]]); código ajustado |
 | 2 | A [[P5.1 - Gerenciar tipos de atividade#RN 21\|RN 21]] (sem tipo ativo não cria OS) contradizia a [[P4.2 - Aceitar ou recusar orçamento#RN 51\|RN 51]] (o aceite gera OS mesmo assim) | A RN 21 e o [[RF 5.8]] valem só para a criação manual |
 | 3 | Editar a OS podia trocar o cliente de uma OS gerada por orçamento | [[P6.4 - Editar OS inteira#RN 57\|RN 57]]: o cliente fica travado; [[RF 6.8]] ajustado; API recusa (409) e o formulário desabilita o campo |
-| 4 | Orçamento com mais de 24 h de serviço nunca podia ser aceito ([[P4.2 - Aceitar ou recusar orçamento#RN 52\|RN 52]]) | [[P4.1 - Montar orçamento#RN 47\|RN 47]]: a soma dos tempos vai até 1.439 min; serviços maiores viram mais de um orçamento; API recusa (400) |
+| 4 | Orçamento com mais de 24 h de serviço nunca podia ser aceito ([[P4.2 - Aceitar ou recusar orçamento#RN 52\|RN 52]]) | Revisto em 28/10/2026: o aceite gera OS em vários dias ([[P4.2 - Aceitar ou recusar orçamento#RN 51\|RN 51]], [[P4.2 - Aceitar ou recusar orçamento#RN 52\|RN 52]], [[RF 4.13]]); o item que não cabe vai para o dia seguinte e cada data é ajustável; sem limite na soma dos tempos ([[P4.1 - Montar orçamento#RN 47\|RN 47]]) |
 
 ## Lacunas
 
@@ -46,6 +46,5 @@ Revisão de todas as RFs (88) e RNs (55 + 10 da V2) em 27/10/2026, cruzando umas
 
 ## Para o grupo decidir
 - [[P6.6 - Concluir ou cancelar#RN 59|RN 59]] e [[P3.3 - Editar e excluir cliente, endereço e observação#RN 61|RN 61]] registram o comportamento atual; vale confirmar se é o desejado.
-- [[P4.1 - Montar orçamento#RN 47|RN 47]] limita o orçamento a um dia de serviço; a alternativa é o aceite distribuir as atividades por vários dias.
 
 Ver também: [[Status da Implementação]]

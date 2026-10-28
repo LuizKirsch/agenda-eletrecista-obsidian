@@ -72,11 +72,11 @@ Todas as rotas ficam sob `/api` e, exceto `POST /auth/login`, exigem sessão vá
 | Método | Rota | Descrição |
 | --- | --- | --- |
 | GET | `/orcamentos` | Lista `id, cliente, criado_em, status, total`, do mais recente para o mais antigo ([[RF 4.14]]) |
-| POST | `/orcamentos` | `{ cliente_id, endereco_id, observacao, itens[] }`; soma dos tempos até 1.439 min ([[P4.1 - Montar orçamento#RN 47\|RN 47]]); item: `{ tipo_atividade_id \| null, descricao, quantidade, valor_unitario, duracao_min }` ([[P4.1 - Montar orçamento]]) |
+| POST | `/orcamentos` | `{ cliente_id, endereco_id, observacao, itens[] }`; item: `{ tipo_atividade_id \| null, descricao, quantidade, valor_unitario, duracao_min }` ([[P4.1 - Montar orçamento]]) |
 | GET | `/orcamentos/:id` | Orçamento com cliente, endereço, itens (com `tipo` ou `null` no avulso), `total` e `ordem_servico_id` |
 | PUT | `/orcamentos/:id` | Só pendente; substitui dados e itens ([[P4.3 - Editar e excluir orçamento#RN 54\|RN 54]]) |
 | DELETE | `/orcamentos/:id` | Só pendente; exclui os itens ([[P4.3 - Editar e excluir orçamento#RN 55\|RN 55]]) |
-| POST | `/orcamentos/:id/aceitar` | `{ data, hora_inicio }` → `{ os_id, aviso_conflito }`; gera a OS encadeando um item por atividade; 409 se não couber no dia ([[P4.2 - Aceitar ou recusar orçamento]]) |
+| POST | `/orcamentos/:id/aceitar` | `{ atividades: [{ data, hora_inicio }] }`, uma por item na ordem dos itens → `{ os_id, aviso_conflito }`; as datas podem ser diferentes; 409 se alguma atividade não couber no próprio dia ([[P4.2 - Aceitar ou recusar orçamento]]) |
 | POST | `/orcamentos/:id/recusar` | Só pendente ([[RF 4.12]]) |
 
 O total é calculado em centavos a cada leitura, nunca gravado ([[P4.1 - Montar orçamento#RN 48|RN 48]]).
