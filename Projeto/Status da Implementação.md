@@ -34,6 +34,12 @@ Comparação entre a Documentação Técnica V6 e o código em `server/` (até o
 - **Tipo nunca é excluído** ([[RF 5.6]], [[P5.1 - Gerenciar tipos de atividade#RN 19|RN 19]]): o código ainda permite excluir tipo sem uso (agora contando também os itens de orçamento); a exclusão deve sair.
 - Resolvidos em 27/10/2026: valor padrão do tipo e uso em orçamentos ([[RF 5.1]] a [[RF 5.3]], [[RF 5.5]], [[RF 5.7]]) e atividade avulsa na OS ([[RF 6.3]], [[RF 6.4]]).
 
+### Validação das RFs e RNs (27/10/2026)
+Detalhes em [[Validação de RFs e RNs]].
+- Furos corrigidos nas regras e no código: orçamento não bloqueia mais a exclusão de cliente/endereço e é excluído junto ([[P3.3 - Editar e excluir cliente, endereço e observação#RN 42|RN 42]], [[P3.3 - Editar e excluir cliente, endereço e observação#RN 43|RN 43]]); OS vinda de orçamento não troca de cliente ([[P6.4 - Editar OS inteira#RN 57|RN 57]]); a soma dos tempos do orçamento cabe em um dia ([[P4.1 - Montar orçamento#RN 47|RN 47]]); a RN 21 vale só para a criação manual de OS.
+- Decisões registradas como RN, sem mudança de código: [[P4.2 - Aceitar ou recusar orçamento#RN 56|RN 56]], [[P6.4 - Editar OS inteira#RN 58|RN 58]], [[P6.6 - Concluir ou cancelar#RN 59|RN 59]], [[P6.1 - Criar OS#RN 60|RN 60]], [[P3.3 - Editar e excluir cliente, endereço e observação#RN 61|RN 61]].
+- [[RF 1.5]] reescrito para o menu principal; [[RF 3.16]] já estava implementado.
+
 ### Orçamento
 - Implementado em 27/10/2026 (`orcamento.service`, telas `/orcamentos`). O vínculo com a OS só nasce do aceite; vincular um orçamento a uma OS já existente ([[RF 4.7]], caminho citado na [[Proposta - Modelo do Orçamento]]) não tem tela.
 - Excluir a OS gerada não apaga o orçamento: `orcamento.ordem_servico_id` tem `ON DELETE SET NULL`, e o orçamento continua aceito, sem OS.

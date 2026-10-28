@@ -35,11 +35,11 @@ Todas as rotas ficam sob `/api` e, exceto `POST /auth/login`, exigem sessão vá
 | POST | `/clientes` | `{ nome, telefone }` ([[RF 3.1]]) |
 | GET | `/clientes/:id` | Cliente com endereços |
 | PUT | `/clientes/:id` | `{ nome, telefone }` ([[RF 3.9]]) |
-| DELETE | `/clientes/:id` | 409 se houver OS ou orçamento; senão exclui endereços, observações e o cliente ([[RF 3.11]]) |
+| DELETE | `/clientes/:id` | 409 se houver OS; senão exclui orçamentos, endereços, observações e o cliente ([[RF 3.11]]) |
 | POST | `/clientes/:id/enderecos` | Novo endereço ([[RF 3.3]]) |
 | GET | `/enderecos/:id` | Endereço com cliente |
 | PUT | `/enderecos/:id` | Mesmos campos do cadastro; devolve o endereço com cliente ([[RF 3.10]]) |
-| DELETE | `/enderecos/:id` | 409 se houver OS ou orçamento; senão exclui as observações e o endereço ([[RF 3.11]]) |
+| DELETE | `/enderecos/:id` | 409 se houver OS; senão exclui os orçamentos do endereço, as observações e o endereço ([[RF 3.11]]) |
 | GET | `/enderecos/:id/observacoes` | Observações, da mais recente para a mais antiga ([[RF 3.7]]) |
 | POST | `/enderecos/:id/observacoes` | `{ texto }` ([[RF 3.5]]) |
 | PUT | `/enderecos/:id/observacoes/:observacaoId` | `{ texto }`; mantém `criado_em` ([[RF 3.10]]) |
@@ -59,8 +59,8 @@ Todas as rotas ficam sob `/api` e, exceto `POST /auth/login`, exigem sessão vá
 | --- | --- | --- |
 | GET | `/agenda?inicio=&fim=` | Atividades do período com `os_id`, `sequencia`, `total`, `tipo`, `status`, `conflito`, cliente e endereço ([[RF 1.1]], [[RF 1.7]], [[RF 6.12]]) |
 | POST | `/os` | `{ cliente_id, endereco_id, observacao, atividades[] }` → `{ id, aviso_conflito }` ([[P6.1 - Criar OS]]) |
-| GET | `/os/:id` | OS com cliente, endereço e atividades (com `conflito`) ([[RF 1.11]]) |
-| PUT | `/os/:id` | Substitui dados e atividades; linhas com `id` são mantidas, as sem `id` são criadas e as ausentes, removidas; renumera a sequência ([[P6.4 - Editar OS inteira]]) |
+| GET | `/os/:id` | OS com cliente, endereço, atividades (com `conflito`) e `orcamento_id` ([[RF 1.11]]) |
+| PUT | `/os/:id` | Substitui dados e atividades; linhas com `id` são mantidas, as sem `id` são criadas e as ausentes, removidas; renumera a sequência; concluídas/canceladas são só leitura e trocar o cliente de OS vinda de orçamento dá 409 ([[P6.4 - Editar OS inteira]]) |
 | DELETE | `/os/:id` | Exclui a OS e as atividades ([[RF 6.18]]) |
 | POST | `/os/:id/deslocar` | `{ atividade_id, data, hora_inicio }`: encadeia as agendadas no dia; 409 se não couber ([[P1.1 - Arrastar atividade#RN 6\|RN 6]]) |
 | POST | `/os/:id/concluir` | Agendadas → concluídas ([[RF 6.16]]) |
@@ -72,7 +72,7 @@ Todas as rotas ficam sob `/api` e, exceto `POST /auth/login`, exigem sessão vá
 | Método | Rota | Descrição |
 | --- | --- | --- |
 | GET | `/orcamentos` | Lista `id, cliente, criado_em, status, total`, do mais recente para o mais antigo ([[RF 4.14]]) |
-| POST | `/orcamentos` | `{ cliente_id, endereco_id, observacao, itens[] }`; item: `{ tipo_atividade_id \| null, descricao, quantidade, valor_unitario, duracao_min }` ([[P4.1 - Montar orçamento]]) |
+| POST | `/orcamentos` | `{ cliente_id, endereco_id, observacao, itens[] }`; soma dos tempos até 1.439 min ([[P4.1 - Montar orçamento#RN 47\|RN 47]]); item: `{ tipo_atividade_id \| null, descricao, quantidade, valor_unitario, duracao_min }` ([[P4.1 - Montar orçamento]]) |
 | GET | `/orcamentos/:id` | Orçamento com cliente, endereço, itens (com `tipo` ou `null` no avulso), `total` e `ordem_servico_id` |
 | PUT | `/orcamentos/:id` | Só pendente; substitui dados e itens ([[P4.3 - Editar e excluir orçamento#RN 54\|RN 54]]) |
 | DELETE | `/orcamentos/:id` | Só pendente; exclui os itens ([[P4.3 - Editar e excluir orçamento#RN 55\|RN 55]]) |

@@ -11,6 +11,7 @@ Sistema de agenda e gestão de Ordens de Serviço para um eletricista autônomo 
 - [[Backlog]]
 - [[Histórico de Versões]]
 - [[Status da Implementação]]
+- [[Validação de RFs e RNs]]
 - [[Histórico de Commits]]
 - [[Fora do MVP]]
 - [[Pendências da Doc V7]]

@@ -5,7 +5,7 @@ modulo: "[[Cliente e Endereço]]"
 prioridade: Média
 alterado: false
 entrega:
-implementacao: pendente
+implementacao: completa
 lgpd: "[[L4 - Aviso no campo de observação|L4]]"
 versao: V2
 ---
@@ -19,3 +19,5 @@ o campo de observação do endereço deve exibir um aviso orientando o registro 
 **Entidades:** [[Observação de Endereço]]
 
 > Origem: ajuste de LGPD [[L4 - Aviso no campo de observação|L4]]. Ver [[LGPD - Visão Geral]].
+
+> Implementado antes da V2: o aviso aparece no formulário de observação do endereço (`Endereco.jsx`).

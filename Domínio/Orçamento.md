@@ -30,5 +30,6 @@ Armazena os orçamentos de um cliente.
 
 ## Implementação
 - Migration: `migrations/20261027000001-create-orcamento.js` · Model: `Orcamento` em `models/index.js` · Regras em `services/orcamento.service.js`
-- `ordem_servico_id` com `ON DELETE SET NULL`: excluir a OS gerada desfaz só o vínculo, e o orçamento aceito continua como histórico (decisão de implementação, 27/10/2026).
+- `ordem_servico_id` com `ON DELETE SET NULL`: excluir a OS gerada desfaz só o vínculo, e o orçamento aceito continua como histórico ([[P4.2 - Aceitar ou recusar orçamento#RN 56|RN 56]]).
+- Excluir o cliente ou o endereço exclui os orçamentos dele no service ([[P3.3 - Editar e excluir cliente, endereço e observação#RN 43|RN 43]]); a FK continua RESTRICT.
 - O vínculo com a OS é criado só pelo aceite ([[RF 4.13]]); não há tela para vincular um orçamento a uma OS já existente.
