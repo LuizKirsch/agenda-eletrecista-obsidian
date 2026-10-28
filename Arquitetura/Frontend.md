@@ -11,8 +11,8 @@ React 19 + React Router + Vite em `server/client/`, sem biblioteca de UI. Em des
 | `/login` | Login | [[RF 2.4]] |
 | `/agenda` | Visão semanal (entrada após o login) | [[RF 1.1]] a [[RF 6.7]] |
 | `/clientes` | Lista com busca (debounce de 300 ms); "Novo cliente" abre um diálogo e, ao salvar, vai para a ficha | [[RF 3.1]], [[RF 3.2]], [[RF 3.8]] |
-| `/clientes/:id` | Cliente e endereços em cartões; "Adicionar endereço" abre um diálogo | [[RF 3.3]] |
-| `/enderecos/:id` | Endereço e observações; "Nova observação" abre um diálogo com o aviso da [[RF 3.16]] | [[RF 3.5]], [[RF 3.7]], [[RF 3.16]] |
+| `/clientes/:id` | Cliente e endereços em cartões; "Adicionar endereço" e "Editar" abrem diálogos; "Excluir" confirma e volta à lista | [[RF 3.3]], [[RF 3.9]], [[RF 3.11]] |
+| `/enderecos/:id` | Endereço e observações; "Nova observação" abre um diálogo com o aviso da [[RF 3.16]]; editar e excluir o endereço no topo e cada observação no próprio cartão | [[RF 3.5]], [[RF 3.7]], [[RF 3.10]] a [[RF 3.12]], [[RF 3.16]] |
 | `/usuarios` | Tabela de usuários; novo/editar em diálogo | [[RF 2.8]] a [[RF 2.12]] |
 | `/tipos-atividade` | Tabela de tipos com valor padrão; novo/editar em diálogo. A agenda redireciona para cá quando não há tipo ativo | [[RF 1.5]], [[RF 5.1]] a [[RF 5.8]] |
 | `/orcamentos` | Tabela de orçamentos; "Novo orçamento" abre o formulário em painel e, ao salvar, vai para o detalhe | [[RF 4.8]] a [[RF 4.10]], [[RF 4.14]] |
@@ -23,8 +23,9 @@ React 19 + React Router + Vite em `server/client/`, sem biblioteca de UI. Em des
 - `api.js` — `fetch` com cookie; transforma `{ erro }` em `Error`.
 - `datas.js` — mesma aritmética de datas do backend; "hoje" calculado em America/Sao_Paulo.
 - `agenda/Grade.jsx` — grade de 24h (48 px por hora, bloco com altura mínima de 20 px).
-- `agenda/OsForm.jsx` — criar, editar e adicionar atividade à OS; a atividade avulsa aparece com a descrição no lugar do tipo.
-- `pages/OrcamentoForm.jsx` — criar e editar orçamento; ao escolher o tipo, copia nome e valor padrão e sugere o tempo como quantidade × duração padrão ([[RF 4.9]]).
+- `agenda/OsForm.jsx` — criar, editar e adicionar atividade à OS; a atividade avulsa aparece com a descrição no lugar do tipo. Com qualquer informação preenchida, toda forma de fechar pede confirmação ([[RF 6.20]]).
+- `pages/OrcamentoForm.jsx` — criar e editar orçamento; o item começa sem atividade escolhida (obrigatório escolher um tipo ou "Avulso"); ao escolher o tipo, copia nome e valor padrão e sugere o tempo como quantidade × duração padrão ([[RF 4.9]]). Com qualquer informação preenchida, toda forma de fechar (Cancelar, ×, clique fora, Esc) pede confirmação ([[RF 4.16]]).
+- `agenda/Modal.jsx` — também exporta `Confirmar` (confirmação de ação destrutiva no lugar do `window.confirm`); a prop `confirmarSaida` do `Modal` ativa a pergunta antes de fechar.
 - `formato.js` — endereço, data/hora, reais (`formatarReais`) e duração (`formatarDuracao`).
 - `agenda/DetalheAtividade.jsx` — OS aberta com a atividade selecionada e as ações.
 - `agenda/RemarcarAtividade.jsx` e `agenda/Modal.jsx` — `<dialog>` nativo que fecha ao clicar fora, com animação.

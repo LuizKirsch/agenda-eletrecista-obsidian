@@ -9,11 +9,11 @@ Comparação entre a Documentação Técnica V6 e o código em `server/` (até o
 | Módulo | Completos | Parciais | Pendentes |
 | --- | --- | --- | --- |
 | [[Agenda]] | 12 | 0 | 0 |
-| [[Ordem de Serviço (módulo)\|Ordem de Serviço]] | 15 | 4 | 0 |
+| [[Ordem de Serviço (módulo)\|Ordem de Serviço]] | 16 | 4 | 0 |
 | [[Atividade]] | 7 | 1 | 0 |
-| [[Cliente e Endereço]] | 7 | 1 | 4 |
+| [[Cliente e Endereço]] | 10 | 2 | 0 |
 | [[Usuários e Acesso]] | 10 | 3 | 0 |
-| [[Orçamento (módulo)\|Orçamento]] | 15 | 0 | 0 |
+| [[Orçamento (módulo)\|Orçamento]] | 16 | 0 | 0 |
 
 ## Divergências com a doc V6
 
@@ -27,7 +27,7 @@ Comparação entre a Documentação Técnica V6 e o código em `server/` (até o
 
 ### Cliente e Endereço
 - **Telefone** ([[RF 3.1]], [[P3.1 - Cadastrar cliente, endereço e observação#RN 37|RN 37]]): não há validação de DDD + 8/9 dígitos nem máscara, e a coluna `cliente.telefone` não é UNIQUE.
-- **Editar e excluir** ([[RF 3.9]] a [[RF 3.12]], [[P3.3 - Editar e excluir cliente, endereço e observação|P3.3]]): ainda não existem rotas nem telas. As FKs de `endereco` e `endereco_observacao` foram criadas sem `ON DELETE CASCADE` ([[P3.3 - Editar e excluir cliente, endereço e observação#RN 43|RN 43]]).
+- **Editar e excluir** ([[RF 3.9]] a [[RF 3.12]], [[P3.3 - Editar e excluir cliente, endereço e observação|P3.3]]): implementado em 27/10/2026. As FKs continuam sem `ON DELETE CASCADE`; a cascata da [[P3.3 - Editar e excluir cliente, endereço e observação#RN 43|RN 43]] é feita nos services. O [[RF 3.9]] fica parcial pelo mesmo motivo do [[RF 3.1]]: a edição não valida o telefone (DDD + 8/9 dígitos, único).
 - **Busca sem acento no SQLite** ([[RF 3.8]]): no MySQL a collation padrão ignora acentos; no SQLite de desenvolvimento, não.
 
 ### Atividade e Orçamento (decisões de 19/10/2026)

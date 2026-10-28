@@ -31,7 +31,7 @@ Armazena os endereços (imóveis) atendidos.
 
 ## Implementação
 - Migration: `migrations/20260928000002-create-endereco.js` · Model: `Endereco` em `models/index.js`
-- ⚠️ FK `cliente_id` **sem ON DELETE CASCADE** ([[P3.3 - Editar e excluir cliente, endereço e observação#RN 43|RN 43]]).
+- FK `cliente_id` sem ON DELETE CASCADE: a exclusão em cadeia ([[P3.3 - Editar e excluir cliente, endereço e observação#RN 43|RN 43]]) é feita em `cliente.service.excluir`, numa transação, depois de conferir que não há OS nem orçamento ([[RF 3.11]]).
 - Divergências: [[Status da Implementação]]
 
 > Fonte: Documentação Técnica V6, seção 15.

@@ -24,7 +24,8 @@ Armazena as observações registradas para cada endereço.
 
 ## Implementação
 - Migration: `migrations/20260928000003-create-endereco-observacao.js` · Model: `EnderecoObservacao` em `models/index.js`
-- ⚠️ FK `endereco_id` **sem ON DELETE CASCADE**.
+- FK `endereco_id` sem ON DELETE CASCADE: as observações são apagadas em `endereco.service.excluir` e `cliente.service.excluir`.
+- A edição troca só o `texto`; `criado_em` não muda ([[P3.3 - Editar e excluir cliente, endereço e observação#RN 41|RN 41]]).
 - Listadas por `criado_em DESC, id DESC`.
 - Divergências: [[Status da Implementação]]
 

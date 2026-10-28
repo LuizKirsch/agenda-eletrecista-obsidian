@@ -34,12 +34,16 @@ Todas as rotas ficam sob `/api` e, exceto `POST /auth/login`, exigem sessão vá
 | GET | `/clientes?busca=` | Lista por nome; `busca` com `LIKE` em nome ou telefone ([[RF 3.8]]) |
 | POST | `/clientes` | `{ nome, telefone }` ([[RF 3.1]]) |
 | GET | `/clientes/:id` | Cliente com endereços |
+| PUT | `/clientes/:id` | `{ nome, telefone }` ([[RF 3.9]]) |
+| DELETE | `/clientes/:id` | 409 se houver OS ou orçamento; senão exclui endereços, observações e o cliente ([[RF 3.11]]) |
 | POST | `/clientes/:id/enderecos` | Novo endereço ([[RF 3.3]]) |
 | GET | `/enderecos/:id` | Endereço com cliente |
+| PUT | `/enderecos/:id` | Mesmos campos do cadastro; devolve o endereço com cliente ([[RF 3.10]]) |
+| DELETE | `/enderecos/:id` | 409 se houver OS ou orçamento; senão exclui as observações e o endereço ([[RF 3.11]]) |
 | GET | `/enderecos/:id/observacoes` | Observações, da mais recente para a mais antiga ([[RF 3.7]]) |
 | POST | `/enderecos/:id/observacoes` | `{ texto }` ([[RF 3.5]]) |
-
-Edição e exclusão ([[RF 3.9]] a [[RF 3.12]]) ainda não têm rotas.
+| PUT | `/enderecos/:id/observacoes/:observacaoId` | `{ texto }`; mantém `criado_em` ([[RF 3.10]]) |
+| DELETE | `/enderecos/:id/observacoes/:observacaoId` | Exclui a observação ([[RF 3.12]]) |
 
 ## Tipos de atividade
 | Método | Rota | Descrição |
