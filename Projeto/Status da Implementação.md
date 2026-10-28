@@ -9,7 +9,7 @@ Comparação entre a Documentação Técnica V6 e o código em `server/` (até o
 | Módulo | Completos | Parciais | Pendentes |
 | --- | --- | --- | --- |
 | [[Agenda]] | 12 | 0 | 0 |
-| [[Ordem de Serviço (módulo)\|Ordem de Serviço]] | 16 | 4 | 0 |
+| [[Ordem de Serviço (módulo)\|Ordem de Serviço]] | 18 | 2 | 0 |
 | [[Atividade]] | 7 | 1 | 0 |
 | [[Cliente e Endereço]] | 10 | 2 | 0 |
 | [[Usuários e Acesso]] | 10 | 3 | 0 |
@@ -19,7 +19,7 @@ Comparação entre a Documentação Técnica V6 e o código em `server/` (até o
 
 ### Ordem de Serviço
 - **Endereço opcional na OS** ([[RF 6.1]], [[P6.1 - Criar OS#RN 34|RN 34]]): a migration cria `ordem_servico.endereco_id` sem NOT NULL, o `OsForm` envia `endereco_id: null` quando nenhum endereço é escolhido e o controller só exige o cliente. O endereço é obrigatório.
-- **Concluídas/canceladas editáveis na edição da OS** ([[RF 6.11]], [[RF 6.8]], [[P6.4 - Editar OS inteira#RN 9|RN 9]]): o `OsForm` carrega todas as atividades como linhas editáveis e removíveis, e `os.service.atualizar` atualiza ou apaga qualquer uma sem conferir o status. Além disso, `lerOs` não rejeita linhas com o mesmo `id`: a atividade é atualizada duas vezes e a sequência fica com buraco ([[P6.4 - Editar OS inteira#RN 35|RN 35]]).
+- **Concluídas/canceladas editáveis na edição da OS** ([[RF 6.11]], [[RF 6.8]], [[P6.4 - Editar OS inteira#RN 9|RN 9]]): resolvido em 27/10/2026. O `OsForm` mostra essas atividades só para leitura e `os.service.atualizar` recusa removê-las (409) e ignora alterações nelas, mantendo só a renumeração da sequência; linhas com o mesmo `id` são recusadas (400).
 - **Busca e cadastro rápido no formulário da OS** ([[RF 6.2]]): o cliente é escolhido em um `<select>` com a lista inteira, sem busca e sem cadastro inline de cliente ou endereço.
 
 ### Usuários e Acesso
