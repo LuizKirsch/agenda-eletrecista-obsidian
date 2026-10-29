@@ -4,8 +4,8 @@
 			"id": "n0",
 			"type": "file",
 			"file": "Domínio/Usuário.md",
-			"x": -700,
-			"y": -300,
+			"x": -175,
+			"y": 600,
 			"width": 280,
 			"height": 160
 		},
@@ -89,7 +89,7 @@
 			"y": -480,
 			"width": 630,
 			"height": 120,
-			"text": "## Mapa do Domínio\nCada cartão é a nota da entidade — dê dois cliques para abrir. Usuário não se liga às outras entidades (não há auditoria no MVP)."
+			"text": "## Mapa do Domínio\nCada cartão é a nota da entidade — dê dois cliques para abrir. Usuário (perfil eletricista) é o responsável pela OS e o executor de cada atividade (RF 6.21, RF 6.22); não há auditoria no MVP."
 		}
 	],
 	"edges": [
@@ -164,6 +164,22 @@
 			"toNode": "n8",
 			"toSide": "left",
 			"label": "N : 0..1 (atividade do catálogo)"
+		},
+		{
+			"id": "eUsuAti",
+			"fromNode": "n0",
+			"fromSide": "top",
+			"toNode": "n7",
+			"toSide": "bottom",
+			"label": "1 : N (eletricista da atividade)"
+		},
+		{
+			"id": "eUsuOrd",
+			"fromNode": "n0",
+			"fromSide": "right",
+			"toNode": "n4",
+			"toSide": "right",
+			"label": "1 : N (responsável)"
 		}
 	]
 }

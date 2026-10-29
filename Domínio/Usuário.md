@@ -12,6 +12,8 @@ Armazena os usuários com acesso ao sistema.
 > Dois perfis: eletricista e secretária. O perfil identifica o usuário e restringe apenas o cadastro, a edição e a exclusão de usuários, exclusivos da secretária ([[RF 2.2]], [[RF 2.3]], [[RF 2.9]], [[RF 2.10]], [[RF 2.11]]). A secretária inicial é criada pela migration da tabela ([[RF 2.13]]).
 
 ## Relacionamentos
+- 1 eletricista → N [[Ordem de Serviço]] (responsável, [[RF 6.21]])
+- 1 eletricista → N [[Atividade da OS]] ([[RF 6.22]]); com atividades vinculadas, não pode ser excluído ([[RF 2.14]])
 
 ## Dicionário de dados
 | Nome | Descrição | Tipo | Tamanho | Restrições |

@@ -14,6 +14,7 @@ Armazena as Ordens de Serviço (OS).
 ## Relacionamentos
 - N OS → 1 [[Cliente]]
 - N OS → 1 [[Endereço]]
+- N OS → 1 [[Usuário]] (eletricista responsável, [[RF 6.21]])
 - 1 OS → N [[Atividade da OS]]
 - 0..1 [[Orçamento]] vinculado (RF 4.7)
 
@@ -23,7 +24,8 @@ Armazena as Ordens de Serviço (OS).
 | `id` | Identificador único | BIGINT Unsigned | 20 | PK NOT NULL |
 | `cliente_id` | Cliente da OS | BIGINT Unsigned | 20 | FK cliente, NOT NULL, ON DELETE RESTRICT |
 | `endereco_id` | Endereço do atendimento | BIGINT Unsigned | 20 | FK endereco, NOT NULL, ON DELETE RESTRICT |
-| `observacao` | Observações livres da OS | TEXT |  |  |
+| `eletricista_id` | Eletricista responsável ([[RF 6.21]]) | BIGINT Unsigned | 20 | FK usuario (perfil eletricista), NOT NULL, ON DELETE RESTRICT — **novo, pendente** |
+| `observacao` | Observação da OS (uma por OS) | TEXT |  |  |
 
 ## Implementação
 - Migration: `migrations/20260930000001-create-ordem-servico.js` · Model: `OrdemServico` em `models/index.js`

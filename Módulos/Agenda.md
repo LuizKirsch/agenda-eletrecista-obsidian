@@ -12,7 +12,7 @@ Nenhuma própria: exibe e move as [[Atividade da OS|atividades]] das [[Ordem de 
 ## Processos e regras de negócio
 - [[P1.1 - Arrastar atividade]]
 
-## Requisitos funcionais (12)
+## Requisitos funcionais (14)
 - [[RF 1.1]] (Alta) — O sistema deve exibir a agenda em visão semanal, de segunda a domingo, em período integral (das 00h00 às 23h59…
 - [[RF 1.2]] (Alta) — o sistema deve permitir navegar para a semana anterior e para a próxima, e retornar à semana atual
 - [[RF 1.3]] (Média) — o sistema deve destacar o dia atual na visão semanal
@@ -25,6 +25,8 @@ Nenhuma própria: exibe e move as [[Atividade da OS|atividades]] das [[Ordem de 
 - [[RF 1.10]] (Alta) — ao arrastar uma atividade de uma OS que possua mais de uma atividade agendada, o sistema deve perguntar se a r…
 - [[RF 1.11]] (Alta) — ao selecionar um bloco (atividade ou grupo), o sistema deve abrir o detalhe da OS (RF 6.19) com a atividade se…
 - [[RF 1.12]] (Média) — as alterações realizadas na agenda devem refletir imediatamente na visão semanal
+- [[RF 1.13]] (Alta) — o sistema deve permitir filtrar a agenda por eletricista…
+- [[RF 1.14]] (Média) — cada bloco da agenda deve identificar o eletricista da atividade
 
 > Separada do módulo Ordem de Serviço na V7. Ver [[Proposta - Módulo Ordem de Serviço]].
 

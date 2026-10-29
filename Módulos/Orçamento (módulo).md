@@ -19,7 +19,7 @@ Modelo de dados: [[Proposta - Modelo do Orçamento]]
 - [[P4.2 - Aceitar ou recusar orçamento]]
 - [[P4.3 - Editar e excluir orçamento]]
 
-## Requisitos funcionais (16)
+## Requisitos funcionais (20)
 - [[RF 4.1]] (Média) — o sistema deve permitir informar um valor padrão em cada tipo de atividade, usado como valor sugerido do item…
 - [[RF 4.2]] (Média) — o catálogo de tipos de atividade deve ser reutilizável em múltiplos orçamentos; somente tipos ativos podem ser…
 - [[RF 4.3]] (Média) — o sistema deve permitir alterar o valor de um item apenas dentro de um orçamento específico
@@ -36,5 +36,9 @@ Modelo de dados: [[Proposta - Modelo do Orçamento]]
 - [[RF 4.14]] (Média) — o sistema deve listar os orçamentos com cliente, data de criação, status e total, do mais recente para o mais antig…
 - [[RF 4.15]] (Média) — o sistema deve permitir editar e excluir, com confirmação, somente o orçamento pendente; o orçamento aceito ou…
 - [[RF 4.16]] (Média) — ao fechar o formulário de orçamento depois de qualquer informação preenchida, por qualquer meio (Cancelar, Fechar, clique fora…
+- [[RF 4.17]] (Alta) — buscar e cadastrar cliente e endereço sem sair do formulário de orçamento
+- [[RF 4.18]] (Média) — exportar o orçamento em PDF, em qualquer status, para envio ao cliente
+- [[RF 4.19]] (Alta) — no aceite, recomendar data e horário de cada atividade sem sobrepor a agenda do eletricista escolhido
+- [[RF 4.20]] (Média) — manter o histórico de versões do orçamento; cada edição salva gera uma nova versão, e as anteriores ficam só para leitura
 
 Voltar: [[00 - Visão Geral]]

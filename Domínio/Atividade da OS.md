@@ -14,6 +14,7 @@ Armazena as atividades agendadas de cada OS.
 ## Relacionamentos
 - N atividades → 1 [[Ordem de Serviço]]
 - N atividades → 1 [[Tipo de Atividade]]
+- N atividades → 1 [[Usuário]] (eletricista, [[RF 6.22]])
 
 ## Dicionário de dados
 | Nome | Descrição | Tipo | Tamanho | Restrições |
@@ -22,6 +23,7 @@ Armazena as atividades agendadas de cada OS.
 | `ordem_servico_id` | OS à qual pertence | BIGINT Unsigned | 20 | FK ordem_servico, NOT NULL |
 | `tipo_atividade_id` | Tipo da atividade (NULL = avulsa) | BIGINT Unsigned | 20 | FK tipo_atividade, NULL, ON DELETE RESTRICT ([[Proposta - Modelo do Orçamento]]) |
 | `descricao` | Nome da atividade avulsa, vinda do orçamento | VARCHAR | 100 | obrigatório quando `tipo_atividade_id` é NULL |
+| `eletricista_id` | Eletricista da atividade ([[RF 6.22]]) | BIGINT Unsigned | 20 | FK usuario (perfil eletricista), NOT NULL, ON DELETE RESTRICT — **novo, pendente** |
 | `sequencia` | Posição da atividade na OS | INT |  | NOT NULL |
 | `data` | Data da atividade | DATE |  | NOT NULL |
 | `hora_inicio` | Horário de início | TIME |  | NOT NULL |
