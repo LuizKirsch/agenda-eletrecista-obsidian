@@ -5,7 +5,7 @@ modulo: "[[Orçamento (módulo)]]"
 prioridade: Baixa
 alterado: true
 entrega: 3
-implementacao: pendente
+implementacao: fora do escopo
 ---
 # RF 4.21
 
@@ -17,6 +17,7 @@ na recomendação de horários do aceite ([[RF 4.19]]), o sistema deve considera
 
 > Origem: ideia do Luiz (06/11/2026). Em análise: ainda não virou regra, nem foi para o banco ou para o código.
 > Fora da documentação técnica da V1 do sistema (decisão de 11/11/2026).
+> Não será implementado por enquanto: o sistema não usa geolocalização (decisão de 13/11/2026).
 
 ## Proposta (rascunho)
 - **Geocodificação:** salvar `latitude` e `longitude` no [[Endereço]] uma vez, ao cadastrar ou editar.

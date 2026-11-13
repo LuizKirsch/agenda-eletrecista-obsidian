@@ -15,7 +15,7 @@ Comparação entre a Documentação Técnica V6 e o código em `server/` (até o
 | [[Usuários e Acesso]] | 14 | 0 | 0 |
 | [[Orçamento (módulo)\|Orçamento]] | 20 | 0 | 0 |
 
-Todos os RFs estão implementados, exceto o [[RF 4.21]] (deslocamento por geolocalização na recomendação), registrado em 06/11/2026 para análise posterior. O [[RF 4.19]] (recomendação de horários) e o [[RF 4.13]] foram concluídos em 06/11/2026. A [[P4.2 - Aceitar ou recusar orçamento#RN 68|RN 68]] também: com conflito no confirmar, a API recusa (409, `codigo: conflito`) e a tela oferece recalcular ou gerar a OS mesmo assim. O [[RF 6.23]] (exportar OS em PDF) foi criado e implementado em 06/11/2026.
+Todos os RFs estão implementados, exceto o [[RF 4.21]] (deslocamento por geolocalização na recomendação), que ficou fora do escopo em 13/11/2026 ([[Fora do MVP]]). O [[RF 4.19]] (recomendação de horários) e o [[RF 4.13]] foram concluídos em 06/11/2026. A [[P4.2 - Aceitar ou recusar orçamento#RN 68|RN 68]] também: com conflito no confirmar, a API recusa (409, `codigo: conflito`) e a tela oferece recalcular ou gerar a OS mesmo assim. O [[RF 6.23]] (exportar OS em PDF) foi criado e implementado em 06/11/2026.
 
 ## Entrega de 06/11/2026
 Feita em quatro frentes paralelas e juntada na `main` no commit `d4f00e4`; migrations aplicadas no `dev.sqlite` (backup em `dev.sqlite.antes-rfs-2026-11-06.bak`).

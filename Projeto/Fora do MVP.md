@@ -8,6 +8,7 @@ tags: [projeto]
 - Modo offline robusto
 - Consulta do histórico de OS por endereço ou por cliente
 - Registro de quem criou ou alterou cada registro
+- Deslocamento por geolocalização na recomendação de horários ([[RF 4.21]]): o sistema não usa geolocalização (decisão de 13/11/2026)
 
 ## V2 do app
 

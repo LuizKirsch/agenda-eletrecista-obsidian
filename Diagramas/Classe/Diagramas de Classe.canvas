@@ -1,0 +1,8 @@
+{
+  "nodes": [
+    {"id": "geral", "type": "file", "file": "Diagramas/Classe/Classe - Geral.md", "x": 0, "y": 0, "width": 1600, "height": 1400},
+    {"id": "criar-os", "type": "file", "file": "Diagramas/Classe/Classe - Criar OS.md", "x": 1700, "y": 0, "width": 1100, "height": 900},
+    {"id": "aceitar", "type": "file", "file": "Diagramas/Classe/Classe - Aceitar Orçamento.md", "x": 1700, "y": 1000, "width": 1100, "height": 1100}
+  ],
+  "edges": []
+}
