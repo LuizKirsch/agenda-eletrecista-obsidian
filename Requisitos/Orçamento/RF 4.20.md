@@ -5,7 +5,7 @@ modulo: "[[Orçamento (módulo)]]"
 prioridade: Média
 alterado: true
 entrega: 2
-implementacao: pendente
+implementacao: completa
 ---
 # RF 4.20
 
@@ -13,5 +13,6 @@ o sistema deve manter o histórico de versões do orçamento: cada edição salv
 
 **Módulo:** [[Orçamento (módulo)|Orçamento]]
 **Entidades:** [[Orçamento]], [[Item de Serviço]]
+**Implementação:** tabela [[Versão do Orçamento|orcamento_versao]]; cada edição salva grava o estado anterior como versão numerada, consultada só para leitura na tela do orçamento (06/11/2026).
 
 > Origem: pedido do Luiz (28/10/2026), junto com os ajustes da apresentação. Regras e mudanças no banco ficam para um segundo momento.

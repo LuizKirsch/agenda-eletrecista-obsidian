@@ -5,7 +5,7 @@ modulo: "[[Cliente e Endereço]]"
 prioridade: Alta
 alterado: true
 entrega: 1
-implementacao: parcial
+implementacao: completa
 ---
 # RF 3.1
 
@@ -14,6 +14,6 @@ O sistema deve permitir cadastrar cliente com campos mínimos: nome e telefone; 
 **Módulo:** [[Cliente e Endereço]]
 **Entidades:** [[Cliente]]
 
-**Implementação:** nome e telefone já são obrigatórios, mas o telefone não tem validação de DDD + 8/9 dígitos, não tem máscara e `cliente.telefone` não é UNIQUE. Ver [[Status da Implementação]].
+**Implementação:** validação de DDD + 8/9 dígitos, máscara na tela e unicidade em `cliente.service.validarTelefone`; o banco guarda só os dígitos (06/11/2026). A coluna ainda não é UNIQUE, ver [[Cliente]].
 
 > Fonte: Documentação Técnica V6, seção 4.

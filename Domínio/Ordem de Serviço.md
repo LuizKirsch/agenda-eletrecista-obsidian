@@ -24,13 +24,15 @@ Armazena as Ordens de Serviço (OS).
 | `id` | Identificador único | BIGINT Unsigned | 20 | PK NOT NULL |
 | `cliente_id` | Cliente da OS | BIGINT Unsigned | 20 | FK cliente, NOT NULL, ON DELETE RESTRICT |
 | `endereco_id` | Endereço do atendimento | BIGINT Unsigned | 20 | FK endereco, NOT NULL, ON DELETE RESTRICT |
-| `eletricista_id` | Eletricista responsável ([[RF 6.21]]) | BIGINT Unsigned | 20 | FK usuario (perfil eletricista), NOT NULL, ON DELETE RESTRICT — **novo, pendente** |
+| `eletricista_id` | Eletricista responsável ([[RF 6.21]]) | BIGINT Unsigned | 20 | FK usuario (perfil eletricista), NOT NULL, ON DELETE RESTRICT |
 | `observacao` | Observação da OS (uma por OS) | TEXT |  |  |
 
 ## Implementação
 - Migration: `migrations/20260930000001-create-ordem-servico.js` · Model: `OrdemServico` em `models/index.js`
 - FKs sem `ON DELETE` explícito (o padrão do banco já impede excluir cliente/endereço com OS). Ao excluir a OS, o service apaga as atividades antes.
-- ⚠️ `endereco_id` **sem NOT NULL** na migration; a API aceita OS sem endereço ([[RF 6.1]]).
+- `eletricista_id` entrou em `migrations/20261106000100-add-eletricista-os-atividade.js`, FK `RESTRICT` (eletricista com OS não é excluído, [[RF 2.14]]). As OS que já existiam receberam o primeiro eletricista cadastrado, ativo de preferência.
+- ⚠️ `eletricista_id` **sem NOT NULL** no banco; a API exige o responsável e recusa usuário inativo ou de outro perfil ([[RF 6.21]]).
+- ⚠️ `endereco_id` **sem NOT NULL** no banco; desde 06/11/2026 a API exige o endereço e confere que é do cliente ([[RF 6.1]]). Nenhuma OS do `dev.sqlite` está sem endereço.
 - Divergências: [[Status da Implementação]]
 
 > Fonte: Documentação Técnica V6, seção 15.

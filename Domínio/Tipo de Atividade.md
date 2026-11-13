@@ -28,6 +28,7 @@ Armazena o catálogo de tipos de atividade e sua duração padrão.
 - Migration: `migrations/20260929000001-create-tipo-atividade.js` · Model: `TipoAtividade` em `models/index.js`
 - CHECK `chk_tipo_atividade_duracao` (5 a 720) e `chk_tipo_atividade_valor` (NULL ou ≥ 0); `valor_padrao` veio em `migrations/20261027000001-create-orcamento.js`.
 - No SQLite, a coluna `nome` usa `COLLATE NOCASE` ([[Decisão - SQLite em Desenvolvimento]]).
+- Não há rota de exclusão: o tipo só é desativado ou reativado ([[RF 5.6]], 06/11/2026).
 - O uso (`uso`) é contado em `tipoAtividade.service.contarUso`, somando atividades de OS e itens de orçamento ([[RF 5.7]]).
 - Divergências: [[Status da Implementação]]
 

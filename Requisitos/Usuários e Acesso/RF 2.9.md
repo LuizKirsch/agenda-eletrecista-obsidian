@@ -5,7 +5,7 @@ modulo: "[[Usuários e Acesso]]"
 prioridade: Alta
 alterado: true
 entrega: 3
-implementacao: parcial
+implementacao: completa
 ---
 # RF 2.9
 
@@ -14,6 +14,6 @@ somente a secretária pode cadastrar usuário, informando nome, login, senha e p
 **Módulo:** [[Usuários e Acesso]]
 **Entidades:** [[Usuário]]
 
-**Implementação:** `POST /api/usuarios` não usa o middleware `somenteSecretaria`, e a tela de Usuários mostra o formulário de cadastro para os dois perfis. Ver [[Status da Implementação]].
+**Implementação:** `POST /api/usuarios` usa `somenteSecretaria` (403 para o eletricista) (06/11/2026).
 
 > Fonte: Documentação Técnica V6, seção 4.

@@ -5,7 +5,7 @@ modulo: "[[Orçamento (módulo)]]"
 prioridade: Alta
 alterado: true
 entrega: 2
-implementacao: parcial
+implementacao: completa
 ---
 # RF 4.13
 
@@ -13,6 +13,7 @@ ao aceitar um orçamento, o sistema deve gerar uma OS com o cliente e o endereç
 
 **Módulo:** [[Orçamento (módulo)|Orçamento]]
 **Entidades:** [[Orçamento]], [[Item de Serviço]], [[Ordem de Serviço]], [[Atividade da OS]]
+**Implementação:** o aceite exige o eletricista responsável, aceita um eletricista por atividade e recomenda os horários pela agenda do eletricista ([[RF 4.19]]); data e início continuam editáveis (06/11/2026).
 **Regras:** [[P4.2 - Aceitar ou recusar orçamento]]
 
 > Origem: decisão do projeto (19/10/2026). Ver [[Proposta - Modelo do Orçamento]].

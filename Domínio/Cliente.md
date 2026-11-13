@@ -26,7 +26,8 @@ Armazena os clientes atendidos.
 
 ## Implementação
 - Migration: `migrations/20260928000001-create-cliente.js` · Model: `Cliente` em `models/index.js`
-- ⚠️ `telefone` **sem UNIQUE** e sem validação de formato ([[RF 3.1]]).
+- Telefone validado em `cliente.service.validarTelefone` (DDD 11 a 99 + 8 ou 9 dígitos) no cadastro e na edição; o banco guarda só os dígitos e a tela mostra com máscara ([[RF 3.1]], [[RF 3.9]]).
+- ⚠️ `telefone` **sem UNIQUE** no banco: a unicidade é conferida no service, comparando só os dígitos. O `dev.sqlite` tem 3 clientes de teste com o mesmo telefone (`519999999956`, que também é inválido); limpar antes de criar o índice.
 - `criado_em` não é enviado no INSERT; o banco preenche, e o service faz `reload()` para devolvê-lo ([[P3.1 - Cadastrar cliente, endereço e observação#RN 38|RN 38]]).
 - Divergências: [[Status da Implementação]]
 

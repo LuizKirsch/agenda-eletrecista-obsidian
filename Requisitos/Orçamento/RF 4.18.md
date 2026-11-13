@@ -5,7 +5,7 @@ modulo: "[[Orçamento (módulo)]]"
 prioridade: Média
 alterado: true
 entrega: 2
-implementacao: pendente
+implementacao: completa
 ---
 # RF 4.18
 
@@ -13,6 +13,7 @@ o sistema deve permitir exportar o orçamento em PDF, em qualquer status, para e
 
 **Módulo:** [[Orçamento (módulo)|Orçamento]]
 **Entidades:** [[Orçamento]], [[Item de Serviço]], [[Cliente]], [[Endereço]]
+**Implementação:** botão "Exportar PDF" na tela do orçamento, via impressão do navegador (`@media print`), sem a coluna de tempo (06/11/2026).
 **Regras:** [[P4.1 - Montar orçamento]]
 
 > Origem: pedido do professor na apresentação de 28/10/2026.

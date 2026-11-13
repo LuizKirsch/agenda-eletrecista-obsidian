@@ -5,7 +5,7 @@ modulo: "[[Cliente e Endereço]]"
 prioridade: Média
 alterado: false
 entrega: 1
-implementacao: parcial
+implementacao: completa
 ---
 # RF 3.9
 
@@ -14,6 +14,6 @@ o sistema deve permitir editar o nome e o telefone do cliente, mantendo as regra
 **Módulo:** [[Cliente e Endereço]]
 **Entidades:** [[Cliente]]
 
-**Implementação:** não há rota nem tela de edição de cliente. Ver [[Status da Implementação]].
+**Implementação:** a edição usa a mesma validação de telefone do [[RF 3.1]] (06/11/2026).
 
 > Fonte: Documentação Técnica V6, seção 4.

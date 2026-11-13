@@ -6,7 +6,7 @@ modulo: "[[Ordem de Serviço (módulo)]]"
 prioridade: Alta
 alterado: true
 entrega: 1
-implementacao: parcial
+implementacao: completa
 ---
 # RF 6.1
 
@@ -15,7 +15,7 @@ o sistema deve permitir criar uma Ordem de Serviço (OS) informando cliente, end
 **Módulo:** [[Ordem de Serviço (módulo)|Ordem de Serviço]]
 **Entidades:** [[Ordem de Serviço]], [[Atividade da OS]], [[Cliente]], [[Endereço]], [[Observação de Endereço]]
 
-**Implementação:** o código ainda aceita OS sem endereço (`ordem_servico.endereco_id` sem NOT NULL, `OsForm` envia `null` e o controller não exige). Ver [[Status da Implementação]].
+**Implementação:** a API exige o endereço e confere que é do cliente (400) (06/11/2026). A coluna `ordem_servico.endereco_id` continua aceitando NULL, ver [[Ordem de Serviço]].
 
 > Fonte: Documentação Técnica V6, seção 4.
 > Numeração V7 (separação do módulo Ordem de Serviço); na V6: RF 1.4.

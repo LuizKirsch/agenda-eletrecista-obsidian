@@ -1,37 +1,48 @@
 ---
 tags: [projeto]
-atualizado: 2026-10-28
+atualizado: 2026-11-06
 ---
 # Status da Implementação
 
-Comparação entre a Documentação Técnica V6 e o código em `server/` (até o commit `50ef569`, 05/10/2026, mais o módulo Orçamento implementado em 27/10/2026, ainda sem commit). Cada RF tem a propriedade `implementacao` (`completa`, `parcial` ou `pendente`), e a view **Implementação** de [[Requisitos.base|Requisitos]] lista os que faltam.
+Comparação entre a Documentação Técnica V6 e o código em `server/` (até o commit `d4f00e4`, 06/11/2026). Cada RF tem a propriedade `implementacao` (`completa`, `parcial` ou `pendente`), e a view **Implementação** de [[Requisitos.base|Requisitos]] lista os que faltam.
 
 | Módulo | Completos | Parciais | Pendentes |
 | --- | --- | --- | --- |
-| [[Agenda]] | 12 | 0 | 0 |
-| [[Ordem de Serviço (módulo)\|Ordem de Serviço]] | 18 | 2 | 0 |
-| [[Atividade]] | 7 | 1 | 0 |
-| [[Cliente e Endereço]] | 11 | 2 | 0 |
-| [[Usuários e Acesso]] | 10 | 3 | 0 |
-| [[Orçamento (módulo)\|Orçamento]] | 16 | 0 | 0 |
+| [[Agenda]] | 14 | 0 | 0 |
+| [[Ordem de Serviço (módulo)\|Ordem de Serviço]] | 23 | 0 | 0 |
+| [[Atividade]] | 8 | 0 | 0 |
+| [[Cliente e Endereço]] | 13 | 0 | 0 |
+| [[Usuários e Acesso]] | 14 | 0 | 0 |
+| [[Orçamento (módulo)\|Orçamento]] | 20 | 0 | 0 |
+
+Todos os RFs estão implementados, exceto o [[RF 4.21]] (deslocamento por geolocalização na recomendação), registrado em 06/11/2026 para análise posterior. O [[RF 4.19]] (recomendação de horários) e o [[RF 4.13]] foram concluídos em 06/11/2026. A [[P4.2 - Aceitar ou recusar orçamento#RN 68|RN 68]] também: com conflito no confirmar, a API recusa (409, `codigo: conflito`) e a tela oferece recalcular ou gerar a OS mesmo assim. O [[RF 6.23]] (exportar OS em PDF) foi criado e implementado em 06/11/2026.
+
+## Entrega de 06/11/2026
+Feita em quatro frentes paralelas e juntada na `main` no commit `d4f00e4`; migrations aplicadas no `dev.sqlite` (backup em `dev.sqlite.antes-rfs-2026-11-06.bak`).
+- **Eletricista por OS e por atividade**: [[RF 6.21]], [[RF 6.22]], [[RF 1.13]], [[RF 1.14]], [[RF 6.19]], [[RF 6.12]], [[RF 2.14]] e a escolha do eletricista no aceite ([[RF 4.13]]). Migration `20261106000100-add-eletricista-os-atividade.js`.
+- **Permissões, telefone e tipos**: [[RF 2.2]], [[RF 2.3]], [[RF 2.9]], [[RF 2.11]], [[RF 3.1]], [[RF 3.9]], [[RF 5.6]]. Sem migration.
+- **Cliente e endereço nos formulários**: [[RF 6.1]], [[RF 6.2]], [[RF 4.17]] (componente `SeletorClienteEndereco`). Sem migration.
+- **Orçamento**: [[RF 4.18]] (PDF pela impressão do navegador) e [[RF 4.20]] ([[Versão do Orçamento]], migration `20261106000400-create-orcamento-versao.js`).
+- Teste integrado da API numa cópia do banco: 25 de 25 checagens. As telas só passaram pelo build; não foram abertas no navegador.
+- Decisões que precisam de aval: as OS antigas receberam o primeiro eletricista cadastrado (no `dev.sqlite`, o Edson, que está inativo); remarcar ou arrastar não troca o eletricista; trocar o perfil de um eletricista com vínculos não é bloqueado.
 
 ## Divergências com a doc V6
 
 ### Ordem de Serviço
-- **Endereço opcional na OS** ([[RF 6.1]], [[P6.1 - Criar OS#RN 34|RN 34]]): a migration cria `ordem_servico.endereco_id` sem NOT NULL, o `OsForm` envia `endereco_id: null` quando nenhum endereço é escolhido e o controller só exige o cliente. O endereço é obrigatório.
+- **Endereço opcional na OS** ([[RF 6.1]], [[P6.1 - Criar OS#RN 34|RN 34]]): resolvido na API em 06/11/2026; a coluna continua aceitando NULL (ver "Diferenças no banco").
 - **Concluídas/canceladas editáveis na edição da OS** ([[RF 6.11]], [[RF 6.8]], [[P6.4 - Editar OS inteira#RN 9|RN 9]]): resolvido em 27/10/2026. O `OsForm` mostra essas atividades só para leitura e `os.service.atualizar` recusa removê-las (409) e ignora alterações nelas, mantendo só a renumeração da sequência; linhas com o mesmo `id` são recusadas (400).
-- **Busca e cadastro rápido no formulário da OS** ([[RF 6.2]]): o cliente é escolhido em um `<select>` com a lista inteira, sem busca e sem cadastro inline de cliente ou endereço.
+- **Busca e cadastro rápido no formulário da OS** ([[RF 6.2]]): resolvido em 06/11/2026.
 
 ### Usuários e Acesso
-- **Cadastro de usuário liberado ao eletricista** ([[RF 2.9]], [[P2.3 - Cadastrar, editar e excluir usuário#RN 29|RN 29]]): `routes/usuario.routes.js` aplica `somenteSecretaria` só em PUT e DELETE; o POST e o formulário da tela ficam abertos aos dois perfis.
+- **Cadastro de usuário liberado ao eletricista** ([[RF 2.9]], [[P2.3 - Cadastrar, editar e excluir usuário#RN 29|RN 29]]): resolvido em 06/11/2026.
 
 ### Cliente e Endereço
-- **Telefone** ([[RF 3.1]], [[P3.1 - Cadastrar cliente, endereço e observação#RN 37|RN 37]]): não há validação de DDD + 8/9 dígitos nem máscara, e a coluna `cliente.telefone` não é UNIQUE.
-- **Editar e excluir** ([[RF 3.9]] a [[RF 3.12]], [[P3.3 - Editar e excluir cliente, endereço e observação|P3.3]]): implementado em 27/10/2026. As FKs continuam sem `ON DELETE CASCADE`; a cascata da [[P3.3 - Editar e excluir cliente, endereço e observação#RN 43|RN 43]] é feita nos services. O [[RF 3.9]] fica parcial pelo mesmo motivo do [[RF 3.1]]: a edição não valida o telefone (DDD + 8/9 dígitos, único).
+- **Telefone** ([[RF 3.1]], [[P3.1 - Cadastrar cliente, endereço e observação#RN 37|RN 37]]): validação e máscara resolvidas em 06/11/2026; a coluna `cliente.telefone` ainda não é UNIQUE.
+- **Editar e excluir** ([[RF 3.9]] a [[RF 3.12]], [[P3.3 - Editar e excluir cliente, endereço e observação|P3.3]]): implementado em 27/10/2026. As FKs continuam sem `ON DELETE CASCADE`; a cascata da [[P3.3 - Editar e excluir cliente, endereço e observação#RN 43|RN 43]] é feita nos services. A edição passou a validar o telefone em 06/11/2026 ([[RF 3.9]]).
 - **Busca sem acento no SQLite** ([[RF 3.8]]): no MySQL a collation padrão ignora acentos; no SQLite de desenvolvimento, não.
 
 ### Atividade e Orçamento (decisões de 19/10/2026)
-- **Tipo nunca é excluído** ([[RF 5.6]], [[P5.1 - Gerenciar tipos de atividade#RN 19|RN 19]]): o código ainda permite excluir tipo sem uso (agora contando também os itens de orçamento); a exclusão deve sair.
+- **Tipo nunca é excluído** ([[RF 5.6]], [[P5.1 - Gerenciar tipos de atividade#RN 19|RN 19]]): resolvido em 06/11/2026; a exclusão saiu da API e da tela.
 - Resolvidos em 27/10/2026: valor padrão do tipo e uso em orçamentos ([[RF 5.1]] a [[RF 5.3]], [[RF 5.5]], [[RF 5.7]]) e atividade avulsa na OS ([[RF 6.3]], [[RF 6.4]]).
 
 ### Validação das RFs e RNs (27/10/2026)
@@ -47,10 +58,12 @@ Detalhes em [[Validação de RFs e RNs]].
 
 ## Diferenças no banco
 Ver a seção "Implementação" de cada entidade em `Domínio/`.
-- `cliente.telefone` sem UNIQUE.
+- `cliente.telefone` sem UNIQUE; a unicidade é conferida no service. Antes do índice, limpar os 3 clientes de teste com `519999999956`.
 - FKs sem `ON DELETE` explícito; a exclusão da OS apaga as atividades no service, não por cascata.
 - `atividade_os.status` aceita NULL (tem só o DEFAULT `'agendada'`); uma linha com NULL escapa do filtro `status <> 'cancelada'` e fica fora da checagem de conflito ([[P6.5 - Verificar conflito de horário#RN 10|RN 10]]).
-- `ordem_servico.endereco_id` aceita NULL; deve ser NOT NULL ([[RF 6.1]]).
+- `ordem_servico.endereco_id` aceita NULL; deve ser NOT NULL ([[RF 6.1]]). A API já exige, e nenhuma OS do `dev.sqlite` está sem endereço.
+- `ordem_servico.eletricista_id` e `atividade_os.eletricista_id` aceitam NULL; o DER e o dicionário pedem NOT NULL ([[RF 6.21]], [[RF 6.22]]). A API já exige, e nenhuma linha do `dev.sqlite` está sem eletricista.
+- O `down` da migration `20261106000100` falha no SQLite (`removeColumn` com FK); no MySQL não foi testado.
 - A migration de `usuario` cria a tabela e insere a secretária sem transação; se o insert falhar no MySQL, a tabela fica criada e o próximo `db:migrate` falha.
 
 ## Auditoria de 09/10/2026

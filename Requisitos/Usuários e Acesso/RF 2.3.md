@@ -5,7 +5,7 @@ modulo: "[[Usuários e Acesso]]"
 prioridade: Média
 alterado: true
 entrega: 3
-implementacao: parcial
+implementacao: completa
 ---
 # RF 2.3
 
@@ -14,6 +14,6 @@ não deve existir tela ou dado exclusivo de um perfil sobre o outro, com exceç�
 **Módulo:** [[Usuários e Acesso]]
 **Entidades:** [[Usuário]]
 
-**Implementação:** o formulário "Cadastrar usuário" aparece também para o eletricista (ver [[RF 2.9]]). Ver [[Status da Implementação]].
+**Implementação:** a tela de Usuários esconde "Novo usuário", editar e excluir para o eletricista (06/11/2026).
 
 > Fonte: Documentação Técnica V6, seção 4.

@@ -6,7 +6,7 @@ modulo: "[[Ordem de Serviço (módulo)]]"
 prioridade: Média
 alterado: true
 entrega: 1
-implementacao: parcial
+implementacao: completa
 ---
 # RF 6.12
 
@@ -14,6 +14,7 @@ o sistema deve sinalizar conflito quando uma atividade se sobrepuser a outra do 
 
 **Módulo:** [[Ordem de Serviço (módulo)|Ordem de Serviço]]
 **Entidades:** [[Atividade da OS]], [[Usuário]]
+**Implementação:** o conflito é calculado por eletricista e dia (`idsEmConflito`), com índice `idx_atividade_os_eletricista_data` (06/11/2026).
 
 > Fonte: Documentação Técnica V6, seção 4.
 > Numeração V7 (separação do módulo Ordem de Serviço); na V6: RF 1.18.

@@ -5,7 +5,7 @@ modulo: "[[Orçamento (módulo)]]"
 prioridade: Alta
 alterado: true
 entrega: 2
-implementacao: pendente
+implementacao: completa
 ---
 # RF 4.17
 
@@ -13,6 +13,7 @@ na criação e na edição do orçamento, o sistema deve permitir buscar o clien
 
 **Módulo:** [[Orçamento (módulo)|Orçamento]]
 **Entidades:** [[Orçamento]], [[Cliente]], [[Endereço]]
+**Implementação:** componente `SeletorClienteEndereco`, compartilhado com o formulário da OS ([[RF 6.2]]) (06/11/2026).
 **Regras:** [[P4.1 - Montar orçamento]]
 
 > Origem: pedido do professor na apresentação de 28/10/2026.

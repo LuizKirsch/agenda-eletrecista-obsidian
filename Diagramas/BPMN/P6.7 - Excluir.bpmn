@@ -8,14 +8,14 @@
 <bpmn:startEvent id="N_s" name="Abre o detalhe da OS e escolhe Excluir"/>
 <bpmn:exclusiveGateway id="N_g1" name="Excluir a OS inteira ou uma atividade?"/>
 <bpmn:task id="N_c1" name="Confirma a exclusão da OS"/>
-<bpmn:task id="N_d1" name="Exclui a OS e todas as suas atividades (RN 16)"/>
+<bpmn:task id="N_d1" name="Exclui a OS e as atividades; se veio de orçamento, só desfaz o vínculo e o orçamento continua aceito (RN 16, 56)"/>
 <bpmn:endEvent id="N_z1" name="OS excluída"/>
 <bpmn:exclusiveGateway id="N_g2" name="Atividade concluída ou cancelada? (RN 14)"/>
 <bpmn:endEvent id="N_e1" name="Exclusão bloqueada"/>
 <bpmn:exclusiveGateway id="N_g3" name="É a última atividade da OS? (RN 15)"/>
 <bpmn:task id="N_d2" name="Exclui a atividade e a OS"/>
 <bpmn:endEvent id="N_z2" name="OS excluída"/>
-<bpmn:task id="N_d3" name="Exclui somente a atividade"/>
+<bpmn:task id="N_d3" name="Exclui somente a atividade e renumera a sequência (RN 35)"/>
 <bpmn:endEvent id="N_z3" name="Atividade excluída"/>
 <bpmn:sequenceFlow id="F_0" sourceRef="N_s" targetRef="N_g1"/>
 <bpmn:sequenceFlow id="F_1" sourceRef="N_g1" targetRef="N_c1" name="OS inteira"/>
@@ -29,8 +29,8 @@
 <bpmn:sequenceFlow id="F_9" sourceRef="N_g3" targetRef="N_d3" name="Não"/>
 <bpmn:sequenceFlow id="F_10" sourceRef="N_d3" targetRef="N_z3"/>
 </bpmn:process><bpmndi:BPMNDiagram id="D1"><bpmndi:BPMNPlane id="PL1" bpmnElement="P_P6.7">
-<bpmndi:BPMNShape id="LS_0" bpmnElement="L_0" isHorizontal="true"><dc:Bounds x="30" y="60" width="1528" height="130"/></bpmndi:BPMNShape>
-<bpmndi:BPMNShape id="LS_1" bpmnElement="L_1" isHorizontal="true"><dc:Bounds x="30" y="190" width="1528" height="390"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="LS_0" bpmnElement="L_0" isHorizontal="true"><dc:Bounds x="30" y="60" width="1440" height="130"/></bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="LS_1" bpmnElement="L_1" isHorizontal="true"><dc:Bounds x="30" y="190" width="1440" height="390"/></bpmndi:BPMNShape>
 <bpmndi:BPMNShape id="S_s" bpmnElement="N_s"><dc:Bounds x="172.0" y="107.0" width="36" height="36"/></bpmndi:BPMNShape>
 <bpmndi:BPMNShape id="S_g1" bpmnElement="N_g1"><dc:Bounds x="380.0" y="97.0" width="56" height="56"/></bpmndi:BPMNShape>
 <bpmndi:BPMNShape id="S_c1" bpmnElement="N_c1"><dc:Bounds x="530.0" y="83.0" width="192" height="84"/></bpmndi:BPMNShape>
@@ -43,15 +43,15 @@
 <bpmndi:BPMNShape id="S_z2" bpmnElement="N_z2"><dc:Bounds x="1262.0" y="367.0" width="36" height="36"/></bpmndi:BPMNShape>
 <bpmndi:BPMNShape id="S_d3" bpmnElement="N_d3"><dc:Bounds x="966.0" y="473.0" width="192" height="84"/></bpmndi:BPMNShape>
 <bpmndi:BPMNShape id="S_z3" bpmnElement="N_z3"><dc:Bounds x="1262.0" y="497.0" width="36" height="36"/></bpmndi:BPMNShape>
-<bpmndi:BPMNEdge id="E_0" bpmnElement="F_0"><di:waypoint x="208.0" y="125.0"/><di:waypoint x="380.0" y="125.0"/></bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge id="E_1" bpmnElement="F_1"><di:waypoint x="436.0" y="125.0"/><di:waypoint x="530.0" y="125.0"/></bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge id="E_2" bpmnElement="F_2"><di:waypoint x="722.0" y="125.0"/><di:waypoint x="735.0" y="125.0"/><di:waypoint x="735.0" y="255.0"/><di:waypoint x="748.0" y="255.0"/></bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge id="E_3" bpmnElement="F_3"><di:waypoint x="940.0" y="255.0"/><di:waypoint x="1044.0" y="255.0"/></bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge id="E_4" bpmnElement="F_4"><di:waypoint x="436.0" y="125.0"/><di:waypoint x="458.0" y="125.0"/><di:waypoint x="458.0" y="385.0"/><di:waypoint x="598.0" y="385.0"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="E_0" bpmnElement="F_0"><di:waypoint x="208.0" y="125"/><di:waypoint x="380.0" y="125"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="E_1" bpmnElement="F_1"><di:waypoint x="436.0" y="125"/><di:waypoint x="530.0" y="125"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="E_2" bpmnElement="F_2"><di:waypoint x="722.0" y="125"/><di:waypoint x="735.0" y="125"/><di:waypoint x="735.0" y="255"/><di:waypoint x="748.0" y="255"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="E_3" bpmnElement="F_3"><di:waypoint x="940.0" y="255"/><di:waypoint x="1044.0" y="255"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="E_4" bpmnElement="F_4"><di:waypoint x="408" y="153.0"/><di:waypoint x="408" y="385"/><di:waypoint x="598.0" y="385"/></bpmndi:BPMNEdge>
 <bpmndi:BPMNEdge id="E_5" bpmnElement="F_5"><di:waypoint x="626" y="413.0"/><di:waypoint x="626" y="497.0"/></bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge id="E_6" bpmnElement="F_6"><di:waypoint x="654.0" y="385.0"/><di:waypoint x="816.0" y="385.0"/></bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge id="E_7" bpmnElement="F_7"><di:waypoint x="872.0" y="385.0"/><di:waypoint x="966.0" y="385.0"/></bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge id="E_8" bpmnElement="F_8"><di:waypoint x="1158.0" y="385.0"/><di:waypoint x="1262.0" y="385.0"/></bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge id="E_9" bpmnElement="F_9"><di:waypoint x="872.0" y="385.0"/><di:waypoint x="894.0" y="385.0"/><di:waypoint x="894.0" y="515.0"/><di:waypoint x="966.0" y="515.0"/></bpmndi:BPMNEdge>
-<bpmndi:BPMNEdge id="E_10" bpmnElement="F_10"><di:waypoint x="1158.0" y="515.0"/><di:waypoint x="1262.0" y="515.0"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="E_6" bpmnElement="F_6"><di:waypoint x="654.0" y="385"/><di:waypoint x="816.0" y="385"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="E_7" bpmnElement="F_7"><di:waypoint x="872.0" y="385"/><di:waypoint x="966.0" y="385"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="E_8" bpmnElement="F_8"><di:waypoint x="1158.0" y="385"/><di:waypoint x="1262.0" y="385"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="E_9" bpmnElement="F_9"><di:waypoint x="844" y="413.0"/><di:waypoint x="844" y="515"/><di:waypoint x="966.0" y="515"/></bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="E_10" bpmnElement="F_10"><di:waypoint x="1158.0" y="515"/><di:waypoint x="1262.0" y="515"/></bpmndi:BPMNEdge>
 </bpmndi:BPMNPlane></bpmndi:BPMNDiagram></bpmn:definitions>

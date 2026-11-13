@@ -40,5 +40,6 @@ Modelo de dados: [[Proposta - Modelo do Orçamento]]
 - [[RF 4.18]] (Média) — exportar o orçamento em PDF, em qualquer status, para envio ao cliente
 - [[RF 4.19]] (Alta) — no aceite, recomendar data e horário de cada atividade sem sobrepor a agenda do eletricista escolhido
 - [[RF 4.20]] (Média) — manter o histórico de versões do orçamento; cada edição salva gera uma nova versão, e as anteriores ficam só para leitura
+- [[RF 4.21]] (Baixa) — considerar o deslocamento entre endereços (geolocalização) na recomendação de horários; em análise, não implementado
 
 Voltar: [[00 - Visão Geral]]

@@ -6,7 +6,7 @@ modulo: "[[Ordem de Serviço (módulo)]]"
 prioridade: Alta
 alterado: true
 entrega: 1
-implementacao: parcial
+implementacao: completa
 ---
 # RF 6.19
 
@@ -14,6 +14,7 @@ o detalhe da OS deve exibir cliente, telefone, endereço, eletricista responsáv
 
 **Módulo:** [[Ordem de Serviço (módulo)|Ordem de Serviço]]
 **Entidades:** [[Ordem de Serviço]], [[Atividade da OS]], [[Tipo de Atividade]], [[Cliente]], [[Endereço]], [[Observação de Endereço]]
+**Implementação:** o detalhe mostra o responsável da OS e o eletricista da atividade (06/11/2026).
 
 > Fonte: Documentação Técnica V6, seção 4.
 > Numeração V7 (separação do módulo Ordem de Serviço); na V6: RF 1.22 (parte).

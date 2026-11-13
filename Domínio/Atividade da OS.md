@@ -23,7 +23,7 @@ Armazena as atividades agendadas de cada OS.
 | `ordem_servico_id` | OS à qual pertence | BIGINT Unsigned | 20 | FK ordem_servico, NOT NULL |
 | `tipo_atividade_id` | Tipo da atividade (NULL = avulsa) | BIGINT Unsigned | 20 | FK tipo_atividade, NULL, ON DELETE RESTRICT ([[Proposta - Modelo do Orçamento]]) |
 | `descricao` | Nome da atividade avulsa, vinda do orçamento | VARCHAR | 100 | obrigatório quando `tipo_atividade_id` é NULL |
-| `eletricista_id` | Eletricista da atividade ([[RF 6.22]]) | BIGINT Unsigned | 20 | FK usuario (perfil eletricista), NOT NULL, ON DELETE RESTRICT — **novo, pendente** |
+| `eletricista_id` | Eletricista da atividade ([[RF 6.22]]) | BIGINT Unsigned | 20 | FK usuario (perfil eletricista), NOT NULL, ON DELETE RESTRICT |
 | `sequencia` | Posição da atividade na OS | INT |  | NOT NULL |
 | `data` | Data da atividade | DATE |  | NOT NULL |
 | `hora_inicio` | Horário de início | TIME |  | NOT NULL |
@@ -35,6 +35,8 @@ Armazena as atividades agendadas de cada OS.
 - CHECK `chk_atividade_os_horario` (`hora_fim > hora_inicio`), `chk_atividade_os_tipo_ou_descricao` (tipo ou descrição) e índice `idx_atividade_os_data`.
 - `tipo_atividade_id` passou a aceitar NULL e `descricao` entrou em `migrations/20261027000001-create-orcamento.js`. A API devolve a atividade avulsa com `tipo: { id: null, nome: descricao }` (`agenda.service.tipoResumo`); na edição da OS, a linha avulsa existente é mantida sem tipo e não pode ser criada à mão.
 - `status` tem DEFAULT `agendada`, mas aceita NULL.
+- `eletricista_id` entrou em `migrations/20261106000100-add-eletricista-os-atividade.js`, FK `RESTRICT`, com o índice `idx_atividade_os_eletricista_data` (`eletricista_id`, `data`) para o conflito por eletricista ([[RF 6.12]]). As atividades que já existiam herdaram o eletricista da OS.
+- ⚠️ `eletricista_id` **sem NOT NULL** no banco; a API preenche com o responsável da OS quando a atividade não informa ([[RF 6.22]]).
 - FK `ordem_servico_id` sem cascata; a renumeração da sequência é feita em `os.service` ([[P6.4 - Editar OS inteira#RN 35|RN 35]]).
 - Divergências: [[Status da Implementação]]
 

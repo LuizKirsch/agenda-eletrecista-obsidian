@@ -10,10 +10,10 @@ sequenceDiagram
 
     U->>F: clica em um horário livre da agenda
     F-->>U: formulário "Nova OS" com data e hora de início
-    U->>F: escolhe cliente, endereço e tipo de cada atividade
-    F->>F: calcula o fim pela duração padrão do tipo
+    U->>F: escolhe cliente, endereço, eletricista responsável<br/>e tipo de cada atividade
+    F->>F: calcula o fim pela duração padrão do tipo e<br/>sugere o responsável como eletricista de cada atividade
     U->>F: confirma (Criar OS)
-    F->>A: criar OS (cliente, endereço, observações, atividades)
+    F->>A: criar OS (cliente, endereço, eletricista,<br/>observações, atividades)
     A->>M: POST /api/os com o token da sessão
     M->>D: busca o usuário do token
     alt token inválido ou usuário inativo
@@ -30,7 +30,7 @@ sequenceDiagram
     end
     C->>S: criar(dados)
     S->>D: abre a transação
-    S->>D: cliente existe? endereço pertence ao cliente?<br/>tipos de atividade ativos?
+    S->>D: cliente existe? endereço pertence ao cliente?<br/>tipos de atividade e eletricistas ativos?
     alt regra de negócio violada
         S->>D: desfaz a transação
         S-->>A: 400 ou 404 – mensagem
@@ -39,7 +39,7 @@ sequenceDiagram
     end
     S->>D: grava a OS
     S->>D: grava as atividades como "agendada",<br/>com sequência de 1 a N
-    S->>D: verifica sobreposição com atividades<br/>não canceladas no mesmo dia
+    S->>D: verifica sobreposição com atividades<br/>não canceladas do mesmo eletricista no mesmo dia
     S->>D: confirma a transação
     S-->>C: id da OS e aviso_conflito
     C-->>A: 201 – id e aviso_conflito
