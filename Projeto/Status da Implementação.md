@@ -1,6 +1,6 @@
 ---
 tags: [projeto]
-atualizado: 2026-11-06
+atualizado: 2026-11-13
 ---
 # Status da Implementação
 
@@ -60,25 +60,23 @@ Detalhes em [[Validação de RFs e RNs]].
 Ver a seção "Implementação" de cada entidade em `Domínio/`.
 - `cliente.telefone` sem UNIQUE; a unicidade é conferida no service. Antes do índice, limpar os 3 clientes de teste com `519999999956`.
 - FKs sem `ON DELETE` explícito; a exclusão da OS apaga as atividades no service, não por cascata.
-- `atividade_os.status` aceita NULL (tem só o DEFAULT `'agendada'`); uma linha com NULL escapa do filtro `status <> 'cancelada'` e fica fora da checagem de conflito ([[P6.5 - Verificar conflito de horário#RN 10|RN 10]]).
-- `ordem_servico.endereco_id` aceita NULL; deve ser NOT NULL ([[RF 6.1]]). A API já exige, e nenhuma OS do `dev.sqlite` está sem endereço.
-- `ordem_servico.eletricista_id` e `atividade_os.eletricista_id` aceitam NULL; o DER e o dicionário pedem NOT NULL ([[RF 6.21]], [[RF 6.22]]). A API já exige, e nenhuma linha do `dev.sqlite` está sem eletricista.
+- Resolvido em 13/11/2026 (migration `20261113000100-not-null-os-atividade.js`, commit `6ab82a9`): `atividade_os.status` ([[P6.5 - Verificar conflito de horário#RN 10|RN 10]]), `ordem_servico.endereco_id` ([[RF 6.1]]), `ordem_servico.eletricista_id` ([[RF 6.21]]) e `atividade_os.eletricista_id` ([[RF 6.22]]) passaram a NOT NULL; status NULL vira `'agendada'`, e a migration aborta se houver endereço ou eletricista NULL. Aplicada no `dev.sqlite` (backup em `dev.sqlite.antes-notnull-2026-11-13.bak`). No SQLite, a recriação da tabela tirou o `AUTOINCREMENT` de `ordem_servico.id` (o id da última OS excluída pode ser reaproveitado); no MySQL não muda.
 - O `down` da migration `20261106000100` falha no SQLite (`removeColumn` com FK); no MySQL não foi testado.
 - A migration de `usuario` cria a tabela e insere a secretária sem transação; se o insert falhar no MySQL, a tabela fica criada e o próximo `db:migrate` falha.
 
 ## Auditoria de 09/10/2026
-Achados da auditoria do código (relatórios em `server/.cartographer/`) que ainda não estavam registrados acima. Nenhum foi corrigido.
+Achados da auditoria do código (relatórios em `server/.cartographer/`) que ainda não estavam registrados acima. Os de Usuários e Acesso e as corridas de carregamento foram corrigidos em 13/11/2026 (commit `6ab82a9`); os demais seguem abertos.
 
 ### Usuários e Acesso
-- **Autoproteção da secretária burlável** ([[P2.3 - Cadastrar, editar e excluir usuário#RN 31|RN 31]]): `ehOProprio` (`services/usuario.service.js:29`) compara o id cru da URL. Com `PUT` ou `DELETE /api/usuarios/01`, o `findByPk` encontra o id 1, mas a checagem não reconhece o próprio usuário, e a secretária consegue se excluir, se desativar ou trocar o próprio perfil.
-- **Logout com sessão expirada** ([[RF 2.6]]): a rota exige sessão válida, então com o token expirado o cookie não é limpo.
-- **Login sem limite de tentativas** ([[P2.1 - Autenticar|P2.1]]).
+- **Autoproteção da secretária burlável** ([[P2.3 - Cadastrar, editar e excluir usuário#RN 31|RN 31]]): resolvido em 13/11/2026. O `usuario.controller` normaliza o id da URL com `lerId`, então `/api/usuarios/01` vira o id 1 e a checagem do próprio usuário funciona.
+- **Logout com sessão expirada** ([[RF 2.6]]): resolvido em 13/11/2026. A rota de logout não exige mais sessão válida e sempre limpa o cookie.
+- **Login sem limite de tentativas** ([[P2.1 - Autenticar|P2.1]]): resolvido em 13/11/2026. Depois de 5 falhas em 15 minutos para o mesmo login e IP, a API responde 429; a mensagem de erro do login continua genérica ([[P2.1 - Autenticar#RN 22|RN 22]]). O controle fica em memória (zera ao reiniciar o servidor), e o app usa `trust proxy` para ler o IP real atrás do Caddy.
 
 ### Agenda e Ordem de Serviço
 - **Grade de 15 minutos só no front** ([[P1.1 - Arrastar atividade#RN 7|RN 7]]): `ehHora` (`services/horario.js:29`) aceita qualquer minuto.
 - **`GET /api/agenda` sem limite de período** ([[API REST]]): `controllers/agenda.controller.js:7` aceita qualquer intervalo e carrega todas as atividades com joins.
-- **Corrida no carregamento da semana** ([[RF 1.1]]): `Agenda.jsx:25-33` não descarta respostas antigas; ao trocar de semana rápido, a resposta anterior pode sobrescrever a atual. Um erro de carga também nunca é limpo depois de um carregamento bem-sucedido.
-- **Corrida no formulário da OS** ([[RF 6.1]]): os effects de endereços e observações em `OsForm.jsx:67-76` não descartam respostas antigas; ao trocar de cliente rápido, a lista pode mostrar endereços do cliente anterior. A API recusa o envio, porque confere se o endereço pertence ao cliente.
+- **Corrida no carregamento da semana** ([[RF 1.1]]): resolvido em 13/11/2026. `Agenda.jsx` só aplica a resposta da última chamada e limpa o erro depois de um carregamento bem-sucedido.
+- **Corrida no formulário da OS** ([[RF 6.1]]): resolvido em 13/11/2026. A busca de cliente e endereço (`SeletorClienteEndereco`) já descartava respostas antigas; o effect das observações do endereço em `OsForm.jsx` passou a descartar também.
 
 ### Atividade
 - **Nome único sem diferenciar maiúsculas só no MySQL** ([[P5.1 - Gerenciar tipos de atividade#RN 17|RN 17]]): a comparação depende da collation; no SQLite de desenvolvimento, "Instalação" e "instalação" passam. O mesmo vale para o `login` do usuário.
